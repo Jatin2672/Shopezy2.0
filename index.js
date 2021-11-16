@@ -23,8 +23,14 @@ function createWelcomeWindow() {
 }
 
 
+
+//when app is ready check if user is already registered
+app.whenReady().then(() => {
+  checkRegisteredState()
+})
+ 
+// Check if the user is already registered
 function checkRegisteredState() {
-    // Check if the user is already registered
   fs.readFile("settings/usersettings.json" , (err, data) => {
         if(err) throw err
         registeredState = (JSON.parse(data)["registered"])
@@ -35,9 +41,3 @@ function checkRegisteredState() {
         }
   })
 }
-
-//when app is ready check if user is already registered
-  app.whenReady().then(() => {
-    checkRegisteredState()
-  })
- 

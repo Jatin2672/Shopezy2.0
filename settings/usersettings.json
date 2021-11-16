@@ -6,5 +6,7 @@
     "mobile" : "",
     "address" : "",
     "bussiness_owner_name" : "",
-    "profile_pic_url" : "" 
+    "profile_pic_url" : "" ,
+    "passcodeApplied" : "false",
+    "passcode" : ""
 }

@@ -1,0 +1,23 @@
+body{
+    background-color: #222;
+}
+.debug{
+    border: 2px solid #ff0000;
+}
+#parent_dashboard_page{
+    flex-direction: column;
+    display: flex;
+    height: 100vh;
+}
+#dashboard_subpage{
+    flex-direction: row;
+    display: flex;
+    height: 100%;
+}
+#navigation_sidebar{
+    width: 220px;
+}
+#navpages_area{
+    width: calc(100% - 220px);
+    background-color: rgb(88, 88, 88);
+}
