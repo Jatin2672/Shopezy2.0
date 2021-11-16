@@ -1,0 +1,65 @@
+:root{
+    --dark_black:#222222;
+
+}
+@font-face {
+    font-family:audiowide ;
+    src: url(../media/font/Audiowide.ttf);
+}
+
+body{
+   
+    background-color:var(--dark_black);
+   
+    
+}
+.debug{
+    border: 5px solid red;
+}
+#left_section {
+    flex-direction: column;
+    height: 100vh;
+    display: flex;
+    width: 60%;
+    background-image: url(../media/backgroundimages/woodenhouse.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+#parent_registration{
+    width: 100%;
+    display: flex;
+
+}
+#top_section,#bottom_section{
+    
+    display: flex;
+    width: 100%;
+    
+}
+#right_section{
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+    width: 40%;
+}
+#logoicon_img{
+    height: 30px;
+    padding-top: 12px;
+    padding-left: 10px;
+    
+
+
+
+}
+#shopezy_text{
+    font-family: Audiowide;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-top: 15px ;
+    
+}
+#topleft_section{
+    display: flex;
+}
