@@ -5,6 +5,8 @@
 @font-face {
     font-family:audiowide ;
     src: url(../media/font/Audiowide.ttf);
+    font-family: baloo;
+    src: url(../media/font/baloofont/BalooDa2-Bold.ttf)
 }
 
 body{
@@ -62,4 +64,21 @@ body{
 }
 #topleft_section{
     display: flex;
+}
+#welcome_text{
+    font-family: Baloo;
+    font-size: 60px;
+    line-height: 101px;
+    margin-left: 22%;
+    margin-top: 22%;
+
+    text-align: center;
+}
+#welcomesupport_text{
+    font-family: Baloo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    margin-top: 30%;
+    
 }
