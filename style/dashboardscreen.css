@@ -2,17 +2,18 @@
     --primary-color: #4087F3;
     --darkBlack : #191919;
     --transparent-color : #00000022;
-    --whiteText : #FFFFFF;
+    --white : #FFFFFF;
+    --red : #ff3333;
 
 }
 body{
     background-color: var(--darkBlack);
-    color: var(--whiteText);
+    color: var(--white);
     margin: 0;
 }
-.debug{
+/* .debug{
     border: 1px solid #3d3d3d;
-}
+} */
 #parent_dashboard_page{
     flex-direction: row;
     display: flex;
@@ -27,6 +28,7 @@ body{
 
 #dashboard_right_section{
     width: calc(100% - 220px);
+    background-color: var(--white);
 }
 #top_title_bar{
     height: 28px;

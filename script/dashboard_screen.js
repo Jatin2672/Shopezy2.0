@@ -13,8 +13,18 @@ window.addEventListener("DOMContentLoaded", () => {
         languageData = JSON.parse(data)
         changeLanguage("hi")
     })
+
+    // just a time pass change title after every 5 seconds
+    setInterval(() => {
+        if(document.getElementsByTagName("title")[0].innerHTML == "ShopEzy"){
+            document.getElementsByTagName("title")[0].innerHTML = "ShopEzy - loading"
+        }else{
+            document.getElementsByTagName("title")[0].innerHTML = "ShopEzy"
+        }
+    }, 500);
 })
 
+// function to change language
 function changeLanguage(languageName){
         // loop all the key 
         for (let key in languageData) {
