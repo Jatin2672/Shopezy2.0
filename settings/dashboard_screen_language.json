@@ -1,0 +1,30 @@
+{
+    "shopezy_side_bar_txt":{
+        "en" : "shopEzy",
+        "hi" : "शॉपइजी"
+    },
+    "home_side_bar_txt":{
+        "en" : "Home",
+        "hi" : "होम"
+    },
+    "invoice_side_bar_txt":{
+        "en" : "Invoice",
+        "hi" : "चालान"
+    },
+    "analytics_side_bar_txt":{
+        "en" : "Analytics",
+        "hi" : "विश्लेषण"
+    },
+    "stocks_side_bar_txt":{
+        "en" : "Stocks",
+        "hi" : "स्टॉक्स"
+    },
+    "transaction_side_bar_txt":{
+        "en" : "Transactions",
+        "hi" : "लेनदेन"
+    },
+    "settings_side_bar_txt":{
+        "en" : "Settings",
+        "hi" : "सेटिंग्स"
+    }
+}

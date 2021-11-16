@@ -3,7 +3,7 @@ const { ipcMain, app, BrowserWindow } = require("electron")
 const path = require("path")
 const fs = require("fs")
 
-let welcomeWindow
+let welcomeWindow , dashboardWindow
 var registeredState  
 
 function createWelcomeWindow() {
@@ -22,7 +22,21 @@ function createWelcomeWindow() {
     welcomeWindow.maximize();
 }
 
-
+function createDashboardWindow() {
+  // Create the browser window.
+  dashboardWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    //frame: false,
+    webPreferences: {
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      preload: path.join(__dirname, "script/dashboard_screen.js"),
+    },
+  });
+  dashboardWindow.loadFile("pages/dashboard_screen.html");
+  dashboardWindow.maximize();
+}
 
 //when app is ready check if user is already registered
 app.whenReady().then(() => {
@@ -37,7 +51,7 @@ function checkRegisteredState() {
         if(registeredState == "false"){
             createWelcomeWindow()
         }else{
-            console.log("will open other window")
+          createDashboardWindow()
         }
   })
 }

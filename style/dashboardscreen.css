@@ -1,23 +1,92 @@
+:root{
+    --primary-color: #4087F3;
+    --darkBlack : #191919;
+    --transparent-color : #00000022;
+    --whiteText : #FFFFFF;
+
+}
 body{
-    background-color: #222;
+    background-color: var(--darkBlack);
+    color: var(--whiteText);
+    margin: 0;
 }
 .debug{
-    border: 2px solid #ff0000;
+    border: 1px solid #3d3d3d;
 }
 #parent_dashboard_page{
-    flex-direction: column;
+    flex-direction: row;
     display: flex;
     height: 100vh;
 }
-#dashboard_subpage{
-    flex-direction: row;
-    display: flex;
-    height: 100%;
-}
 #navigation_sidebar{
     width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#dashboard_right_section{
+    width: calc(100% - 220px);
+}
+#top_title_bar{
+    height: 28px;
 }
 #navpages_area{
-    width: calc(100% - 220px);
-    background-color: rgb(88, 88, 88);
+    height: calc(100% - 28px);
+}
+.nav_items{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+}
+.nav_items span{
+    font-size: 16px;
+    color: #fff;
+    margin-left: 30px;
+}
+
+.nav_items img{
+    filter: grayscale(100%) brightness(200%);
+}
+.nav_items:hover img{
+    filter: grayscale(0%) brightness(100%);
+}
+.nav_items:hover{
+    background-color: var(--transparent-color);
+}
+.nav_items:hover span{
+    color: var(--primary-color);
+}
+
+#navigation_menu_main{
+    display: flex;
+    flex-direction: column;
+}
+
+#expand_menu_btn{
+    margin-bottom: 20px;
+}
+#shop_name_badge{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+#shop_badge_texts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#name_shop_badge{
+    font-size: 16px;
+}
+#email_shop_badge{
+    font-size: 10px;
+}
+#photo_shop_badge{
+    width : 50px;
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    margin-right: 10px;
 }

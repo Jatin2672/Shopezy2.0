@@ -1,26 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="../style/dashboardscreen.css"/>
-</head>
-<body>
-    <div id="parent_dashboard_page" class="debug">
-        <div id="top_bar" class="debug">
-            A
-        </div>
-        <div id="dashboard_subpage" class="debug">
-            <div id="navigation_sidebar" class="debug">
-                A
-            </div>
-            <div id="navpages_area" class="debug">
-            </div>
-        </div>
-    </div>
+    <link rel="stylesheet" href="../style/dashboardscreen.css" />
+  </head>
 
-</body>
+  <body>
+    <div id="parent_dashboard_page" class="debug">
+      <div id="navigation_sidebar" class="debug">
+        <div id="expand_menu_btn" class="nav_items">
+          <img src="../media/side_bar_icon/menu_icon.svg" alt="" />
+          <span id="shopezy_side_bar_txt"></span>
+        </div>
+        <div id="navigation_menu_main">
+          <div class="nav_items">
+            <img src="../media/side_bar_icon/home.svg" alt="" />
+            <span id="home_side_bar_txt"></span>
+          </div>
+          <div class="nav_items">
+            <img src="../media/side_bar_icon/invoice.svg" alt="" />
+            <span id="invoice_side_bar_txt"></span>
+          </div>
+          <div class="nav_items">
+            <img src="../media/side_bar_icon/graphs.svg" alt="" />
+            <span id="analytics_side_bar_txt"></span>
+          </div>
+          <div class="nav_items">
+            <img src="../media/side_bar_icon/database.svg" alt="" />
+            <span id="stocks_side_bar_txt"></span>
+          </div>
+          <div class="nav_items">
+            <img src="../media/side_bar_icon/transactions.svg" alt="" />
+            <span id="transaction_side_bar_txt"></span>
+          </div>
+          <div class="nav_items">
+            <img src="../media/side_bar_icon/setting.svg" alt="" />
+            <span id="settings_side_bar_txt"></span>
+          </div>
+        </div>
+        <div id="shop_name_badge">
+            <img id="photo_shop_badge" src="../media/userphoto.png" alt="" />
+            <div id="shop_badge_texts">
+            <span id="name_shop_badge">Lesile Fashion</span>
+            <span id="email_shop_badge">Lesilealexandder@gmail.com</span>
+            </div>
+          </div>
+      </div>
+      <div id="dashboard_right_section" class="debug">
+        <div id="top_title_bar" class="debug"></div>
+        <div id="navpages_area"></div>
+      </div>
+    </div>
+  </body>
 </html>
