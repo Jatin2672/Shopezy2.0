@@ -14,12 +14,11 @@ window.addEventListener("DOMContentLoaded", () => {
         changeLanguage("hi")
     })
 
-    fs.readFile("./settings/settings" , (err, data) => {
+    fs.readFile("./settings/usersettings" , (err, data) => {
         if (err) throw err
         settingsData = JSON.parse(data)
+        console.log(settingsData)
     });
-
-    
 
 })
 
@@ -30,6 +29,7 @@ function changeLanguage(languageName){
         }
 }
 
+// function to register user
 function registerUser(){
 
 }
