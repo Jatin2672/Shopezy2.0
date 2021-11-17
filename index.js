@@ -79,3 +79,11 @@ function checkRegisteredState() {
         }
   })
 }
+
+ipcMain.on("passcode:authenticated" , ()=>{
+  createDashboardWindow()
+  passcodeWindow.close()
+})
+ipcMain.on("passcode:close" , ()=>{
+  passcodeWindow.close()
+})
