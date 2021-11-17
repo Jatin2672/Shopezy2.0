@@ -242,3 +242,74 @@ table{
     text-align: center;
     height: 30px;
 }
+/* invoice history page */
+.top_section_invoice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.time_interval_search_invoice{
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 20vw;
+    font-size: 14px;
+    color: var(--primary-color);
+    position: absolute;
+    left: 70%;
+}
+#time_stamp_txt, #time_stamp_left_btn, #time_stamp_right_btn{
+    cursor: pointer;
+}
+.search_subSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 21.5vw;
+    height: 15vh;
+}
+#Search_text_invoice{
+    padding: 5px;
+    font-size: 18px;
+    width: 21.5vw;
+    height: 28.5px;
+}
+#Search_btn{
+    height: 42.5px;
+    width: 3vw;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    position: relative;
+    left: -2%;
+    /* top: 2px; */
+    background-color: black;
+}
+.table_Section_invoice{
+    width: 95%;
+    padding: auto;
+    margin: auto;
+    height: 70vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.table_Section_invoice table{
+    border-collapse: collapse;
+}
+.table_Section_invoice tr{
+    height: 30px;
+    cursor: pointer;
+}
+.table_Section_invoice thead{
+    background-color: black;
+    color: white;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.table_Section_invoice tr:nth-child(even){
+    background-color: var(--gray1);
+}
