@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (err) throw err
         // parse the data
         languageData = JSON.parse(data)
-        changeLanguage("hi")
+        changeLanguage("en")
     })
 
     // read a json file using fs for user settings
