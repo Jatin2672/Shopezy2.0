@@ -89,5 +89,9 @@
     "estm_sell_txt":{
         "en":"ESTIMATED SELL",
         "hi":"अनुमानित बिक्री"
+    },
+    "updt_on_txt":{
+        "en":"UPDATED ON",
+        "hi":"को अपडेट किया"
     }
 }
