@@ -199,7 +199,7 @@ function changePage(pageNumber){
         case 3:
             stocks_page.animate([ {opacity: 0}, {opacity: 1}
             ], { duration: 500,})
-            stocks_page.style.display = "flex"
+            stocks_page.style.display = "block"
             break
         case 4:
             transaction_page.animate([ {opacity: 0}, {opacity: 1}

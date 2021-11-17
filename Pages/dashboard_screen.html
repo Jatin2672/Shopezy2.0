@@ -53,7 +53,7 @@
       </div>
       <div id="dashboard_right_section">
         <!-------------------- Home Page ---------------------------->
-        <div id="home_page" class="main_pages" style="display: flex;">
+        <div id="home_page" class="main_pages" style="display: none;">
           HOME
         </div>
 
@@ -68,8 +68,70 @@
         </div>
 
         <!-------------------- Stock Page ---------------------------->
-        <div id="stocks_page" class="main_pages" style="display: none;">
-          Stock
+        <div id="stocks_page" class="main_pages" style="display: block;">
+          <!----------------------- Stock page here-------------------->
+    <p id="mobile_client_txt">Connect to Android Mobile Client 123@1991</p>
+
+    <!-- top section of stock page -->
+    <div class="top_section">
+        <div class="left_btn_section">
+            <button class="top_btn" id="Bin_stock_btn"><img src="../media/stock_page/Dust.svg" alt=""></button>
+            <button class="top_btn" id="fav_stock_btn"><img src="../media/stock_page/Star.svg" alt=""></button>
+        </div>
+        <div class="right_btn_section">
+            <button class="top_btn" id="AddItm_btn"><img src="../media/stock_page/Add.svg" alt=""><span>Add Item</span></button>
+            <button class="top_btn" id="anayls_stock_btn"><img src="../media/stock_page/Setting_2.svg" alt=""></button>
+            <button class="top_btn" id="setting_stock_btn"><img src="../media/stock_page/settings.svg" alt=""></button>
+        </div>
+    </div>
+    <!-- top section of stock page ends -->
+
+    <!-- table section of stock page -->
+    <div id="stocks_tbl">
+        <table>
+
+            <thead>
+                <tr>
+                    <th>BARCODE</th>
+                    <th>PRODUCT NAME</th>
+                    <th>COST PRICE</th>
+                    <th>SELL PRICE</th>
+                    <th>PROFIT</th>
+                    <th>STOCK QTY</th>
+                    <th>DISCOUNT OFF</th>
+                    <th>ESTIMATED SELL</th>
+                    <th>UPDATED ON</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>00928746</td>
+                    <td>Biscuit</td>
+                    <td>45.06</td>
+                    <td>3</td>
+                    <td>5%</td>
+                    <td>5%</td>
+                    <td>128.421</td>
+                    <td>128.421</td>
+                    <td>128.421</td>
+                </tr>
+                <tr>
+                    <td>00928746</td>
+                    <td>Kishmish</td>
+                    <td>45.06</td>
+                    <td>3</td>
+                    <td>5%</td>
+                    <td>5%</td>
+                    <td>5%</td>
+                    <td>5%</td>
+                    <td>128.421</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- table section of stock page ends here -->
+    </div>
+    <!----------------------- Stock page here-------------------->
         </div>
 
         <!-------------------- Transaction Page ---------------------------->

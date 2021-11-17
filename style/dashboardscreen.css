@@ -4,6 +4,7 @@
     --transparent-color : #00000022;
     --white : #FFFFFF;
     --red : #ff3333;
+    --gray1: #EDEDEE;
 
 }
 body{
@@ -161,4 +162,83 @@ body{
     justify-content: center;
     border-radius: 20px;
     box-shadow: 0px 0px 12px rgb(0, 0, 0 , 0.2);
+}
+
+/* ---------------------------- stock css------------------------------ */
+#stocks_page{
+    padding: 10px;
+}
+.left_btn_section{
+    display: flex;
+    justify-content:space;
+    align-items: left;
+}
+#mobile_client_txt{
+    color: var(--primary-color);
+    cursor: pointer;
+    text-align: right;
+}
+.right_btn_section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: right;
+}
+#stocks_tbl tr:nth-child(even){
+    background-color: var(--gray1);
+}
+.top_section{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+#Bin_stock_btn{
+    height: 45px;
+    width: 54px;
+    border-radius: 5px;
+    border: 1px solid var(--red);
+    cursor: pointer;
+}
+.top_btn{
+    height: 45px;
+    width: 54px;
+    border: 1px solid var(--darkBlack);
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: var(--white);
+}
+#AddItm_btn{
+    height: 45px;
+    width: 138px;
+    border: 1px solid var(--darkBlack);
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#stocks_tbl{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 60%;
+    padding: 10px 0;
+}
+table{
+    border-collapse: collapse;
+}
+#stocks_tbl table thead{
+    background-color : var(--darkBlack);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    height: 30px;
+}
+#stocks_tbl tr{
+    text-align: center;
+    height: 30px;
 }
