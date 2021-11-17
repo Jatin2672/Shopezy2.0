@@ -7,6 +7,6 @@
     "address" : "",
     "bussiness_owner_name" : "",
     "profile_pic_url" : "" ,
-    "passcodeApplied" : "false",
-    "passcode" : ""
+    "passcodeApplied" : "true",
+    "passcode" : "1234"
 }
