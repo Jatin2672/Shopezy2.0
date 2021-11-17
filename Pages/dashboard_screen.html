@@ -15,37 +15,37 @@
       <div id="navigation_sidebar">
         <div id="expand_menu_btn" class="nav_items">
           <img src="../media/side_bar_icon/menu_icon.svg" />
-          <span id="shopezy_side_bar_txt"></span>
+          <span id="shopezy_side_bar_txt" class="collapsible_side_bar_text"></span>
         </div>
         <div id="navigation_menu_main">
-          <div id="home_btn" class="nav_items">
+          <div id="home_btn" class="nav_items selected">
             <img src="../media/side_bar_icon/home.svg" />
-            <span id="home_side_bar_txt"></span>
+            <span id="home_side_bar_txt" class="collapsible_side_bar_text"></span>
           </div>
           <div id="invoice_btn" class="nav_items">
             <img src="../media/side_bar_icon/invoice.svg" />
-            <span id="invoice_side_bar_txt"></span>
+            <span id="invoice_side_bar_txt" class="collapsible_side_bar_text"></span>
           </div>
           <div id="analytics_btn" class="nav_items">
             <img src="../media/side_bar_icon/graphs.svg" />
-            <span id="analytics_side_bar_txt"></span>
+            <span id="analytics_side_bar_txt" class="collapsible_side_bar_text"></span>
           </div>
           <div id="stocks_btn" class="nav_items">
             <img src="../media/side_bar_icon/database.svg" />
-            <span id="stocks_side_bar_txt"></span>
+            <span id="stocks_side_bar_txt" class="collapsible_side_bar_text"></span>
           </div>
           <div id="transaction_btn" class="nav_items">
             <img src="../media/side_bar_icon/transactions.svg" />
-            <span id="transaction_side_bar_txt"></span>
+            <span id="transaction_side_bar_txt" class="collapsible_side_bar_text"></span>
           </div>
           <div id="settings_btn" class="nav_items">
             <img src="../media/side_bar_icon/setting.svg" />
-            <span id="settings_side_bar_txt"></span>
+            <span id="settings_side_bar_txt" class="collapsible_side_bar_text"></span>
           </div>
         </div>
         <div id="shop_name_badge">
             <img id="photo_shop_badge" src="../media/userphoto.png" />
-            <div id="shop_badge_texts">
+            <div id="shop_badge_texts" class="collapsible_side_bar_text">
             <span id="name_shop_badge">Lesile Fashion</span>
             <span id="email_shop_badge">Lesilealexandder@gmail.com</span>
             </div>
@@ -53,7 +53,7 @@
       </div>
       <div id="dashboard_right_section">
         <!-------------------- Home Page ---------------------------->
-        <div id="home_page" class="main_pages" style="display: none;">
+        <div id="home_page" class="main_pages" style="display: flex;">
           HOME
         </div>
 
@@ -78,12 +78,35 @@
         </div>
 
         <!-------------------- Settings Page ---------------------------->
-        <div id="settings_page" class="main_pages debug" style="display: flex;">
-          <div id="setting_side_bar_menu" class="debug">
-            sidebar here
+        <div id="settings_page" class="main_pages" style="display: none;">
+          <div id="setting_side_bar_menu">
+            <span id="settings_title_txt">
+              Settings
+            </span>
+            <div id="navigation_for_settings">
+              <span id="account_setting_btn" class="selected">Account</span>
+              <span id="invoice_setting_btn">Invoice</span>
+              <span id="analytics_setting_btn">Analytics</span>
+              <span id="stocks_setting_btn">Stocks</span>
+              <span id="personalization_setting_btn">Personalization</span>
+            </div>
           </div>
-          <div id="settings_sub_pages" class="debug">
-            setting subpages here
+          <div id="settings_sub_pages">
+            <div id="settings_sub_pages_account" class="setting_subpage " style="display: flex;">
+              Account Settings
+            </div>
+            <div id="settings_sub_pages_invoice" class="setting_subpage "  style="display: none;">
+              Invoice Settings
+            </div>
+            <div id="settings_sub_pages_analytics" class="setting_subpage "  style="display: none;">
+              Analytics Settings
+            </div>
+            <div id="settings_sub_pages_stocks" class="setting_subpage "  style="display: none;">
+              Stocks Settings
+            </div>
+            <div id="settings_sub_pages_personalization" class="setting_subpage "  style="display: none;">
+              Personalization Settings
+            </div>
           </div>
         </div>
 

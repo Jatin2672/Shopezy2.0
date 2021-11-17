@@ -26,5 +26,29 @@
     "settings_side_bar_txt":{
         "en" : "Settings",
         "hi" : "सेटिंग्स"
+    },
+    "settings_title_txt":{
+        "en" : "Settings",
+        "hi" : "सेटिंग्स"
+    },
+    "account_setting_btn":{
+        "en" : "Account ",
+        "hi" : "खाता"
+    },
+    "invoice_setting_btn":{
+        "en" : "Invoice ",
+        "hi" : "चालान"
+    },
+    "analytics_setting_btn":{
+        "en" : "Analytics ",
+        "hi" : "विश्लेषण"
+    },
+    "stocks_setting_btn":{
+        "en" : "Stocks ",
+        "hi" : "स्टॉक्स"
+    },
+    "personalization_setting_btn":{
+        "en" : "Personalization ",
+        "hi" : "निजीकरण"
     }
 }
