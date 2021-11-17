@@ -12,9 +12,12 @@ let account_setting_page , invoice_setting_page ,
  analytics_setting_page , stocks_setting_page , 
  personalization_setting_page
 
+let stock_table_body , all_items_in_stocks = []
+
 let expand_sidebar_btn , is_sidebar_expanded = false
 
 let last_selected_settings_btn = "account_setting_btn" ,last_selected_btn = "home_btn"
+
 
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
@@ -85,7 +88,14 @@ window.addEventListener("DOMContentLoaded", () => {
     analytics_setting_page = document.getElementById("settings_sub_pages_analytics")
     stocks_setting_page = document.getElementById("settings_sub_pages_stocks")
     personalization_setting_page = document.getElementById("settings_sub_pages_personalization")
-    
+
+    // assign the html elements to elements
+    stock_table_body = document.getElementById("stock_table_body")
+
+    setTimeout(() => {
+        addItemsToStockTable()
+    }, 100);
+
     // apply click on all the buttons [sidebar]
     applyEventListeners('home_btn', 0)
     applyEventListeners('invoice_btn', 1)
@@ -122,6 +132,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
 })
+
 
 // function to change language
 function changeLanguage(languageName){
@@ -285,3 +296,81 @@ function changeSettingsPage(pageNumber){
             }
             selectedSettingsPage = pageNumber
 }
+
+// import sql
+const sql = require('sqlite3').verbose()
+
+// connect to database
+const sqlite3 = require("sqlite3").verbose();
+
+let db = new sqlite3.Database("database/masterDatabase.db", (err) => {
+  if (err) {
+    console.log(err.message);
+  }
+  console.log("connected to database");
+});
+
+// insert item to stock
+function addItemToStock(barcode , product_name , cost_price , selling_price , quantity){
+    let added_date = new Date().getTime()
+    db.run(`INSERT INTO stockitem (barcode , product_name , cost_price , selling_price , quantity , sold_quantity, date_added ) VALUES 
+    (${barcode} , '${product_name}' , ${cost_price} , ${selling_price} , ${quantity} , 0 , '${added_date}')` , (err) => {
+        if(err){
+            console.log(err.message)
+        }
+        console.log("item added to stock");
+    });
+}
+
+//delete item from stock
+function deleteItemFromStock(barcode){
+    db.run(`DELETE FROM stockitem WHERE barcode = ${barcode}` , (err) => {
+        if(err){
+            console.log(err.message)
+        }
+        console.log("item deleted from stock");
+    });
+}
+
+// function increase sold quantity
+function increaseSoldQuantity(barcode){
+    db.run(`UPDATE stockitem SET sold_quantity = sold_quantity + 1 WHERE barcode = ${barcode}` , (err) => {
+        if(err){
+            console.log(err.message)
+        }
+        console.log("item sold");
+    });
+}
+
+
+
+function addItemsToStockTable(){
+    let html_to_add = ""
+    stock_table_body.innerHTML = ""
+    for(let i = 0 ; i < all_items_in_stocks.length ; i++){
+        html_to_add += `<tr>
+        <td>${[all_items_in_stocks[i].barcode]}</td>
+        <td>${[all_items_in_stocks[i].product_name]}</td>
+        <td>${[all_items_in_stocks[i].cost_price]}</td>
+        <td>${[all_items_in_stocks[i].selling_price]}</td>
+        <td>${[all_items_in_stocks[i].selling_price - all_items_in_stocks[i].cost_price]}</td>
+        <td>${[all_items_in_stocks[i].quantity]}</td>
+        <td>0</td>
+        <td>${[all_items_in_stocks[i].sold_quantity]}</td>
+        <td>${[all_items_in_stocks[i].date_added]}</td>
+        </tr>`
+    }
+    stock_table_body.innerHTML = html_to_add
+}
+
+// function get all item from stock in ascending order of date added
+function getAllItemFromStock(){
+    db.each(`SELECT * FROM stockitem ORDER BY date_added ASC` , (err, row) => {
+        if(err){
+            console.log(err.message)
+        }
+        all_items_in_stocks.push(row)
+    });
+}
+
+getAllItemFromStock()
