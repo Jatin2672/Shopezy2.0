@@ -93,5 +93,29 @@
     "updt_on_txt":{
         "en":"UPDATED ON",
         "hi":"को अपडेट किया"
+    },
+    "timestamp_txt":{
+        "en":"TIMESTAMP",
+        "hi":"टाइमस्टैम्प"
+    },
+    "invoice_no_txt":{
+        "en":"INVOICE NUMBER",
+        "hi":"  इनवॉइस संख्या"
+    },
+    "custmer_name_txt":{
+        "en":"CUSTOMER'S NAME",
+        "hi":"ग्राहक का नाम"
+    },
+    "total_amnt_txt":{
+        "en":"TOTAL AMOUNT",
+        "hi":"कुल राशि"
+    },
+    "payment_method_txt":{
+        "en":"PAYMENT METHOD",
+        "hi":"भुगतान विधि"
+    },
+    "accountant_txt":{
+        "en":"ACCOUNTANT",
+        "hi":"मुनीम"
     }
 }
