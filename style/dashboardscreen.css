@@ -11,9 +11,9 @@ body{
     color: var(--white);
     margin: 0;
 }
-/* .debug{
+.debug{
     border: 1px solid #3d3d3d;
-} */
+}
 #parent_dashboard_page{
     flex-direction: row;
     display: flex;
@@ -91,4 +91,28 @@ body{
     border-radius: 50%;
     border: 1px solid var(--primary-color);
     margin-right: 10px;
+}
+.main_pages{
+    height: 100%;
+    background-color: rgb(6, 2, 26);
+    align-items: center;
+    justify-content: center;
+}
+#settings_page{
+    flex-direction: row;
+    
+}
+#setting_side_bar_menu{
+    display: flex;
+    width: 200px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#settings_sub_pages{
+    display: flex;
+    width: calc(100% - 200px);
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }

@@ -10,35 +10,35 @@
   </head>
 
   <body>
-    <div id="parent_dashboard_page" class="debug">
+    <div id="parent_dashboard_page">
       <!-------------------------------------------Navigation Sidebar Here ------------------------------------->
-      <div id="navigation_sidebar" class="debug">
+      <div id="navigation_sidebar">
         <div id="expand_menu_btn" class="nav_items">
           <img src="../media/side_bar_icon/menu_icon.svg" />
           <span id="shopezy_side_bar_txt"></span>
         </div>
         <div id="navigation_menu_main">
-          <div class="nav_items">
+          <div id="home_btn" class="nav_items">
             <img src="../media/side_bar_icon/home.svg" />
             <span id="home_side_bar_txt"></span>
           </div>
-          <div class="nav_items">
+          <div id="invoice_btn" class="nav_items">
             <img src="../media/side_bar_icon/invoice.svg" />
             <span id="invoice_side_bar_txt"></span>
           </div>
-          <div class="nav_items">
+          <div id="analytics_btn" class="nav_items">
             <img src="../media/side_bar_icon/graphs.svg" />
             <span id="analytics_side_bar_txt"></span>
           </div>
-          <div class="nav_items">
+          <div id="stocks_btn" class="nav_items">
             <img src="../media/side_bar_icon/database.svg" />
             <span id="stocks_side_bar_txt"></span>
           </div>
-          <div class="nav_items">
+          <div id="transaction_btn" class="nav_items">
             <img src="../media/side_bar_icon/transactions.svg" />
             <span id="transaction_side_bar_txt"></span>
           </div>
-          <div class="nav_items">
+          <div id="settings_btn" class="nav_items">
             <img src="../media/side_bar_icon/setting.svg" />
             <span id="settings_side_bar_txt"></span>
           </div>
@@ -51,7 +51,42 @@
             </div>
           </div>
       </div>
-      <div id="dashboard_right_section" class="debug">
+      <div id="dashboard_right_section">
+        <!-------------------- Home Page ---------------------------->
+        <div id="home_page" class="main_pages" style="display: none;">
+          HOME
+        </div>
+
+        <!-------------------- Invoice Page ---------------------------->
+        <div id="invoice_page" class="main_pages" style="display: none;">
+          Invoice
+        </div>
+
+        <!-------------------- Analytics Page ---------------------------->
+        <div id="analytics_page" class="main_pages" style="display: none;">
+          Analytics
+        </div>
+
+        <!-------------------- Stock Page ---------------------------->
+        <div id="stocks_page" class="main_pages" style="display: none;">
+          Stock
+        </div>
+
+        <!-------------------- Transaction Page ---------------------------->
+        <div id="transactions_page" class="main_pages" style="display: none;">
+          Transactions
+        </div>
+
+        <!-------------------- Settings Page ---------------------------->
+        <div id="settings_page" class="main_pages debug" style="display: flex;">
+          <div id="setting_side_bar_menu" class="debug">
+            sidebar here
+          </div>
+          <div id="settings_sub_pages" class="debug">
+            setting subpages here
+          </div>
+        </div>
+
       </div>
     </div>
   </body>

@@ -33,7 +33,7 @@ function createDashboardWindow() {
       preload: path.join(__dirname, "script/dashboard_screen.js"),
     },
   });
-  dashboardWindow.removeMenu()
+  //dashboardWindow.removeMenu()
   dashboardWindow.loadFile("pages/dashboard_screen.html");
   dashboardWindow.maximize();
 }
@@ -41,7 +41,6 @@ function createDashboardWindow() {
 //when app is ready check if user is already registered
 app.whenReady().then(() => { 
   checkRegisteredState()
- 
 })
  
 // Check if the user is already registered
