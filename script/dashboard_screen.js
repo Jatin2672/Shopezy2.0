@@ -1,5 +1,4 @@
 //import file system
-const { settings } = require('cluster');
 const fs = require('fs');
 let languageData , userSettingsData
 

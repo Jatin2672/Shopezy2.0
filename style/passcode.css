@@ -28,6 +28,16 @@ body{
     /* filter: grayscale(100%); */
     
 }
+#close_passcode_btn{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 10px;
+}
+#close_passcode_btn:hover{
+    
+    background-color: var(--red);
+}
 #app_name{
     font-size: 20px;
     display: flex;
@@ -41,7 +51,7 @@ body{
     justify-items: center;
     align-items: center;
     justify-content: space-between;
-    padding: 40px;
+    padding: 30px;
 }
 #passcode_label{
     display: flex;
@@ -54,7 +64,7 @@ body{
     height: auto;
     border-radius: 50%;
     border: 1px solid var(--primary-color);
-    margin-top: 20px;
+    margin-top: 50px;
 }
 #passcode_area{
     display: flex;
@@ -65,6 +75,7 @@ body{
     padding: 15px;
     border-radius: 8px;
     margin-left: 10px;
+    cursor: pointer;
 }
 #passcode_input{
     border-radius: 8px;
@@ -78,9 +89,9 @@ body{
 
 #passcode_forget_area{
     display: flex;
-    margin-top: 10px;
-    margin-left: -100px;
-    font-size: 12px;
+    margin-top: 15px;
+    margin-left: -80px;
+    font-size: 14px;
     color: var(--gray1);
 }
 #reset_now_btn{
