@@ -50,9 +50,44 @@
     "personalization_setting_btn":{
         "en" : "Personalization ",
         "hi" : "निजीकरण"
+    },
+   "mobile_client_txt":{
+       "en" : "Connect to Android Mobile Client 123@1991",
+       "hi" : "Android मोबाइल क्लाइंट से कनेक्टेड 123@1991"
+   }, 
+    "Add_itm_btn" : {
+        "en" : "Add Item",
+        "hi" : "सामान जोडें"
+    },
+    "barcode_stocks_txt" : {
+        "en" : "BARCODE",
+        "hi" : "बारकोड"
+    },"prod_name_stock_txt":{
+        "en":"PRODUCT NAME",
+        "hi":"प्रोडक्ट का नाम"
+    },
+    "cost_price_txt":{
+        "en": "COST PRICE",
+        "hi":"लागत मूल्य"
+    },
+    "sell_price_txt":{
+        "en":"SELL PRICE",
+        "hi":"विक्रय मूल्य"
+    },
+    "profit_txt":{
+        "en":"PROFIT",
+        "hi":"फायदा"
+    },
+    "stoct_qty_txt":{
+        "en":"STOCK QTY",
+        "hi":"स्टॉक मात्रा"
+    },
+    "discount_off_txt":{
+        "en":"DISCOUNT OFF",
+        "hi":"छूट बंद"
+    },
+    "estm_sell_txt":{
+        "en":"ESTIMATED SELL",
+        "hi":"अनुमानित बिक्री"
     }
-    "timestamp_txt":{
-        
-    }
-    
 }
