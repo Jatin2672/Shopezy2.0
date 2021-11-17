@@ -3,8 +3,8 @@ const { ipcMain, app, BrowserWindow, nativeTheme } = require("electron")
 const path = require("path")
 const fs = require("fs")
 
-let welcomeWindow , dashboardWindow
-var registeredState  
+let welcomeWindow , dashboardWindow , passcodeWindow
+var registeredState , hasPasscode
 
 function createWelcomeWindow() {
     // Create the browser window.
@@ -38,6 +38,23 @@ function createDashboardWindow() {
   dashboardWindow.maximize();
 }
 
+function createPasscodeWindow() {
+  // Create the browser window.
+  passcodeWindow = new BrowserWindow({
+    width: 700,
+    height: 480,
+    frame: false,
+    resizable:false,
+    webPreferences: {
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      preload: path.join(__dirname, "script/passcode.js"),
+    },
+  });
+  //dashboardWindow.removeMenu()
+  passcodeWindow.loadFile("pages/passcode.html");
+}
+
 //when app is ready check if user is already registered
 app.whenReady().then(() => { 
   checkRegisteredState()
@@ -48,11 +65,17 @@ function checkRegisteredState() {
   fs.readFile("settings/usersettings.json" , (err, data) => {
         if(err) throw err
         registeredState = (JSON.parse(data)["registered"])
+        hasPasscode = (JSON.parse(data)["passcodeApplied"])
         if(registeredState == "false"){
             createWelcomeWindow()
-              
         }else{
-          createDashboardWindow()
+          if(hasPasscode == "false"){
+            createDashboardWindow()
+          }
+          else{
+            createPasscodeWindow()
+          }
+          
         }
   })
 }
