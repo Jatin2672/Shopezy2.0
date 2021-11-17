@@ -8,7 +8,10 @@
     <title>ShopEzy</title>
 </head>
 <body>
+    <img id="close_btn" src="../media/passcode/close.svg" alt="">
+    <img id="minimize_btn" src="../media/passcode/minimize.svg" alt="">
     <div id="parent_registration">
+        
         <div id="left_section" class="debug">
             <div id="topleft_section">
                 <img id="logoicon_img" src="../media/logoicon.svg" alt="">
@@ -18,6 +21,7 @@
                 <span id="welcome_text">WELCOME</span>
                 <span id="welcomesupport_text">We're so excited to see you here !</span>
             </div>
+            <img id="questionmark_icon" src="../media/questionmark.svg" alt="">
             
         </div>
         <div id="right_section" class="debug">
@@ -26,20 +30,30 @@
                     <option value="0">Hindi</option>
                     <option value="1">English</option>
                 </select>
+               
                 <span id="createaccount_text">Create an account</span>
                 <img id="homofaber_icon" src="../media/homofabers_icon.png" alt="">
             </div>
             <div id="bottom_section" class="bottom_section1">
-                <span class="accountinfo_text">Shop or Bussiness Name</span>
-                <input type="text" class="userinput_accountinfo">
-                <span class="accountinfo_text">Bussiness Category</span>
-                <input type="text" class="userinput_accountinfo">
-                <span class="accountinfo_text">Email</span>
-                <input type="text" class="userinput_accountinfo">
-                <span class="accountinfo_text">Address</span>
-                <input type="text" class="userinput_accountinfo" id="address_userinput">
-                <button id="continue_btn">Continue</button>
+                <div>
+                    <span class="accountinfo_text">Shop or Bussiness Name</span>
+                    <input type="text" class="userinput_accountinfo">
+                    <span class="accountinfo_text">Bussiness Category</span>
+                    <input type="text" class="userinput_accountinfo">
+                    <span class="accountinfo_text">Email</span>
+                    <input type="text" class="userinput_accountinfo">
+                    <span class="accountinfo_text">Address</span>
+                    <input type="text" class="userinput_accountinfo" id="address_userinput"> 
+                    </div>  
             </div>
+            <button id="continue_btn">Continue</button>
+            <div id="condition_text">
+                <span id="registertext_1">By registering you agree to Shopezy’s</span>
+                <span id="registertext_2">Terms of Service</span>
+                <span id="registertext_3">and</span>
+                <span id="registertext_4"> Privacy Policy.</span>
+            </div>
+          
         </div>
     </div>
 </body>

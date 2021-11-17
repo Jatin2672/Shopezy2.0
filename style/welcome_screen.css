@@ -5,6 +5,9 @@
 @font-face {
     font-family:audiowide ;
     src: url(../media/font/Audiowide.ttf);
+    
+}
+@font-face {
     font-family: baloo;
     src: url(../media/font/baloofont/BalooDa2-Bold.ttf)
 }
@@ -43,7 +46,7 @@ body{
     height: 100%;
     display: flex;
     width: 40%;
-    overflow-y: scroll;
+    
     
 }
 #logoicon_img{
@@ -122,12 +125,17 @@ body{
     display: flex;
     width: 100%;
     margin-top: 287px;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+    height: 350px;
+    
    
 }
 .bottom_section1{
     flex-direction: column;   
     width: 50%;
     padding: 5%;
+    
 }
 .userinput_accountinfo{
     width: 450px;
@@ -142,7 +150,7 @@ body{
 #address_userinput{
     height: 125px;
 }
-#settings_container::-webkit-scrollbar {
+#bottom_section::-webkit-scrollbar {
     display: none;
 }
 #continue_btn{
@@ -154,6 +162,40 @@ body{
     color: white;
     padding: 18px;
     border: none;
-    margin-left: 91px;
-    margin-top: 25px;
+    margin-left: 140px;
+    margin-top: 30px;
+}
+#close_btn{
+    position: fixed;
+    padding: 10px;
+    right: 1px;
+
+}
+#minimize_btn{
+    position: fixed;
+    
+    right: 40px;
+    padding-top:16px ;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 16px;   
+}
+#questionmark_icon{
+    position: absolute;
+    margin-top: 760px;
+    margin-left: 910px;
+}
+#registertext_1,#registertext_3{
+    color: #6B6B6B;
+    font-family: Arial;
+    font-size: 12px;
+}
+#registertext_2,#registertext_4{
+    color: #01C7F2;
+    font-family: Arial;
+    font-size: 12px;
+}
+#condition_text{
+    margin-top: 10px;
+    margin-left: 140px;
 }
