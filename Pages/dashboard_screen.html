@@ -79,7 +79,7 @@
             <button class="top_btn" id="fav_stock_btn"><img src="../media/stock_page/Star.svg" alt=""></button>
         </div>
         <div class="right_btn_section">
-            <button class="top_btn" id="AddItm_btn"><img src="../media/stock_page/Add.svg" alt=""><span>Add Item</span></button>
+            <button class="top_btn" id="AddItm_btn"><img src="../media/stock_page/Add.svg" alt=""><span id="Add_itm_btn">Add Item</span></button>
             <button class="top_btn" id="anayls_stock_btn"><img src="../media/stock_page/Setting_2.svg" alt=""></button>
             <button class="top_btn" id="setting_stock_btn"><img src="../media/stock_page/settings.svg" alt=""></button>
         </div>
@@ -92,15 +92,15 @@
 
             <thead>
                 <tr>
-                    <th>BARCODE</th>
-                    <th>PRODUCT NAME</th>
-                    <th>COST PRICE</th>
-                    <th>SELL PRICE</th>
-                    <th>PROFIT</th>
-                    <th>STOCK QTY</th>
-                    <th>DISCOUNT OFF</th>
-                    <th>ESTIMATED SELL</th>
-                    <th>UPDATED ON</th>
+                    <th id="barcode_stocks_txt">BARCODE</th>
+                    <th id="prod_name_stock_txt">PRODUCT NAME</th>
+                    <th id="cost_price_txt">COST PRICE</th>
+                    <th id="sell_price_txt">SELL PRICE</th>
+                    <th id="profit_txt">PROFIT</th>
+                    <th id="stoct_qty_txt">STOCK QTY</th>
+                    <th id="discount_off_txt">DISCOUNT OFF</th>
+                    <th id="estm_sell_txt">ESTIMATED SELL</th>
+                    <th id="updt_on_txt">UPDATED ON</th>
                 </tr>
             </thead>
 
@@ -136,7 +136,84 @@
 
         <!-------------------- Transaction Page ---------------------------->
         <div id="transactions_page" class="main_pages" style="display: none;">
-          Transactions
+          <div class="top_section_invoice"> <!-- Top section of Invoice -->
+        
+            <div class="search_subSection">
+                <input type="text" name="Search" id="Search_text_invoice" placeholder="Search">
+                <button id="Search_btn"><img src="../media/invoiceHistory/Search.svg" alt=""></button>
+            </div>
+    
+            <div class="time_interval_search_invoice">
+                <img src="../media/invoiceHistory/change_arrow_left.svg" alt="" id="time_stamp_left_btn">
+                <p id="time_stamp_txt">12/10/2021 - 12/11/2021</p>
+                <img src="../media/invoiceHistory/change_arrow_right.svg" alt="" id="time_stamp_right_btn">
+            </div>
+    
+        </div><!-- Top section of Invoice ends here -->
+    
+        <div class="table_Section_invoice"><!------------- Table section of Invoice ------------------------>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th id="timestamp_txt">TIMESTAMP</th>
+                        <th>iNVOICE NUMBER</th>
+                        <th>CUSTOMER'S NAME</th>
+                        <th>TOTAL AMOUNT</th>
+                        <th>PAYMENT METHOD</th>
+                        <th>ACCOUNTANT</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr>
+                        <td>12/10/2021 - 12/11/2021</td>
+                        <td>1210202102</td>
+                        <td>Shubh</td>
+                        <td>1200</td>
+                        <td>Credit</td>
+                        <td>Abc</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>12/10/2021 - 12/11/2021</td>
+                        <td>1210202102</td>
+                        <td>Shubh</td>
+                        <td>1200</td>
+                        <td>Credit</td>
+                        <td>Abc</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>12/10/2021 - 12/11/2021</td>
+                        <td>1210202102</td>
+                        <td>Shubh</td>
+                        <td>1200</td>
+                        <td>Credit</td>
+                        <td>Abc</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>12/10/2021 - 12/11/2021</td>
+                        <td>1210202102</td>
+                        <td>Shubh</td>
+                        <td>1200</td>
+                        <td>Credit</td>
+                        <td>Abc</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>12/10/2021 - 12/11/2021</td>
+                        <td>1210202102</td>
+                        <td>Shubh</td>
+                        <td>1200</td>
+                        <td>Credit</td>
+                        <td>Abc</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
         </div>
 
         <!-------------------- Settings Page ---------------------------->

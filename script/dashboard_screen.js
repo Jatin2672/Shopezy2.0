@@ -1,5 +1,4 @@
 //import file system
-const { settings } = require('cluster');
 const fs = require('fs');
 let languageData , userSettingsData
 
@@ -215,7 +214,7 @@ function changePage(pageNumber){
         case 4:
             transaction_page.animate([ {opacity: 0}, {opacity: 1}
             ], { duration: 500,})
-            transaction_page.style.display = "flex"
+            transaction_page.style.display = "block"
             break
         case 5:
             settings_page.animate([ {opacity: 0}, {opacity: 1}
