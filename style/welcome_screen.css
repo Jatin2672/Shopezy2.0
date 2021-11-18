@@ -199,3 +199,23 @@ body{
     margin-top: 10px;
     margin-left: 140px;
 }
+/* ......................................................privacy policy page.................................................. */
+#backarrow{
+    margin-top: 105px;
+    margin-left: 92px;
+}
+#terms_text{
+    margin-left: 35px;
+    display:absolute ;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 24px;
+}
+#heading_1{
+    margin-top: 40px;
+    margin-left: 90px;
+    display: flex;
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+}
