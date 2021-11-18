@@ -559,3 +559,21 @@ table{
     margin-left: -40px;
     margin-top: -60px;
 }
+
+#model_box_container{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #00000099;
+    backdrop-filter: blur(4px);
+    display: flex;
+}
+#connect_to_android_page{
+    width: 900px;
+    height: 550px;
+    margin-top: calc(50vh - 275px);
+    margin-left: calc(50vw - 450px);
+    border-radius: 8px;
+}
