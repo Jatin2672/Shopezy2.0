@@ -1,10 +1,63 @@
 {
-    "a_demo_text":{
-        "hi":"दिव्यांशु",
-        "en":"divyanshu"
+    "language_select":{
+        "hi":"हिंदी ",
+        "en":"Hindi",
+        "hi":"अंग्रेजी",
+        "en":"English"
     },
-    "a_demo_text2":{
-        "hi":"दिव्यांशु",
-        "en":"div"
+    "shopezy_text":{
+        "hi":"शोपिज़ी",
+        "en":"Shopezy"
+    },
+    "welcome_text":{
+        "hi":"स्वागत हे",
+        "en":"Welcome"
+    },
+    "welcomesupport_text":{
+        "hi":"हम आपको यहाँ देखकर बहुत उत्साहित हैं!",
+        "en":"We're so excited to see you here !"
+    },
+    "createaccount_text":{
+        "hi":"खाता बनाएं",
+        "en":"Create an account"
+    },
+    "accountinfo_userinput":{
+       "hi":"दुकान या व्यवसाय का नाम",
+       "en":"Shop or Bussiness Name",
+       "hi":"व्यवसाय श्रेणी",
+       "en":"Bussiness Category",
+       "hi":"ईमेल",
+       "en":"Email",
+       "hi":"पता",
+       "en":"Address"
+
+    },
+    "continue_btn":{
+        "hi":"जारी रखें",
+        "en":"Continue"
+    },
+    "registertext_1":{
+        "hi":"पंजीकरण करके आप Shopezy's  से सहमत होते हैं",
+        "en":"By registering you agree to Shopezy’s"
+    },
+    "registertext_2":{
+        "hi":"सेवा की शर्तें",
+        "en":"Terms of Service"
+    },
+    "registertext_3":{
+        "hi":"तथा",
+        "en":"and"
+    },
+    "registertext_4":{
+        "hi":"गोपनीयता नीति",
+        "en":"Privacy Policy"
+    },
+    "terms_text":{
+        "hi":"सेवा की शर्तें और गोपनीयता नीति",
+        "en":"Term Of Service & Privacy Policy"
+    },
+    "docs_heading":{
+        "hi":"दस्तावेज़ीकरण और गाइड",
+        "en":"Documentations & Guide"
     }
 }
