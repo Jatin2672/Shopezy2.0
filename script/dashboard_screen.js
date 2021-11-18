@@ -341,6 +341,12 @@ function increaseSoldQuantity(barcode){
     });
 }
 
+// insert data to invoice_detail table
+function addNewInvoiceData(customer_id , invoice_date, 
+    invoice_total_amount, payment_mode, accountant_director, total_items){
+        let added_date = new Date().getTime()
+        db.run(``)
+}
 
 
 function addItemsToStockTable(){
