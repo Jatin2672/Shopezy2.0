@@ -388,10 +388,31 @@
 
     </div>
   </div>
-  <div id="model_box_container" class="debug" style="display: none;">
+  <div id="model_box_container" class="debug" style="display: block;">
 
     <!------------------- Connect to Android dialog box ------------------>
-  <div id="connect_to_android_page" class="debug"  style="display: none;">
+  <div id="connect_to_android_page" class="debug"  style="display: flex;">
+
+    <div id="part1_connect_to_android">
+          <span id="how_to_connect_lbl" class="large_text_connect_client">How to Connect?</span>
+          <img src="../Media/connectToAndroid/download_illustration.svg" alt="">
+          <span id="download_and_install_lbl"> Download and install</span>
+          <span id="client_shopexzy_lbl">shopezy client app</span>
+          <span id="link_download_shopezy_lbl">https://www.someurl.com/somesuffix</span>
+          <img src="../Media/home_page/mobile_image.png" alt="" style="margin-left: 25px;">
+          <span id="click_to_connect_lbl">Click on Scan to Connect</span>
+          <span id="make_sure_lbl">Make sure both mobile and desktop are on same network</span>
+  </div>
+  <div id="part2_connect_to_android">
+      <span id="scan_connect_lbl_txt" class="large_text_connect_client">Scan To Connect</span>
+      <div>
+        <input type="checkbox" name="Keep me sign in" id="sign">
+        <span id="check_connect_client_lbl">Keep me signed in</span>
+      </div>
+  </div>
+  <img id="close_connect_client_btn" src="../Media/passcode/close.svg" />
+
+
   </div>
 
   <!------------------- Notification dialog box ------------------>

@@ -5,6 +5,7 @@
     --white : #FFFFFF;
     --red : #ff3333;
     --gray1: #EAEAEA;
+    --card-color : #393E3A;
 
 }
 body{
@@ -571,9 +572,35 @@ table{
     display: flex;
 }
 #connect_to_android_page{
-    width: 900px;
-    height: 550px;
+    width: 780px;
+    height: 490px;
     margin-top: calc(50vh - 275px);
     margin-left: calc(50vw - 450px);
     border-radius: 8px;
+    background-color: var(--card-color);
+    flex-direction: row;
+    padding: 60px;
+}
+#part1_connect_to_android , #part2_connect_to_android{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    font-size: large;
+}
+.large_text_connect_client{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+#close_connect_client_btn{
+    position: fixed;
+    top: calc(50vh - 275px);
+    left: calc(50vw + 400px);
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 8px;
+}
+#close_connect_client_btn:hover{
+    background-color: var(--red);
 }
