@@ -476,3 +476,25 @@ table{
 #parent_summary_container{
     display: flex;
 }
+#client_connect_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--gray1);
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+}
+#connect_android_btn_home{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+#no_android_client_txt{
+    color: var(--red);
+}
