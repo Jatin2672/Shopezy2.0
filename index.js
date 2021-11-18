@@ -25,15 +25,17 @@ function createWelcomeWindow() {
 function createDashboardWindow() {
   // Create the browser window.
   dashboardWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1280,
+    height: 720,
+    minWidth: 1280,
+    minHeight: 720,
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
       preload: path.join(__dirname, "script/dashboard_screen.js"),
     },
   });
-  //dashboardWindow.removeMenu()
+  dashboardWindow.removeMenu()
   dashboardWindow.loadFile("pages/dashboard_screen.html");
   dashboardWindow.maximize();
 }
