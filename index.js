@@ -25,7 +25,7 @@ function createWelcomeWindow() {
 function createDashboardWindow() {
   // Create the browser window.
   dashboardWindow = new BrowserWindow({
-    width: 1280,
+    width: 1350,
     height: 720,
     minWidth: 1280,
     minHeight: 720,
