@@ -15,6 +15,7 @@ body{
     background-color: var(--darkGray);
     display: flex;
     flex-direction: column;
+    user-select: none;
 }
 #top_title_bar{
     padding: 20px;
@@ -24,9 +25,7 @@ body{
 #logo_img{
     width: 40px;
     display: flex;
-    margin-right: 20px;
-    /* filter: grayscale(100%); */
-    
+    margin-right: 20px;    
 }
 #close_passcode_btn{
     position: absolute;

@@ -11,6 +11,7 @@ body{
     background-color: var(--darkBlack);
     color: var(--white);
     margin: 0;
+    user-select: none;
 }
 .debug{
     border: 1px solid red;
