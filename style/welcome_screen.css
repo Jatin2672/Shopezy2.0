@@ -95,7 +95,8 @@ body{
     width: 122px;
     height: 40px;
     border-radius: 4px;
-    margin-left: 3px;
+    margin-left: 1030px;
+    position: fixed;
 }
 #createaccount_text{
     font-family: Arial;
@@ -219,3 +220,54 @@ body{
     font-size: 18px;
     color: #FFFFFF;
 }
+#paragraph1_text,#paragraph2_text,#paragraph3_text{
+    font-size: 14px;
+    color: #eeeeee;
+    margin-top: 30px;
+    margin-left: 93px;
+    font-family: arial;
+}
+#heading_2{
+    margin-top: 40px;
+    margin-left: 90px;
+    display: flex;
+    font-family: Arial;
+    font-size: 18px;
+    color: #EEEEEE;
+}
+/* ..........................................documentation page........................................ */
+#backarrow_2{
+    margin-top: 105px;
+    margin-left: 92px;
+}
+#docs_heading{
+    margin-left: 45px;
+    display:absolute ;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 28px;
+}
+#faq_heading{
+    margin-top: 50px;
+    margin-left: 90px;
+    display: flex;
+    font-family: Arial;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+.paragraph_documentationpage{
+    font-size: 14px;
+    color: #eeeeee;
+    margin-top: 30px;
+    margin-left: 93px;
+    font-family: arial;
+}
+#docs_heading1{
+    margin-left: 90px;
+    display:flex ;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 28px;
+    margin-top: 50px;
+}
+
