@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,11 @@
     <link rel="stylesheet" href="../style/add_itm_temp.css">
     <title>add</title>
 </head>
+
 <body>
     <!-- ADD ITEM SUBPAGE -->
-    <div class="add_itm_subpage">
-        
+    <div id="add_itm_subpage" style="display: none;">
+
         <div class="add_itm_subpage_header">
             <div id="add_itm_header_txt">add new product</div>
             <div><img src="../media/passcode/close.svg" alt="" id="add_itm_close_btn"></div>
@@ -26,60 +28,29 @@
                     <p>4562 34613 6136 3</p>
                     <img src="../media/add_itm/dustbinIcon.svg" alt="" class="remove_itm_Btn">
                 </div>
-        
+
                 <div class="add_item_card_txt">
                     <p>Product Name</p>
                     <input type="text" name="product_name" id="add_item_card_input_txt">
                 </div>
-                
-               <div>
 
-                <div class="Pricediv">
-                    <p>Cost Price</p>
-                    <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
-                </div>
-                
-                <div class="Pricediv">
-                    <p>Sell Price</p>
-                    <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
-                </div>
+                <div>
 
-                <div class="Pricediv">
-                    <p>Stock quantity</p>
-                    <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
-                </div>
+                    <div class="Pricediv">
+                        <p>Cost Price</p>
+                        <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+                    </div>
 
-               </div>
+                    <div class="Pricediv">
+                        <p>Sell Price</p>
+                        <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+                    </div>
 
-            </div>
-            <!-- Add item card -->
+                    <div class="Pricediv">
+                        <p>Stock quantity</p>
+                        <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+                    </div>
 
-            <!-- Add item card -->
-            <div class="add_item_card">
-
-                <div class="add_item_card_top">
-                    <p>4562 34613 6136 3</p>
-                    <img src="../media/add_itm/dustbinIcon.svg" alt="" class="remove_itm_Btn">
-                </div>
-        
-                <div class="add_item_card_txt">
-                    <p>Product Name</p>
-                    <input type="text" name="product_name" id="add_item_card_input_txt">
-                </div>
-                
-                <div class="Pricediv">
-                    <p>Cost Price</p>
-                    <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
-                </div>
-                
-                <div class="Pricediv">
-                    <p>Sell Price</p>
-                    <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
-                </div>
-
-                <div class="Pricediv">
-                    <p>Stock quantity</p>
-                    <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
                 </div>
 
             </div>
@@ -92,17 +63,17 @@
                     <p>4562 34613 6136 3</p>
                     <img src="../media/add_itm/dustbinIcon.svg" alt="" class="remove_itm_Btn">
                 </div>
-        
+
                 <div class="add_item_card_txt">
                     <p>Product Name</p>
                     <input type="text" name="product_name" id="add_item_card_input_txt">
                 </div>
-                
+
                 <div class="Pricediv">
                     <p>Cost Price</p>
                     <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
                 </div>
-                
+
                 <div class="Pricediv">
                     <p>Sell Price</p>
                     <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
@@ -116,24 +87,74 @@
             </div>
             <!-- Add item card -->
 
-           <div class="add_item_card Connected_device">
-               <h5>Continue Scan To Add Products</h5>
-               <div><img src="../media/add_itm/mobile_image.png" alt=""></div>
-               <p>Connected With <span id="Conneted_device_txt">SM F21</span></p>
-           </div> 
-            
+            <!-- Add item card -->
+            <div class="add_item_card">
+
+                <div class="add_item_card_top">
+                    <p>4562 34613 6136 3</p>
+                    <img src="../media/add_itm/dustbinIcon.svg" alt="" class="remove_itm_Btn">
+                </div>
+
+                <div class="add_item_card_txt">
+                    <p>Product Name</p>
+                    <input type="text" name="product_name" id="add_item_card_input_txt">
+                </div>
+
+                <div class="Pricediv">
+                    <p>Cost Price</p>
+                    <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+                </div>
+
+                <div class="Pricediv">
+                    <p>Sell Price</p>
+                    <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+                </div>
+
+                <div class="Pricediv">
+                    <p>Stock quantity</p>
+                    <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+                </div>
+
+            </div>
+            <!-- Add item card -->
+
+            <!-- Connected Device card -->
+            <div class="add_item_card Connected_device">
+                <h5>Continue Scan To Add Products</h5>
+                <img src="../media/add_itm/Group_307.png" alt="">
+                <p>Connected With <span id="Conneted_device_txt">SM F21</span></p>
+            </div>
+            <!-- Connected Device card -->
+
         </div>
         <!-- Add item main Div -->
+
+        <!--  Update button   -->
         <div class="UpdateStockContainer">
             <button id="updateStockBtn">
                 Update Stocks
             </button>
         </div>
+        <!--  Update button   -->
 
-        <!-- Add Item Subpage -->
     </div>
+    <!-- Add Item Subpage -->
 
-   
-    
+    <!-- Pop up Screen -->
+    <div id="popUp_screen_cnfrm_addItm" style="display: grid;">
+        
+        <div class="Confirm_popUp_addItm">
+            <p>Do you really want to discard changes ?</p>
+            <div class="popUP_btn_addItm">
+                <button class="PopUp_btn_chng_addItm" id="yes_btn_cnfrm_addItm">YES</button>
+                <button class="PopUp_btn_chng_addItm" id="no_btn_cnfrm_addItm">NO</button>
+            </div>
+        </div>
+        
+    </div>
+    <!-- Pop up Screen -->
+
+    <script src="../script/add_itm_temp.js"></script>
 </body>
+
 </html>
