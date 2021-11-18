@@ -143,7 +143,9 @@
             </div>
           </div>
         </div>
-        <div id="right_home_section" class="debug">
+
+        <!-----------------Right graph and connection -------------->
+        <div id="right_home_section">
           <div id="client_connect_section">
             <span id="no_android_client_txt">No android client connected</span>
             <img src="../media/home_page/mobile_image.png" />
@@ -158,16 +160,32 @@
               <option>Last 6 Months</option>
             </select>
             <div id="parent_summary_container">
-              <div id="left_summary_container">
-                <div></div>
-                <div></div>
+              <div id="left_summary_container" class="half_graph_area_home">
+                <div>
+                  <span class="large_text_suummary">Profit</span>
+                  <span class="larger_text_suummary">₹15.0K</span>
+                </div>
+                <div>
+                  <span class="large_text_suummary">Sell</span>
+                  <span class="larger_text_suummary">₹50.0K</span>
+                </div>
               </div>
-              <div id="right_summary_container">
-                <div></div>
-                <div></div>
+              <div id="right_summary_container" class="half_graph_area_home">
+                <div>
+                  <div id="growth_circle_indicator">
+                    <span id="growth_indicator_txt">13%</span>
+                    <img id="growth_arrow" src="../media/home_page/Arrow_green.png">
+                  </div>
+                </div>
+                <div>
+                  <span class="large_text_suummary">Transactions</span>
+                 <span class="larger_text_suummary">950</span>
+              </div>
               </div>
             </div>
-            <div id="home_page_graph"></div>
+            <div id="home_page_graph" class="debug">
+               some sort of graph goes here
+            </div>
           </div>
         </div>
       </div>

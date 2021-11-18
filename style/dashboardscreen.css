@@ -4,7 +4,7 @@
     --transparent-color : #00000022;
     --white : #FFFFFF;
     --red : #ff3333;
-    --gray1: #EDEDEE;
+    --gray1: #EAEAEA;
 
 }
 body{
@@ -323,7 +323,6 @@ table{
 #right_home_section{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     width: 280px;
     height: 100%;
 }
@@ -482,9 +481,10 @@ table{
     justify-content: space-between;
     align-items: center;
     background-color: var(--gray1);
-    padding: 15px;
+    padding: 20px;
     margin: 10px;
     border-radius: 8px;
+    height: 200px;
 }
 #connect_android_btn_home{
     padding-left: 30px;
@@ -497,4 +497,64 @@ table{
 }
 #no_android_client_txt{
     color: var(--red);
+}
+#sell_summary_graph_section{
+    background-color: var(--gray1);
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 210px);
+}
+#term_period_selection{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    background-color: var(--gray1);
+}
+.large_text_suummary{
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+}
+.larger_text_suummary{
+    margin-top: 10px;
+    display: flex;
+    font-size: 30px;
+    font-weight: 700;
+    display: block;
+}
+.half_graph_area_home{
+    width: 50%;
+}
+.half_graph_area_home div{
+    margin-top: 15px;
+    margin-right: 20px;
+    height: 50%;
+}
+#home_page_graph{
+    margin-top: 40px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+#growth_circle_indicator{
+    display: flex;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: inset 8px -4px 4px rgba(0, 0, 0, 0.25);
+}
+#growth_indicator_txt{
+    font-size: 30px;
+    font-weight: 700;
+    margin: 25%;
+}
+#growth_arrow{
+    margin-left: -40px;
+    margin-top: -60px;
 }
