@@ -13,6 +13,7 @@
     max-height: auto;
     
 }
+
 #add_itm_header_txt{
     font-size: 22px;
     text-align: right;
@@ -135,7 +136,12 @@
     place-items: center;
     background-color: rgba(0, 0, 0, 0.568);
     backdrop-filter: blur(8px);
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
+
 .Confirm_popUp_addItm{
     width: 30%;
     height: 150px;

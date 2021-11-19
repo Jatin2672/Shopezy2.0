@@ -8,11 +8,9 @@ updateStockBtn = document.getElementById("updateStockBtn")
 NoBtn_popUp =document.getElementById("no_btn_cnfrm_addItm")
 
 updateStockBtn.addEventListener('click',()=>{
-    add_itm_main.style.display="none";
     add_itm_PopUp.style.display="grid";
 })
-NoBtn_popUp.addEventListener('click',()=>{
-    add_itm_main.style.display="block";
-    add_itm_PopUp.style.display="none";
 
+NoBtn_popUp.addEventListener('click',()=>{
+    add_itm_PopUp.style.display="none";
 })
