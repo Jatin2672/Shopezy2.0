@@ -13,10 +13,7 @@
 }
 
 body{
-   
-    background-color: #36393F;;
-   
-    
+    background-color: #36393F; 
 }
 
 #left_section {
@@ -87,6 +84,7 @@ body{
 #left_center{
     /* text-align: center; */
     display:flex;
+    justify-content: left;
     
 }
 #language_select{
@@ -96,7 +94,7 @@ body{
     height: 40px;
     border-radius: 4px;
     margin-left: 1030px;
-    position: fixed;
+    position: absolute;
 }
 #createaccount_text{
     font-family: Arial;
@@ -186,6 +184,7 @@ body{
     position: absolute;
     margin-top: 760px;
     margin-left: 910px;
+    cursor: pointer;
 }
 #registertext_1,#registertext_3{
     color: #6B6B6B;

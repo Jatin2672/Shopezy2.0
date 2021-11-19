@@ -21,11 +21,11 @@ window.addEventListener("DOMContentLoaded", () => {
     //     changeLanguage("en")
     // })
 
-    fs.readFile("./settings/usersettings" , (err, data) => {
-        if (err) throw err
-        settingsData = JSON.parse(data)
-        console.log(settingsData)
-    });
+    // fs.readFile("./settings/usersettings" , (err, data) => {
+    //     if (err) throw err
+    //     settingsData = JSON.parse(data)
+    //     console.log(settingsData)
+    // });
 
     // --------------------Validate fn ----------------------------
     bussiness_category_inpt=document.getElementById("bussiness_type_regPage")
@@ -37,9 +37,9 @@ window.addEventListener("DOMContentLoaded", () => {
     
     continue_btn_regPage.addEventListener('click',()=>{
         if(validate(bussiness_name_inpt,bussiness_category_inpt,email_inpt,address_inpt))
-            console.log("Validated");
+            alert("Validated");
         else
-            console.log("Not Validated");
+            alert("Not Validated");
         
     })
     // ------------------Validate fn ----------------------------
@@ -47,9 +47,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // --------------------- Validate fn ----------------------------
 function validate(bussiness_name,bussiness_category,email,address) {
-    if(checkBussinessName(bussiness_name.value) && checkBussinessName(bussiness_category.value) && checkAddress(address.value) && checkEmail(email.value))
-        return true;
-    return false;
+    flag = true;
+    if(!checkAddress(address.value)){
+        console.log("Address not Correct");
+        flag=false;
+    }
+    if(!checkBussinessName(bussiness_name.value)){
+        console.log("Bussiness Name not Correct");
+        flag=false;
+    }
+    if(!checkEmail(email.value)){
+        console.log("Email not Correct");
+        flag=false;
+    }
+    if(!checkBussinessOwnerName(bussiness_category.value)){
+        console.log("Bussiness Category not Correct");
+        flag=false;
+    }
+    return flag;
 }
 
 // --------------------- Validate fn ----------------------------
