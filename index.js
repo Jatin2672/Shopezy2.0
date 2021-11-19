@@ -61,6 +61,7 @@ function createPasscodeWindow() {
 app.whenReady().then(() => { 
   checkRegisteredState()
 })
+
  
 // Check if the user is already registered
 function checkRegisteredState() {
@@ -88,4 +89,9 @@ ipcMain.on("passcode:authenticated" , ()=>{
 })
 ipcMain.on("passcode:close" , ()=>{
   passcodeWindow.close()
+})
+
+ipcMain.on("welcome:register" , ()=>{
+  createDashboardWindow()
+  welcomeWindow.close()
 })

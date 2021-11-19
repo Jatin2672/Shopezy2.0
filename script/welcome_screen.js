@@ -1,4 +1,5 @@
 //import file system
+const { ipcRenderer } = require('electron');
 const fs = require('fs');
 let languageData , settingsData
 
@@ -36,8 +37,12 @@ window.addEventListener("DOMContentLoaded", () => {
     continue_btn_regPage=document.getElementById("continue_btn")
     
     continue_btn_regPage.addEventListener('click',()=>{
-        if(validate(bussiness_name_inpt,bussiness_category_inpt,email_inpt,address_inpt))
+        if(validate(bussiness_name_inpt,bussiness_category_inpt,email_inpt,address_inpt)){
             alert("Validated");
+            // write function to register user
+            //registerUser()
+            ipcRenderer.send('welcome:register');
+        }
         else
             alert("Not Validated");
         
