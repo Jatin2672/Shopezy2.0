@@ -4,6 +4,7 @@
     --link: #4087F3;
     --input_border: rgb(90, 89, 89);
     --yes_btn: #FF8585;
+    --blur_bg: rgba(0, 0, 0, 0.568);
 }
 #add_itm_subpage{
     width: 70vw;
@@ -134,7 +135,7 @@
     height: 100vh;
     display: grid;
     place-items: center;
-    background-color: rgba(0, 0, 0, 0.568);
+    background-color: var(--blur_bg);
     backdrop-filter: blur(8px);
     z-index: 10;
     position: fixed;
