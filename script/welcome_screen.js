@@ -2,17 +2,24 @@
 const fs = require('fs');
 let languageData , settingsData
 
+
+// ----------------------------------------------------------------------------------------
+let bussiness_category_inpt, email_inpt, bussiness_name_inpt, address_inpt,
+continue_btn_regPage
+// ----------------------------------------------------------------------------------------
+
+
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
 
     // read a json file using fs
-    fs.readFile("./settings/welcome_screen_language.json", (err, data) => {
-        // if error occurs
-        if (err) throw err
-        // parse the data
-        languageData = JSON.parse(data)
-        changeLanguage("hi")
-    })
+    // fs.readFile("./settings/welcome_screen_language.json", (err, data) => {
+    //     // if error occurs
+    //     if (err) throw err
+    //     // parse the data
+    //     languageData = JSON.parse(data)
+    //     changeLanguage("en")
+    // })
 
     fs.readFile("./settings/usersettings" , (err, data) => {
         if (err) throw err
@@ -20,7 +27,32 @@ window.addEventListener("DOMContentLoaded", () => {
         console.log(settingsData)
     });
 
+    // --------------------Validate fn ----------------------------
+    bussiness_category_inpt=document.getElementById("bussiness_type_regPage")
+    email_inpt=document.getElementById("email_regPage")
+    bussiness_name_inpt=document.getElementById("bussiness_name_regPage")
+    address_inpt=document.getElementById("address_userinput")
+    
+    continue_btn_regPage=document.getElementById("continue_btn")
+    
+    continue_btn_regPage.addEventListener('click',()=>{
+        if(validate(bussiness_name_inpt,bussiness_category_inpt,email_inpt,address_inpt))
+            console.log("Validated");
+        else
+            console.log("Not Validated");
+        
+    })
+    // ------------------Validate fn ----------------------------
 })
+
+// --------------------- Validate fn ----------------------------
+function validate(bussiness_name,bussiness_category,email,address) {
+    if(checkBussinessName(bussiness_name.value) && checkBussinessName(bussiness_category.value) && checkAddress(address.value) && checkEmail(email.value))
+        return true;
+    return false;
+}
+
+// --------------------- Validate fn ----------------------------
 
 function changeLanguage(languageName){
         // loop all the key 
