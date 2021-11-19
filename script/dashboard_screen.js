@@ -16,7 +16,10 @@ let stock_table_body, all_items_in_stocks = []
 let expand_sidebar_btn, is_sidebar_expanded = false
 
 let last_selected_settings_btn = "account_setting_btn", last_selected_btn = "home_btn"
-
+// ------
+let AddItm_btn_stock
+let add_itm_main, add_itm_PopUp, updateStockBtn, NoBtn_popUp
+// ------
 
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
@@ -132,6 +135,39 @@ window.addEventListener("DOMContentLoaded", () => {
             changeSettingsPage(pageNumber)
         })
     }
+
+// ---------------
+
+AddItm_btn_stock=document.getElementById("AddItm_btn");
+let add_itm_Subpage=document.getElementById("add_stock_item_dialog_page")
+AddItm_btn_stock.addEventListener('click',()=>{
+    add_itm_Subpage.style.display="block"
+})
+let add_itm_close_btn=document.getElementById("add_itm_close_btn")
+
+add_itm_close_btn.addEventListener('click',()=>{
+    add_itm_Subpage.style.display="none"
+
+})
+
+
+
+add_itm_main = document.getElementById("add_itm_subpage");
+add_itm_PopUp = document.getElementById("popUp_screen_cnfrm_addItm")
+
+updateStockBtn = document.getElementById("updateStockBtn")
+
+NoBtn_popUp =document.getElementById("no_btn_cnfrm_addItm")
+
+updateStockBtn.addEventListener('click',()=>{
+    add_itm_PopUp.style.display="grid";
+})
+
+NoBtn_popUp.addEventListener('click',()=>{
+    add_itm_PopUp.style.display="none";
+})
+
+// ---------------
 
 })
 
