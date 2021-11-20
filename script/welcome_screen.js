@@ -40,11 +40,11 @@ window.addEventListener("DOMContentLoaded", () => {
         if(validate(bussiness_name_inpt,bussiness_category_inpt,email_inpt,address_inpt)){
             alert("Validated");
             // write function to register user
-            //registerUser()
+            // registerUser()
             ipcRenderer.send('welcome:register');
         }
         else
-            alert("Not Validated");
+            console.log("Not Validated");
         
     })
     // ------------------Validate fn ----------------------------
@@ -54,19 +54,19 @@ window.addEventListener("DOMContentLoaded", () => {
 function validate(bussiness_name,bussiness_category,email,address) {
     flag = true;
     if(!checkAddress(address.value)){
-        console.log("Address not Correct");
+        address_inpt.style.border="1px solid #aa0000"
         flag=false;
     }
     if(!checkBussinessName(bussiness_name.value)){
-        console.log("Bussiness Name not Correct");
+        bussiness_name_inpt.style.border="1px solid #aa0000"
         flag=false;
     }
     if(!checkEmail(email.value)){
-        console.log("Email not Correct");
+        email_inpt.style.border="1px solid #aa0000"
         flag=false;
     }
     if(!checkBussinessOwnerName(bussiness_category.value)){
-        console.log("Bussiness Category not Correct");
+        bussiness_category_inpt.style.border="1px solid #aa0000"
         flag=false;
     }
     return flag;
