@@ -40,7 +40,12 @@ window.addEventListener("DOMContentLoaded", () => {
         if(validate(bussiness_name_inpt,bussiness_category_inpt,email_inpt,address_inpt)){
             alert("Validated");
             // write function to register user
-            // registerUser()
+            // bussiness_name=bussiness_name_inpt.value
+            // bussiness_category=bussiness_category_inpt.value
+            // email=email_inpt.value
+            // address=address_inpt.value
+            // registerUser(bussiness_name,bussiness_category,email,address);
+
             ipcRenderer.send('welcome:register');
         }
         else
@@ -90,6 +95,7 @@ function registerUser(bussiness_name , bussiness_category , email , mobile , add
     settingsData.address = address
     settingsData.bussiness_owner_name = bussiness_owner_name
     settingsData.profile_pic_url = profile_pic_url
+    
     // write the usersettings to json file
     fs.writeFile("./settings/usersettings.json", JSON.stringify(settingsData), (err) => {
         if (err) throw err
