@@ -5,7 +5,7 @@ let languageData , settingsData
 
 
 // ----------------------------------------------------------------------------------------
-let bussiness_category_inpt, email_inpt, bussiness_name_inpt, address_inpt,
+let bussiness_category_inpt, email_inpt, bussiness_name_inpt, address_inpt, mobile_inpt,  bussiness_owner_name_inpt,
 continue_btn_regPage
 // ----------------------------------------------------------------------------------------
 
@@ -22,29 +22,34 @@ window.addEventListener("DOMContentLoaded", () => {
     //     changeLanguage("en")
     // })
 
-    // fs.readFile("./settings/usersettings" , (err, data) => {
-    //     if (err) throw err
-    //     settingsData = JSON.parse(data)
-    //     console.log(settingsData)
-    // });
+    fs.readFile("./settings/usersettings.json" , (err, data) => {
+        if (err) throw err
+        settingsData = JSON.parse(data)
+        console.log(settingsData)
+    });
 
     // --------------------Validate fn ----------------------------
     bussiness_category_inpt=document.getElementById("bussiness_type_regPage")
     email_inpt=document.getElementById("email_regPage")
     bussiness_name_inpt=document.getElementById("bussiness_name_regPage")
     address_inpt=document.getElementById("address_userinput")
+    mobile_inpt=document.getElementById("mobile_regPage")
+    bussiness_owner_name_inpt=document.getElementById("bussiness_owner_name_regPage")
     
-    continue_btn_regPage=document.getElementById("continue_btn")
+    continue_btn_regPage = document.getElementById("continue_btn")
     
     continue_btn_regPage.addEventListener('click',()=>{
-        if(validate(bussiness_name_inpt,bussiness_category_inpt,email_inpt,address_inpt)){
+        if(validate(bussiness_name_inpt,bussiness_category_inpt,email_inpt)){
             alert("Validated");
             // write function to register user
-            // bussiness_name=bussiness_name_inpt.value
-            // bussiness_category=bussiness_category_inpt.value
-            // email=email_inpt.value
-            // address=address_inpt.value
-            // registerUser(bussiness_name,bussiness_category,email,address);
+            bussiness_name=bussiness_name_inpt.value
+            bussiness_category=bussiness_category_inpt.value
+            email=email_inpt.value
+            address=address_inpt.value
+            mobile=mobile_inpt.value
+            bussiness_owner_name=bussiness_owner_name_inpt.value
+
+            registerUser(bussiness_name, bussiness_category ,email , mobile ,address , bussiness_owner_name , "");
 
             ipcRenderer.send('welcome:register');
         }
@@ -56,12 +61,8 @@ window.addEventListener("DOMContentLoaded", () => {
 })
 
 // --------------------- Validate fn ----------------------------
-function validate(bussiness_name,bussiness_category,email,address) {
+function validate(bussiness_name,bussiness_category,email) {
     flag = true;
-    if(!checkAddress(address.value)){
-        address_inpt.style.border="1px solid #aa0000"
-        flag=false;
-    }
     if(!checkBussinessName(bussiness_name.value)){
         bussiness_name_inpt.style.border="1px solid #aa0000"
         flag=false;
@@ -88,13 +89,14 @@ function changeLanguage(languageName){
 
 // function to register user
 function registerUser(bussiness_name , bussiness_category , email , mobile , address , bussiness_owner_name , profile_pic_url){
-    settingsData.bussiness_name = bussiness_name
+    settingsData.bussiness_name= bussiness_name
     settingsData.bussiness_category = bussiness_category
     settingsData.email = email
     settingsData.mobile = mobile
     settingsData.address = address
     settingsData.bussiness_owner_name = bussiness_owner_name
     settingsData.profile_pic_url = profile_pic_url
+    settingsData.registered = true
     
     // write the usersettings to json file
     fs.writeFile("./settings/usersettings.json", JSON.stringify(settingsData), (err) => {
@@ -125,10 +127,4 @@ function checkBussinessName(bussiness_name){
 function checkBussinessOwnerName(bussiness_owner_name){
     let bussinessOwnerNameRegex = /^[a-zA-Z]+$/
     return bussinessOwnerNameRegex.test(bussiness_owner_name)
-}
-
-// function check sanity of the address
-function checkAddress(address){
-    let addressRegex = /^[a-zA-Z0-9]+$/
-    return addressRegex.test(address)
 }
