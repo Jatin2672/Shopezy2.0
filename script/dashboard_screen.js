@@ -12,6 +12,7 @@ let account_setting_page, invoice_setting_page,
     personalization_setting_page
 
 let stock_table_body, all_items_in_stocks = []
+let invoice_his_table_body , all_items_in_invoice = []
 
 let expand_sidebar_btn, is_sidebar_expanded = false
 
@@ -96,6 +97,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // assign the html elements to elements
     stock_table_body = document.getElementById("stock_table_body")
+    invoice_his_table_body = document.getElementById("invoice_history_table_body")
 
     setTimeout(() => {
         addItemsToStockTable()
@@ -380,14 +382,6 @@ function increaseSoldQuantity(barcode) {
     });
 }
 
-// insert data to invoice_detail table
-function addNewInvoiceData(customer_id, invoice_date,
-    invoice_total_amount, payment_mode, accountant_director, total_items) {
-    let added_date = new Date().getTime()
-    db.run(``)
-}
-
-
 function addItemsToStockTable() {
     let html_to_add = ""
     stock_table_body.innerHTML = ""
@@ -418,6 +412,47 @@ function getAllItemFromStock() {
 }
 
 getAllItemFromStock()
+
+
+// function to add new row to invoice_detail table of masterdatabase
+function addNewInvoiceData(invoice_total_amount, payment_mode, accountant_director, total_items) {
+    let added_date = new Date().getTime()
+    db.run(`INSERT INTO invoice_detail (invoice_date , invoice_total_amount , payment_mode , accountant_director , total_items  ) VALUES 
+    ( '${added_date}' , ${invoice_total_amount} , '${payment_mode}' , '${accountant_director}' , ${total_items} )`, (err) => {
+        if (err) {
+            console.log(err.message)
+        }
+        console.log("invoice data added to master database");
+    });
+    db.close()
+}
+
+function addItemsToInvoiceHistoryTable(){
+    let html_to_add = ""
+    invoice_his_table_body.innerHTML = ""
+    for (let i = 0; i < all_items_in_invoice.length; i++) {
+        html_to_add += `<tr>
+        <td>${[all_items_in_invoice[i].invoice_date]}</td>
+        <td>${[all_items_in_stocks[i].invoice_id]}</td>
+        <td>${[all_items_in_stocks[i].customer_id]}</td>
+        <td>${[all_items_in_stocks[i].invoice_total_amount]}</td>
+        <td>${[all_items_in_stocks[i].payment_mode]}</td>
+        <td>${[all_items_in_stocks[i].accountant_director]}</td>
+        </tr>`
+    }
+    invoice_his_table_body.innerHTML = html_to_add
+}
+// function get all item from invoice in ascending order of date added
+function getAllItemFromInvoiceHistory(){
+    db.each(`SELECT * FROM invoice_detail ORDER BY invoice_date ASC`, (err, row) => {
+        if (err) {
+            console.log(err.message)
+        }
+        all_items_in_invoice.push(row)
+    });
+}
+
+getAllItemFromInvoiceHistory()
 
 //--------------------------get ip of the pc----------------------------
 const { networkInterfaces } = require("os");
