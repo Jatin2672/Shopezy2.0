@@ -96,7 +96,7 @@ function registerUser(bussiness_name , bussiness_category , email , mobile , add
     settingsData.address = address
     settingsData.bussiness_owner_name = bussiness_owner_name
     settingsData.profile_pic_url = profile_pic_url
-    settingsData.registered = true
+    settingsData.registered = "true"
     
     // write the usersettings to json file
     fs.writeFile("./settings/usersettings.json", JSON.stringify(settingsData), (err) => {
