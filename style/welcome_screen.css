@@ -13,6 +13,8 @@
 }
 
 body{
+    margin: 0;
+    padding: 0;
     background-color: #36393F; 
 }
 
@@ -30,7 +32,7 @@ body{
 #parent_registration{
     width: 100%;
     display: flex;
-    
+    overflow-x: hidden;
 }
 #top_section,#bottom_section{
     
@@ -40,20 +42,14 @@ body{
 }
 #right_section{
     flex-direction: column;
-    height: 100%;
     display: flex;
     width: 40%;
-    
-    
 }
 #logoicon_img{
     height: 30px;
     padding-top: 12px;
     padding-left: 10px;
     
-
-
-
 }
 #shopezy_text{
     font-family: Audiowide;
@@ -126,9 +122,7 @@ body{
     margin-top: 287px;
     overflow-y: scroll;
     scroll-behavior: auto;
-    height: 350px;
-    
-   
+        
 }
 .bottom_section1{
     flex-direction: column;   
@@ -139,7 +133,7 @@ body{
 .userinput_accountinfo{
     width: 450px;
     height: 44px;
-    
+    color: white;
     box-sizing: border-box;
     border-radius: 4px;
     margin-left: 92px;
@@ -169,21 +163,30 @@ body{
     position: fixed;
     padding: 10px;
     right: 1px;
-
+    cursor: pointer;
+    border-radius: 5px;
 }
+#close_btn:hover{
+    background-color: red;
+}
+
 #minimize_btn{
     position: fixed;
-    
+    cursor: pointer;
     right: 40px;
     padding-top:16px ;
     padding-right: 10px;
     padding-left: 10px;
-    padding-bottom: 16px;   
+    padding-bottom: 16px;
+    border-radius: 5px;  
+}
+#minimize_btn:hover{
+    background-color: rgba(187, 185, 185, 0.712);
 }
 #questionmark_icon{
-    position: absolute;
-    margin-top: 760px;
-    margin-left: 910px;
+    position: fixed;
+    margin-top: 47%;
+    margin-left: 60%;
     cursor: pointer;
 }
 #registertext_1,#registertext_3{
@@ -200,11 +203,16 @@ body{
 #condition_text{
     margin-top: 10px;
     margin-left: 140px;
+    padding-bottom: 15px;
 }
 /* ......................................................privacy policy page.................................................. */
+#privacy_policy{
+    width: 40%;
+}
 #backarrow{
     margin-top: 105px;
     margin-left: 92px;
+    cursor: pointer;
 }
 #terms_text{
     margin-left: 35px;
@@ -237,9 +245,13 @@ body{
     color: #EEEEEE;
 }
 /* ..........................................documentation page........................................ */
+#documentation_page{
+    width: 40%;
+}
 #backarrow_2{
     margin-top: 105px;
     margin-left: 92px;
+    cursor: pointer;
 }
 #docs_heading{
     margin-left: 45px;

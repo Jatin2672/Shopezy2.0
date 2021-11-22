@@ -5,8 +5,12 @@ let languageData , settingsData
 
 
 // ----------------------------------------------------------------------------------------
-let bussiness_category_inpt, email_inpt, bussiness_name_inpt, address_inpt, mobile_inpt,  bussiness_owner_name_inpt,
-continue_btn_regPage
+let bussiness_category_inpt, email_inpt, bussiness_name_inpt,
+address_inpt, mobile_inpt,  bussiness_owner_name_inpt,
+continue_btn_regPage,FAQbtn, T_and_C_btn,Privacy_btn,
+ FAQ_to_register,
+TC_to_register, register_right_section, T_and_C_page,
+FAQpage
 // ----------------------------------------------------------------------------------------
 
 
@@ -39,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
     continue_btn_regPage = document.getElementById("continue_btn")
     
     continue_btn_regPage.addEventListener('click',()=>{
-        if(validate(bussiness_name_inpt,bussiness_category_inpt,email_inpt)){
+        if(validate(bussiness_name_inpt,bussiness_owner_name_inpt,email_inpt,mobile_inpt)){
             alert("Validated");
             // write function to register user
             bussiness_name=bussiness_name_inpt.value
@@ -58,10 +62,59 @@ window.addEventListener("DOMContentLoaded", () => {
         
     })
     // ------------------Validate fn ----------------------------
+
+    // -----------------switch pges on register page---------
+    register_right_section=document.getElementById("right_section")
+
+    FAQbtn=document.getElementById("questionmark_icon")
+    FAQ_to_register=document.getElementById("backarrow_2")
+    FAQpage=document.getElementById("documentation_page")
+    
+    T_and_C_btn=document.getElementById("registertext_2")
+    T_and_C_page=document.getElementById("privacy_policy")
+    TC_to_register=document.getElementById("backarrow")
+    Privacy_btn=document.getElementById("registertext_4")
+
+    T_and_C_btn.addEventListener('click',()=>{
+        register_right_section.style.display="none"
+        T_and_C_page.style.display="block"
+    })
+    
+    Privacy_btn.addEventListener('click',()=>{
+        register_right_section.style.display="none"
+        T_and_C_page.style.display="block"
+    })
+    
+    TC_to_register.addEventListener('click',()=>{
+        register_right_section.style.display="flex"
+        T_and_C_page.style.display="none"
+    })
+
+    FAQbtn.addEventListener('click',()=>{
+        if(register_right_section.style.display==="flex"){
+            register_right_section.style.display="none"
+            FAQpage.style.display="block"
+        }
+        else if(T_and_C_page.style.display==="block"){
+            T_and_C_page.style.display="none"
+            FAQpage.style.display="block"
+        }
+        else{
+            register_right_section.style.display="flex"
+            FAQpage.style.display="none"
+        }
+    })
+    
+    FAQ_to_register.addEventListener('click',()=>{
+        register_right_section.style.display="flex"
+        FAQpage.style.display="none"
+    })
+    
+    // -----------------switch pges on register page---------
 })
 
 // --------------------- Validate fn ----------------------------
-function validate(bussiness_name,bussiness_category,email) {
+function validate(bussiness_name,bussiness_user,email,mobile) {
     flag = true;
     if(!checkBussinessName(bussiness_name.value)){
         bussiness_name_inpt.style.border="1px solid #aa0000"
@@ -71,8 +124,12 @@ function validate(bussiness_name,bussiness_category,email) {
         email_inpt.style.border="1px solid #aa0000"
         flag=false;
     }
-    if(!checkBussinessOwnerName(bussiness_category.value)){
-        bussiness_category_inpt.style.border="1px solid #aa0000"
+    if(!checkBussinessOwnerName(bussiness_user.value)){
+        bussiness_user.style.border="1px solid #aa0000"
+        flag=false;
+    }
+    if(!checkMobile(mobile.value)){
+        mobile.style.border="1px solid #aa0000"
         flag=false;
     }
     return flag;

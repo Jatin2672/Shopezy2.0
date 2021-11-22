@@ -33,7 +33,7 @@
             
         </div>
 
-        <div id="right_section" class="debug" >
+        <div id="right_section" class="debug" style="display: flex;" >
             <div id="top_section" class="debug">
                 
                
@@ -45,7 +45,13 @@
                     <span class="accountinfo_text">Shop or Bussiness Name</span>
                     <input type="text" class="userinput_accountinfo" id="bussiness_name_regPage">
                     <span class="accountinfo_text">Bussiness Category</span>
-                    <input type="text" class="userinput_accountinfo" id="bussiness_type_regPage">
+                    <!-- <input type="text" class="userinput_accountinfo" id="bussiness_type_regPage"> -->
+                    <select name="Bussiness_type" id="bussiness_type_regPage" class="userinput_accountinfo">
+                        <option value="Grocery">Grocery</option>
+                        <option value="Genaral Store">Genaral</option>
+                        <option value="pharmacy">pharmacy</option>
+                        <option value="other">Other</option>
+                    </select>
                     <span class="accountinfo_text">Bussiness Owner's Name</span>
                     <input type="text" class="userinput_accountinfo" id="bussiness_owner_name_regPage">
                     <span class="accountinfo_text">Email</span>
