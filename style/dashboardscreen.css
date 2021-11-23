@@ -798,3 +798,194 @@ table{
 padding: 10%;
 margin-bottom: 20px;
 }
+
+/* -------------------------------Invoice---------------------------- */
+
+#invoice_page{
+    width: 85vw;
+    margin: 0 auto;
+    overflow: auto;
+}
+#invoice_page::-webkit-scrollbar{
+    width: 0px;
+    background-color: transparent;
+}
+#InvoicePage p{
+    padding: 0 30px;
+}
+#Connected_device_InvoicePage{
+    text-align: right;
+    color: #4087F3;
+    cursor: pointer;
+}
+.top_section_invoicePage{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 30%;
+}
+.top_left_section_invoicePage{
+    display: grid;
+    width: 60%;
+    height: 80%;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 2px 2px 12px rgba(35, 19, 62, 0.5);
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px 0 40px 20px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    column-gap: 20%;
+}
+#Name, #email, #No{
+    width: 90%;
+    height: 28px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.dropdown{
+    height: 30px;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.invoice_rightBtn{
+    margin: 0 5px;
+}
+.top_right_section_invoicePage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.top_right_sec_btn{
+    display: flex;
+}
+#previewBtn{
+    background-color: #4087F3;
+    padding: 8px;
+    width: 135px;
+    height: 45px;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#Bin_btn{
+    height: 45px;
+    width: 45px;
+    border-radius: 5px;
+    border: 1px solid #ff5555;
+    cursor: pointer;
+}
+#Setting_btn{
+    height: 45px;
+    width: 45px;
+    border-radius: 5px;
+    border: 1px solid #191919;
+    cursor: pointer;
+}
+#below_btn_card{
+    background-color: #eeeeee;
+    text-align: center;
+    padding: 2%;
+    height: 70%;
+    width: 95%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25) ;
+}
+.bottom_section_inviocePage{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    margin: 40px auto;
+    row-gap: 30px;
+}
+.item_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #eeeeee;
+    width: 320px;
+    height: 320px;
+    padding: 2%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+.item_cards_rows{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    align-items: center;
+}
+.item_no{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 4px;
+}
+.item_name_card_invo{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 4px;
+    
+}
+.itmPrice_card_invo{
+    font-size: 18px;
+    padding: 2px;
+}
+.maxPrc_card_invo{
+    text-decoration: line-through;
+    position: relative;
+    bottom: 15px;
+    color: gray;
+}
+.item_cards_rows h3{
+    font-size: 24px;
+    color: gray;
+}
+.item_cards_rows h2{
+    font-size: 30px;
+    color: gray;
+}
+.itmQn{
+    color: gray;
+    font-size: 18px;
+    font-weight: 700;
+}
+.threeDot_option_card{
+    cursor: pointer;
+}
+.discount_card_invo{
+    color: #4087F3;
+    font-size: 18px;
+    font-weight: 700;
+}
+.quantity{
+    padding: 5px;
+    height: 15px;
+    width: 30px;
+    justify-content: space-between;
+    display: flex;
+}
+.Connected_device{
+    align-items: center;
+    justify-content: space-between;
+}
+.Connected_device h5{
+    color: #6B6B6B;
+}
+.Connected_device p{
+    font-size: 20px;
+}
+.Connected_device p span{
+    color: #4087F3;
+    cursor: pointer;
+}
+.Connected_device img{
+    width: 200px;
+    height: 200px;
+}
+/* -------------------------------Invoice---------------------------- */

@@ -243,7 +243,7 @@ function changePage(pageNumber) {
         case 1:
             invoice_page.animate([{ opacity: 0 }, { opacity: 1 }
             ], { duration: 500, })
-            invoice_page.style.display = "flex"
+            invoice_page.style.display = "block"
             break
         case 2:
             analytics_page.animate([{ opacity: 0 }, { opacity: 1 }
