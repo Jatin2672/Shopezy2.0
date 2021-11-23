@@ -19,12 +19,12 @@ let expand_sidebar_btn, is_sidebar_expanded = false
 let last_selected_settings_btn = "account_setting_btn", last_selected_btn = "home_btn"
 
 
-let model_box_container , connect_to_android_page , 
-add_stock_item_dialog_page , add_stock_itm_subpage , 
+let model_box_container , 
+add_stock_btn , add_stock_item_dialog_page , add_stock_itm_subpage , 
 popUp_screen_cnfrm_addItm , add_itm_close_btn ,
 yes_btn_cnfrm_addItm , no_btn_cnfrm_addItm 
 
-let add_stock_btn
+let connect_android_btn_home , connect_to_android_page , close_connect_client_btn
 
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
@@ -118,6 +118,14 @@ window.addEventListener("DOMContentLoaded", () => {
     no_btn_cnfrm_addItm = document.getElementById("no_btn_cnfrm_addItm")
 
     addStockButtonClick()
+
+    // connect android client pop up
+    connect_android_btn_home = document.getElementById("connect_android_btn_home")
+    connect_to_android_page = document.getElementById("connect_to_android_page")
+    close_connect_client_btn = document.getElementById("close_connect_client_btn")
+
+    addConnectButtonClick()
+
 
     // a small delay for data to be added to tables
     setTimeout(() => {
@@ -346,6 +354,17 @@ function addStockButtonClick() {
         popUp_screen_cnfrm_addItm.style.display = "block"
         add_stock_itm_subpage.style.display = "block"
         popUp_screen_cnfrm_addItm.style.display = "none"
+    })
+}
+
+function addConnectButtonClick(){
+    connect_android_btn_home.addEventListener("click" , () => {
+        model_box_container.style.display = "block"
+        connect_to_android_page.style.display = "flex"
+    })
+    close_connect_client_btn.addEventListener("click" , () =>{
+        model_box_container.style.display = "none"
+        connect_to_android_page.style.display = "none"
     })
 }
 

@@ -502,6 +502,7 @@ table{
     border-radius: 4px;
     color: var(--white);
     background-color: var(--primary-color);
+    cursor: pointer;
 }
 #no_android_client_txt{
     color: var(--red);
@@ -582,12 +583,12 @@ table{
 #connect_to_android_page{
     width: 780px;
     height: 490px;
-    margin-top: calc(50vh - 275px);
-    margin-left: calc(50vw - 450px);
     border-radius: 8px;
     background-color: var(--card-color);
     flex-direction: row;
     padding: 60px;
+    margin-left: calc(50% - 490px);
+    margin-top: 40px;
 }
 #part1_connect_to_android , #part2_connect_to_android{
     display: flex;
@@ -602,15 +603,20 @@ table{
     margin-bottom: 20px;
 }
 #close_connect_client_btn{
-    position: fixed;
-    top: calc(50vh - 275px);
-    left: calc(50vw + 400px);
     cursor: pointer;
     padding: 20px;
     border-radius: 8px;
+    width: 20px;
+    margin-left: calc(100% + 85px);
+    margin-top: -65px;
+
 }
 #close_connect_client_btn:hover{
     background-color: var(--red);
+}
+#mobile_image_illustration_connect{
+    width: 200px;
+    align-self: center;
 }
 
 /* ---------------------------add item in stock subpage --------------------------- */
