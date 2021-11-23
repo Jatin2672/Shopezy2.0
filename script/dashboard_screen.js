@@ -24,7 +24,7 @@ add_stock_btn , add_stock_item_dialog_page , add_stock_itm_subpage ,
 popUp_screen_cnfrm_addItm , add_itm_close_btn ,
 yes_btn_cnfrm_addItm , no_btn_cnfrm_addItm 
 
-let connect_android_btn_home , connect_to_android_page , close_connect_client_btn
+let connect_android_btn_home , disconnect_android_btn_home , connect_to_android_page , close_connect_client_btn
 
 let mini_invoice_history , stock_out_table
 
@@ -123,6 +123,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // connect android client pop up
     connect_android_btn_home = document.getElementById("connect_android_btn_home")
+    disconnect_android_btn_home = document.getElementById("disconnect_android_btn_home")
     connect_to_android_page = document.getElementById("connect_to_android_page")
     close_connect_client_btn = document.getElementById("close_connect_client_btn")
 
@@ -518,7 +519,7 @@ function getAllItemFromInvoiceHistory(){
 }
 
 getAllItemFromInvoiceHistory()
-
+const port = 8080;
 //--------------------------get ip of the pc----------------------------
 const { networkInterfaces } = require("os");
 let getLocalExternalIP = () =>
@@ -528,7 +529,7 @@ let getLocalExternalIP = () =>
         .address;
 
 function writeIP_forQR(){
-    document.getElementById("hiddenIP").innerHTML = getLocalExternalIP
+    document.getElementById("hiddenIP").innerHTML = getLocalExternalIP() + ":" + port.toString()
 }
 
 
@@ -537,12 +538,12 @@ function writeIP_forQR(){
 const http = require("http");
 var os = require('os')
 const host = getLocalExternalIP();
-const port = 8080;
+
 
 function createServer() {
     const requestListener = function (req, res) {
         const urls = req.url;
-        let urls_splitted, params;
+        let urls_splitted, params = "";
 
         // check if url contains ?
         if (urls.includes("?")) {
@@ -559,7 +560,7 @@ function createServer() {
                 res.end("CONNECTED:" + os.hostname());
                 if (params.includes("name")) deviceName = params.split("=")[1]
                 console.log(deviceName);
-                dashboardWindow.webContents.send("deviceName", deviceName);
+                deviceConnectedSuccess(deviceName);
                 break;
             case "/addItem":
                 res.writeHead(200);
@@ -581,4 +582,14 @@ function createServer() {
     server.listen(port, host, () => {
         console.log(`Server is running on http://${host}:${port}`);
     });
+}
+
+function deviceConnectedSuccess(deviceName){
+    model_box_container.style.display = "none"
+    connect_android_btn_home.style.display = "none"
+    connect_android_btn_home.style.display = "none"
+    document.getElementById("client_connected_success_txt").innerHTML += deviceName
+    document.getElementById("client_connected_success_txt").style.display = "flex"
+    document.getElementById("no_android_client_txt").style.display = "none"
+    disconnect_android_btn_home.style.display = "flex"
 }
