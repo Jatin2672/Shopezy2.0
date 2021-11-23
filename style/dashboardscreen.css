@@ -504,8 +504,21 @@ table{
     background-color: var(--primary-color);
     cursor: pointer;
 }
+#disconnect_android_btn_home{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    color: var(--white);
+    background-color: var(--red);
+    cursor: pointer;
+}
 #no_android_client_txt{
     color: var(--red);
+}
+#client_connected_success_txt{
+    color : var(--primary-color);
 }
 #sell_summary_graph_section{
     background-color: var(--gray1);
