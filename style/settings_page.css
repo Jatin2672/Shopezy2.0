@@ -1,0 +1,406 @@
+body{
+    display: flex;
+}
+
+#SettingsMenu{
+    width:20%;
+    height: 100%;
+    padding-left: 20px;
+}
+.menu_item_setting{
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    cursor: pointer;
+}
+#account_background_settings{
+    
+    border: 2px;
+    background: #4087F3;
+   
+    border-radius: 16px;
+    width: 50%;
+  
+}
+#settings_container{
+    display: flex;
+    margin-top: 50px;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    overflow-y: scroll;
+    padding-top: 50px;
+    
+    
+}
+#acc_settings{
+    margin-left: 35px;
+    
+}
+.acc_1_settings{
+    display: flex;
+    background:white;
+    margin: 8px;
+    
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+}
+#icon img{
+    border-radius: 250px;
+    border: 2px solid #4087F3;
+    height: fit-content;
+}
+#upl_settings{
+    display: flex;
+    align-items: center;
+}
+#upl1_account_settings{
+    
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 4px;
+    height: fit-content;
+    color: #4087F3;
+}
+#remove_account_settings{
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 4px;
+    height: fit-content;
+    
+}
+.horizontal_line_account_settings{
+    color: #EEEEEE;
+    width: 80%;
+}
+#account_menu_settings{
+    width: 100%;
+}
+#userinfo_account_settings{
+    display: flex;
+    width: 100%;
+
+}
+.user_info_account_settings{
+    flex-direction: column;
+    /* background-color: #4087F3; */
+    width: 50%;
+    padding: 5%;
+}
+.label_account_settings{
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+.userinput_account_settings{
+    width: 100%;
+    height: 44px;
+    border: 1px solid #6B6B6B;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+#addressinput_account_settings{
+    height: 125px;
+}
+#verifycontainer_account_settings{
+    padding: 5%;
+    
+    
+}
+.btn_account_settings{
+     
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 4px;
+    height: fit-content;
+    color: #4087F3;
+    padding: 18px;
+    border: none;
+}
+#settings_container::-webkit-scrollbar {
+    display: none;
+}
+#savebtn_account_settings{
+     
+    background-color: #4087F3;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 4px;
+    height: fit-content;
+    color: white;
+    padding: 18px;
+    border: none;
+    margin-left: calc(100% - 150px);
+
+}
+/*.................................... inoice page design .............................................*/
+#invoice_background_settings{
+    width: 50%;
+    
+    /* background: #4087F3; */
+
+    border-radius: 16px;
+    display: flex;
+}
+.text_invoice_settings{
+    margin-left: 35px;
+}
+.temp_option_invoice_settings{
+    margin: 15px;
+    display:flex ;
+    margin-left: 45px;
+   
+}
+#template_option_invoice_settings{
+    display: flex;
+    
+}
+#text_statement_invoice_settings{
+    margin-top: 30px;
+    margin-left: 35px;
+}
+#option_payment_invoice_settings{
+    display: flex;
+    margin-top: 25px;
+    margin-left: 35px;
+}
+#credit_invoice_settings{
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 25px;
+    height: fit-content;
+    
+}
+#debit_invoice_settings{
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 25px;
+    height: fit-content;
+}
+#Upi_invoice_settings{
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 25px;
+    height: fit-content;
+}
+#cash_invoice_settings{
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 25px;
+    height: fit-content;
+}
+#paymentoption_add_invoice_settings{
+    margin-top: 20px;
+    margin-left: 47%;
+    /* display: flex; */
+}
+#info_accountant1_invoice_settings{
+    display:flex;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+
+
+#info_accountant2_invoice_settings{
+    display: flex;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+#info_accountant3_invoice_settings{
+    display:flex;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+#signature_directors1_invoice_settings{
+    background: #EEEEEE;
+    border-radius: 12px;
+    margin-left: 194px;
+    width: 215px;
+    /* height: 56px; */
+    text-align: center;
+    padding: 15px;
+}
+#signature_directors2_invoice_settings{
+    background: #EEEEEE;
+    border-radius: 12px;
+    margin-left: 180px;
+    width: 215px;
+    /* height: 56px; */
+    text-align: center;
+    padding: 15px;
+}
+#signature_directors3_invoice_settings{
+    background: #EEEEEE;
+    border-radius: 12px;
+    margin-left: 180px;
+    width: 215px;
+    /* height: 56px; */
+    text-align: center;
+    padding: 15px;
+}
+.director_option_invoice_settings{
+    margin-left: 200px;
+}
+#newaccountdirector_invoice_settings{
+    margin-top: 45px;
+    margin-left:35%;
+    background: #4087F3;
+    border-radius: 4px;
+    width: 280px;
+    height: 30px;
+    text-align: center;
+    padding-top: 15px;
+
+}
+#savebtn_invoice_settings{
+    background-color: #4087F3;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 4px;
+    height: fit-content;
+    color: white;
+    padding: 18px;
+    border: none;
+    margin-left: calc(100% - 150px);
+    margin-top: 100px;
+    margin-bottom: 20px;
+
+}
+/* ....................personalisaton screen design....................... */
+#personalisation_background_settings{
+    width: 50%;
+    border-radius: 16px;
+    display: flex;
+}
+.text_personalisation_settings{
+    margin-left: 40px;
+}
+.language_personalisation_settings{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+#selectmenu_personalisation_settings{
+    margin-left: 250px;
+    width: 300px;
+    height: 45px;
+}
+#selectmenu2_personalisation_settings{
+    margin-left: 253px;
+    width: 300px;
+    height: 45px;
+}
+.enable_disable_personalisation_settings{
+    margin-left: 150px;
+   
+}
+.text_fetchEnable_personalisation_settings{
+    display: flex;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+#savebtn_personalisation_settings{
+    background-color: #4087F3;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 8px;
+    height: fit-content;
+    color: white;
+    padding: 18px;
+    border: none;
+    margin-left: calc(100% - 150px);
+    margin-top: 100px;
+    width: 270px;
+}
+/* ...........................stocks screen design.................................. */
+#stocks_background_settings{
+    width: 50%;
+    
+    /* background: #4087F3; */
+
+    border-radius: 16px;
+    display: flex;
+}
+.stocks_initial_settings{
+    margin-left: 40px;  
+}
+#quantity_option_stocks_settings{
+    display: flex;
+    margin-left: 30px;
+}
+#quantity_text_stocks_settings{
+    margin-left: 30px;
+    margin-top: 50px;
+    padding: 25px;
+}
+#addoption_quantity_stocks_settings{
+    margin-left: 30px;
+}
+#realstocksadd_stocks_settings{
+    margin-left: 35px;
+    margin-top: 70px;
+}
+#unit_stocks_settings{
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 25px;
+    height: fit-content;
+}
+#weight_stocks_settings{
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 25px;
+    height: fit-content;
+}
+#meter_stocks_settings{
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 25px;
+    height: fit-content;
+}
+#quantity_stocks_settings{
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 25px;
+    height: fit-content;
+}
+#savebtn_stocks_settings{
+    background-color: #4087F3;
+    box-shadow: 0px 0px 8px rgba(64, 135, 243, 0.5);
+    border-radius: 4px;
+    height: fit-content;
+    color: white;
+    padding: 18px;
+    border: none;
+    margin-left: calc(100% - 150px);
+    margin-top: 100px;
+    width: 270px;
+    
+}
+/* ..................................Integration screen design................................ */
+#integration_background_settings{
+    width: 50%;
+    
+    /* background: #4087F3; */
+
+    border-radius: 16px;
+    display: flex;
+}
+#integration_initial_settings{
+    margin-left: 40px;  
+}
+#integration_img_settings{
+    display: flex;
+    margin-left:25%;
+    margin-top: 80px;
+}
+#integration_text_settings{
+    margin-left: 50%;
+    text-align: center;
+    margin-top: 60px;
+    color: #4087F3;;
+
+}
