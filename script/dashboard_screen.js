@@ -2,6 +2,8 @@
 const fs = require('fs');
 let languageData, userSettingsData
 
+let scanStatus = false
+
 let selectedPage = 0
 let home_page, invoice_page, analytics_page,
     stocks_page, transaction_page, settings_page
@@ -40,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (err) throw err
         // parse the data
         languageData = JSON.parse(data)
-        changeLanguage("en")
+        changeLanguage("hi")
     })
 
     // read a json file using fs for user settings
@@ -346,6 +348,7 @@ function addStockButtonClick() {
         model_box_container.style.display = "block"
         add_stock_item_dialog_page.style.display = "block"
         add_stock_itm_subpage.style.display = "block"
+        scanStatus = true
     })
     add_itm_close_btn.addEventListener("click", function () {
         add_stock_itm_subpage.style.display = "none"
@@ -355,6 +358,7 @@ function addStockButtonClick() {
         model_box_container.style.display = "none"
         popUp_screen_cnfrm_addItm.style.display = "none"
         add_stock_item_dialog_page.style.display = "none"
+        scanStatus = false
     })
     no_btn_cnfrm_addItm.addEventListener("click", function () {
         model_box_container.style.display = "block"
@@ -560,16 +564,26 @@ function createServer() {
                 res.end("CONNECTED:" + os.hostname());
                 if (params.includes("name")) deviceName = params.split("=")[1]
                 console.log(deviceName);
+                close_connect_client_btn.click()
                 deviceConnectedSuccess(deviceName);
                 break;
             case "/addItem":
                 res.writeHead(200);
-                res.end("addItem Successfully" + params);
+                res.end("ADDEDITEM");
+                console.log("add item :" + params);
                 break;
             case "/availabilityItem":
                 res.writeHead(200);
                 res.end("10 items available");
                 break;
+            case "/scanStatus":
+                res.writeHead(200)
+                if(scanStatus){
+                    res.end("STARTSCAN")
+                }else{
+                    res.end("STOPSCAN")
+                }
+                break
 
             default:
                 res.writeHead(404);

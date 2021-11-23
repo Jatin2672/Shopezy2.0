@@ -17,13 +17,13 @@ FAQpage
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
 
-    // read a json file using fs
+    //read a json file using fs
     // fs.readFile("./settings/welcome_screen_language.json", (err, data) => {
     //     // if error occurs
     //     if (err) throw err
     //     // parse the data
     //     languageData = JSON.parse(data)
-    //     changeLanguage("en")
+    //     changeLanguage("hi")
     // })
 
     fs.readFile("./settings/usersettings.json" , (err, data) => {
