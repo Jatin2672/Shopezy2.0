@@ -19,6 +19,13 @@ let expand_sidebar_btn, is_sidebar_expanded = false
 let last_selected_settings_btn = "account_setting_btn", last_selected_btn = "home_btn"
 
 
+let model_box_container , connect_to_android_page , 
+add_stock_item_dialog_page , add_stock_itm_subpage , 
+popUp_screen_cnfrm_addItm , add_itm_close_btn ,
+yes_btn_cnfrm_addItm , no_btn_cnfrm_addItm 
+
+let add_stock_btn
+
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -95,6 +102,22 @@ window.addEventListener("DOMContentLoaded", () => {
     // assign the html elements to elements
     stock_table_body = document.getElementById("stock_table_body")
     invoice_his_table_body = document.getElementById("invoice_history_table_body")
+
+    // assign the html elements to model box
+    model_box_container = document.getElementById("model_box_container")
+    connect_to_android_page = document.getElementById("connect_to_android_page")
+    add_stock_item_dialog_page = document.getElementById("add_stock_item_dialog_page")
+    add_stock_itm_subpage = document.getElementById("add_itm_subpage")
+    popUp_screen_cnfrm_addItm = document.getElementById("popUp_screen_cnfrm_addItm")
+
+    add_stock_btn = document.getElementById("AddItm_stock_btn")
+    popUp_screen_cnfrm_addItm = document.getElementById("popUp_screen_cnfrm_addItm")
+    add_itm_close_btn = document.getElementById("add_itm_close_btn")
+
+    yes_btn_cnfrm_addItm = document.getElementById("yes_btn_cnfrm_addItm")
+    no_btn_cnfrm_addItm = document.getElementById("no_btn_cnfrm_addItm")
+
+    addStockButtonClick()
 
     // a small delay for data to be added to tables
     setTimeout(() => {
@@ -301,6 +324,29 @@ function changeSettingsPage(pageNumber) {
             break
     }
     selectedSettingsPage = pageNumber
+}
+
+function addStockButtonClick() {
+    add_stock_btn.addEventListener("click", function () {
+        model_box_container.style.display = "block"
+        add_stock_item_dialog_page.style.display = "block"
+        add_stock_itm_subpage.style.display = "block"
+    })
+    add_itm_close_btn.addEventListener("click", function () {
+        add_stock_itm_subpage.style.display = "none"
+        popUp_screen_cnfrm_addItm.style.display = "flex"
+    })
+    yes_btn_cnfrm_addItm.addEventListener("click", function () {
+        model_box_container.style.display = "none"
+        popUp_screen_cnfrm_addItm.style.display = "none"
+        add_stock_item_dialog_page.style.display = "none"
+    })
+    no_btn_cnfrm_addItm.addEventListener("click", function () {
+        model_box_container.style.display = "block"
+        popUp_screen_cnfrm_addItm.style.display = "block"
+        add_stock_itm_subpage.style.display = "block"
+        popUp_screen_cnfrm_addItm.style.display = "none"
+    })
 }
 
 // import sql
