@@ -97,11 +97,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // assign the html elements to elements
     stock_table_body = document.getElementById("stock_table_body")
-    invoice_his_table_body = document.getElementById("invoice_history_table_body")
+    i nvoice_his_table_body = document.getElementById("invoice_history_table_body")
 
+    // a small delay for data to be added to tables
     setTimeout(() => {
         addItemsToStockTable()
-    }, 100);
+        addItemsToInvoiceHistoryTable()
+    }, 300);
 
     // apply click on all the buttons [sidebar]
     applyEventListeners('home_btn', 0)
@@ -382,6 +384,7 @@ function increaseSoldQuantity(barcode) {
     });
 }
 
+// add item to html template table
 function addItemsToStockTable() {
     let html_to_add = ""
     stock_table_body.innerHTML = ""
@@ -415,10 +418,10 @@ getAllItemFromStock()
 
 
 // function to add new row to invoice_detail table of masterdatabase
-function addNewInvoiceData(invoice_total_amount, payment_mode, accountant_director, total_items) {
+function addNewInvoiceData(customer_id , invoice_total_amount, payment_mode, accountant_director, total_items) {
     let added_date = new Date().getTime()
-    db.run(`INSERT INTO invoice_detail (invoice_date , invoice_total_amount , payment_mode , accountant_director , total_items  ) VALUES 
-    ( '${added_date}' , ${invoice_total_amount} , '${payment_mode}' , '${accountant_director}' , ${total_items} )`, (err) => {
+    db.run(`INSERT INTO invoice_detail (customer_id ,invoice_date , invoice_total_amount , payment_mode , accountant_director , total_items  ) VALUES 
+    ( '${customer_id}','${added_date}' , ${invoice_total_amount} , '${payment_mode}' , '${accountant_director}' , ${total_items} )`, (err) => {
         if (err) {
             console.log(err.message)
         }
@@ -427,19 +430,21 @@ function addNewInvoiceData(invoice_total_amount, payment_mode, accountant_direct
     db.close()
 }
 
+// add item to html template table
 function addItemsToInvoiceHistoryTable(){
     let html_to_add = ""
     invoice_his_table_body.innerHTML = ""
     for (let i = 0; i < all_items_in_invoice.length; i++) {
         html_to_add += `<tr>
         <td>${[all_items_in_invoice[i].invoice_date]}</td>
-        <td>${[all_items_in_stocks[i].invoice_id]}</td>
-        <td>${[all_items_in_stocks[i].customer_id]}</td>
-        <td>${[all_items_in_stocks[i].invoice_total_amount]}</td>
-        <td>${[all_items_in_stocks[i].payment_mode]}</td>
-        <td>${[all_items_in_stocks[i].accountant_director]}</td>
+        <td>${[all_items_in_invoice[i].invoice_id]}</td>
+        <td>${[all_items_in_invoice[i].customer_id]}</td>
+        <td>${[all_items_in_invoice[i].invoice_total_amount]}</td>
+        <td>${[all_items_in_invoice[i].payment_mode]}</td>
+        <td>${[all_items_in_invoice[i].accountant_director]}</td>
         </tr>`
     }
+    console.log(html_to_add)
     invoice_his_table_body.innerHTML = html_to_add
 }
 // function get all item from invoice in ascending order of date added
