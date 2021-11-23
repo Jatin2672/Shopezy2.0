@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ShopEzy - Home</title>
-
   <link rel="stylesheet" href="../style/dashboardscreen.css" />
+  <script src="../script/qrcode.min.js"></script>
 </head>
 
 <body>
@@ -108,7 +108,7 @@
                     <th>Total Price</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="mini_invoice_history">
                   <tr>
                     <td>00928746</td>
                     <td>198.45</td>
@@ -127,9 +127,10 @@
                   <tr>
                     <th>Name</th>
                     <th>Product Number</th>
+                    <th>Quantity Left</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="stock_out_table">
                   <tr>
                     <td>Poha</td>
                     <td>19883837</td>
@@ -339,6 +340,7 @@
       <div id="part2_connect_to_android">
         <img id="close_connect_client_btn" src="../Media/passcode/close.svg" />
         <span id="scan_connect_lbl_txt" class="large_text_connect_client">Scan To Connect</span>
+        <div id="qrcode_ip"></div>
         <div>
           <input type="checkbox" name="Keep me sign in" id="sign">
           <span id="check_connect_client_lbl">Keep me signed in</span>
@@ -353,7 +355,7 @@
     <div id="notification_dialog_page" class="debug" style="display: none;">
     </div>
     <!------------------- Add product to stock dialog box ------------------>
-    <div id="add_stock_item_dialog_page" style="display: block;">
+    <div id="add_stock_item_dialog_page" style="display: none;">
 
       <!-- Add Item Subpage -->
       <div id="add_itm_subpage" style="display: none;">
@@ -432,37 +434,6 @@
           </div>
           <!-- Add item card -->
 
-          <!-- Add item card -->
-          <div class="add_item_card">
-
-            <div class="add_item_card_top">
-              <p>4562 34613 6136 3</p>
-              <img src="../media/add_itm/dustbinIcon.svg" alt="" class="remove_itm_Btn">
-            </div>
-
-            <div class="add_item_card_txt">
-              <p>Product Name</p>
-              <input type="text" name="product_name" id="add_item_card_input_txt">
-            </div>
-
-            <div class="Pricediv">
-              <p>Cost Price</p>
-              <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
-            </div>
-
-            <div class="Pricediv">
-              <p>Sell Price</p>
-              <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
-            </div>
-
-            <div class="Pricediv">
-              <p>Stock quantity</p>
-              <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
-            </div>
-
-          </div>
-          <!-- Add item card -->
-
           <!-- Connected Device card -->
           <div class="add_item_card Connected_device">
             <h5>Continue Scan To Add Products</h5>
@@ -501,7 +472,26 @@
   </div>
 
 
- 
+<div id="hiddenIP" style="display: none;"></div>
 </body>
+
+<script type="text/javascript" defer>
+  let runtimes = 0;
+  // qr generated when clicked on connect btn.also getting the ip from hiddenIP
+  document.getElementById("connect_android_btn_home").addEventListener("click", () => {
+    if (runtimes == 0) {
+      let url = document.getElementById("hiddenIP").innerHTML;
+      var qrcode = new QRCode(document.getElementById("qrcode_ip"), {
+        text: url,
+        width: 256,
+        height: 256,
+        colorDark: "#ffffff",
+        colorLight: "#393E3A",
+        correctLevel: QRCode.CorrectLevel.H,
+      });
+      runtimes++;
+    }
+  });
+</script>
 
 </html>

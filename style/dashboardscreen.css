@@ -794,3 +794,7 @@ table{
 #yes_btn_cnfrm_addItm{
     background-color: var(--yes_btn);
 }
+#qrcode_ip{
+padding: 10%;
+margin-bottom: 20px;
+}

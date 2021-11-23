@@ -26,6 +26,8 @@ yes_btn_cnfrm_addItm , no_btn_cnfrm_addItm
 
 let connect_android_btn_home , connect_to_android_page , close_connect_client_btn
 
+let mini_invoice_history , stock_out_table
+
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -126,11 +128,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
     addConnectButtonClick()
 
+    mini_invoice_history = document.getElementById("mini_invoice_history")
+    stock_out_table = document.getElementById("stock_out_table")
+
 
     // a small delay for data to be added to tables
     setTimeout(() => {
         addItemsToStockTable()
         addItemsToInvoiceHistoryTable()
+        writeIP_forQR()
     }, 300);
 
     // apply click on all the buttons [sidebar]
@@ -431,6 +437,20 @@ function addItemsToStockTable() {
         </tr>`
     }
     stock_table_body.innerHTML = html_to_add
+    let html_to_add2 = ""
+    let no_of_row_added = 0
+    stock_out_table.innerHTML = ""
+    for(let i = 0; i < all_items_in_stocks.length; i++){
+        if(all_items_in_stocks[i].quantity - all_items_in_stocks[i].sold_quantity < 10 && no_of_row_added<10){
+        html_to_add2 += `<tr>
+        <td>${[all_items_in_stocks[i].product_name]}</td>
+        <td>${[all_items_in_stocks[i].barcode]}</td>
+        <td>${[all_items_in_stocks[i].quantity - all_items_in_stocks[i].sold_quantity]}</td>
+        </tr>`
+        no_of_row_added++
+        }
+    }
+    stock_out_table.innerHTML = html_to_add2
 }
 
 // function get all item from stock in ascending order of date added
@@ -475,6 +495,17 @@ function addItemsToInvoiceHistoryTable(){
     }
     console.log(html_to_add)
     invoice_his_table_body.innerHTML = html_to_add
+
+    let html_to_add2 = ""
+    mini_invoice_history.innerHTML = ""
+    for (let i = 0; i < Math.min(all_items_in_invoice.length ,10 ); i++) {
+        html_to_add2 += `<tr>
+        <td>${[all_items_in_invoice[i].invoice_id]}</td>
+        <td>${[all_items_in_invoice[i].invoice_total_amount]}</td>
+        </tr>`
+    }
+    mini_invoice_history.innerHTML = html_to_add2
+
 }
 // function get all item from invoice in ascending order of date added
 function getAllItemFromInvoiceHistory(){
@@ -495,6 +526,10 @@ let getLocalExternalIP = () =>
         .concat(...Object.values(networkInterfaces()))
         .find((details) => details.family === "IPv4" && !details.internal)
         .address;
+
+function writeIP_forQR(){
+    document.getElementById("hiddenIP").innerHTML = getLocalExternalIP
+}
 
 
 // -----------------------------------creation of a http server ---------------------------------------
