@@ -6,6 +6,7 @@ const fs = require("fs")
 let welcomeWindow , dashboardWindow , passcodeWindow
 var registeredState , hasPasscode
 
+
 function createWelcomeWindow() {
     // Create the browser window.
     welcomeWindow = new BrowserWindow({
