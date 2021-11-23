@@ -542,7 +542,7 @@ function writeIP_forQR(){
 const http = require("http");
 var os = require('os')
 const host = getLocalExternalIP();
-
+let itemListReceived = []
 
 function createServer() {
     const requestListener = function (req, res) {
@@ -567,10 +567,16 @@ function createServer() {
                 close_connect_client_btn.click()
                 deviceConnectedSuccess(deviceName);
                 break;
-            case "/addItem":
+            case "/additem":
                 res.writeHead(200);
-                res.end("ADDEDITEM");
-                console.log("add item :" + params);
+                // check if item list has already this item
+                if (!itemListReceived.includes(params)) {
+                    itemListReceived.push(params)
+                    res.end("ADDEDITEM");
+                    console.log("add item :" + params);
+                }else{
+                    res.end("SAMEITEM");
+                }
                 break;
             case "/availabilityItem":
                 res.writeHead(200);
