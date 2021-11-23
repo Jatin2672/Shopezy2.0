@@ -32,6 +32,36 @@ window.addEventListener("DOMContentLoaded", () => {
         console.log(settingsData)
     });
 
+// ----------------------
+let imgDiv = document.getElementById('dpContainer');
+let img = document.getElementById('photo');
+let file = document.getElementById('file');
+let uploadBtn = document.getElementById('uploadBtn');
+
+
+imgDiv.addEventListener('mouseenter', ()=>{
+    uploadBtn.style.display = "block";
+});
+
+
+imgDiv.addEventListener('mouseleave', ()=>{
+    uploadBtn.style.display = "none";
+});
+file.addEventListener('change',function(){
+    const chooseFile=this.files[0];
+
+    if(chooseFile){
+        const reader = new FileReader();
+
+        reader.addEventListener('load',()=>{
+            img.setAttribute('src',reader.result);
+        });
+        reader.readAsDataURL(chooseFile)
+    }
+})
+
+// ----------------------
+
     // --------------------Validate fn ----------------------------
     bussiness_category_inpt=document.getElementById("bussiness_type_regPage")
     email_inpt=document.getElementById("email_regPage")
