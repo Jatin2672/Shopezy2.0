@@ -1,7 +1,9 @@
 {
     "language_select":{
         "hi":"हिंदी ",
-        "en":"Hindi",
+        "en":"Hindi"  
+    },
+    "language_select":{
         "hi":"अंग्रेजी",
         "en":"English"
     },
@@ -23,15 +25,21 @@
     },
     "accountinfo_userinput":{
        "hi":"दुकान या व्यवसाय का नाम",
-       "en":"Shop or Bussiness Name",
-       "hi":"व्यवसाय श्रेणी",
-       "en":"Bussiness Category",
-       "hi":"ईमेल",
-       "en":"Email",
-       "hi":"पता",
-       "en":"Address"
-
+       "en":"Shop or Bussiness Name"
     },
+    "accountinfo_userinput":{
+        "hi":"व्यवसाय श्रेणी",
+        "en":"Bussiness Category"
+     },
+     "accountinfo_userinput":{
+        "hi":"ईमेल",
+        "en":"Email"
+     },
+     "accountinfo_userinput":{
+        "hi":"पता",
+        "en":"Address"
+ 
+     },
     "continue_btn":{
         "hi":"जारी रखें",
         "en":"Continue"
