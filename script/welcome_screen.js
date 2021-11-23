@@ -3,6 +3,8 @@ const { ipcRenderer } = require('electron');
 const fs = require('fs');
 let languageData , settingsData
 
+let profile_pic_url = "../media/userphoto.png"
+
 
 // ----------------------------------------------------------------------------------------
 let bussiness_category_inpt, email_inpt, bussiness_name_inpt,
@@ -55,6 +57,7 @@ file.addEventListener('change',function(){
 
         reader.addEventListener('load',()=>{
             img.setAttribute('src',reader.result);
+            profile_pic_url = reader.result;
         });
         reader.readAsDataURL(chooseFile)
     }
@@ -83,7 +86,8 @@ file.addEventListener('change',function(){
             mobile=mobile_inpt.value
             bussiness_owner_name=bussiness_owner_name_inpt.value
 
-            registerUser(bussiness_name, bussiness_category ,email , mobile ,address , bussiness_owner_name , "");
+            registerUser(bussiness_name, bussiness_category ,email , mobile ,address , bussiness_owner_name , profile_pic_url);
+
 
             ipcRenderer.send('welcome:register');
         }
