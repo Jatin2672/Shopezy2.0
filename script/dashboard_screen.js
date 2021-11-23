@@ -97,7 +97,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // assign the html elements to elements
     stock_table_body = document.getElementById("stock_table_body")
-    i nvoice_his_table_body = document.getElementById("invoice_history_table_body")
+    invoice_his_table_body = document.getElementById("invoice_history_table_body")
 
     // a small delay for data to be added to tables
     setTimeout(() => {
