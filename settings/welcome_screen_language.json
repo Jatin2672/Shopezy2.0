@@ -1,9 +1,5 @@
 {
     "language_select":{
-        "hi":"हिंदी ",
-        "en":"Hindi"  
-    },
-    "language_select":{
         "hi":"अंग्रेजी",
         "en":"English"
     },
@@ -38,7 +34,6 @@
      "accountinfo_userinput":{
         "hi":"पता",
         "en":"Address"
- 
      },
     "continue_btn":{
         "hi":"जारी रखें",

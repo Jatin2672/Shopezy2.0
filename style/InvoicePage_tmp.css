@@ -1,3 +1,10 @@
+#invoice_page{
+    width: 85vw;
+    margin: 0 auto;
+}
+#InvoicePage p{
+    padding: 0 30px;
+}
 #Connected_device_InvoicePage{
     text-align: right;
     color: #4087F3;
@@ -5,15 +12,13 @@
 }
 .top_section_invoicePage{
     display: flex;
-    width: 95vw;
-    margin: 0 auto;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 40px;
     height: 30%;
 }
 .top_left_section_invoicePage{
     display: grid;
-    width: 55%;
+    width: 60%;
     grid-template-columns: 1fr 1fr;
     box-shadow: 2px 2px 12px rgba(35, 19, 62, 0.5);
     background-color: #ffffff;
@@ -87,7 +92,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
-    margin: 40px 0;
+    margin: 40px auto;
     row-gap: 30px;
 }
 .item_card{
@@ -95,7 +100,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     background-color: #eeeeee;
-    width: 60%;
+    width: 320px;
     height: 320px;
     padding: 2%;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
