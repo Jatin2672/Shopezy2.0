@@ -194,5 +194,59 @@
     "add_local_passcode_btn":{
         "hi":"स्थानीय पासकोड जोड़ें",
         "en":"Add Local Passcode"
+    },
+    "setting_invoice_heading_text":{
+        "hi":"इनवॉइस",
+        "en":"Invoice "
+    },
+    "setting_invoice_text_template":{
+        "hi":"टेम्पलेट",
+        "en":"Template"
+    },
+    "text_statement_invoice_settings":{
+        "hi":"भुगतान मोड स्वीकृत",
+        "en":"Payment Mode Accepted"
+    },
+    "credit_invoice_settings":{
+        "hi":"क्रेडिट कार्ड",
+        "en":"Credit Card"
+    },
+    "debit_invoice_settings":{
+        "hi":"डेबिट कार्ड",
+        "en":"Debit Card"
+    },
+    "Upi_invoice_settings":{
+        "hi":"यूपीआई भुगतान",
+        "en":"Upi Payment"
+    },
+    "cash_invoice_settings":{
+        "hi":"नकद भुगतान",
+        "en":"Cash Payment"
+    },
+    "invoice_accountantdirector_text":{
+        "hi":"लेखाकार निदेशक",
+        "en":"Accountant Director"
+    },
+    "annette_blact_text":{
+        "hi":"एनेट ब्लैक",
+        "en":"Annette Black"
+    },
+    "bessie_cooper_text":{
+        "hi":"बेस्सी कूपर",
+        "en":"Bessie Cooper"
+    },
+    "jacob_jones_text":{
+        "hi":"जैकब जोन्स",
+        "en":"Jacob Jones"
+    },
+    "newaccountdirector_invoice_settings":{
+        "hi":"नया लेखाकार निदेशक",
+        "en":"New Accountant Director"
+    },
+    "savebtn_invoice_settings":{
+        "hi":"परिवर्तनों को सुरक्षित करें",
+        "en":"Save changes"
     }
+    
+    
 }
