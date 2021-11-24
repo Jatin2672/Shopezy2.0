@@ -1388,5 +1388,10 @@ margin-bottom: 20px;
     color: #4087F3;;
 
 }
+.toggle_btns_personalization_settings{
+    margin-left: 100px;
+    cursor: pointer;
+}
 
 /* -------------------------------Settings end---------------------------- */
+
