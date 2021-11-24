@@ -208,16 +208,20 @@ function userSettingsUpdate() {
     if (userSettingsData.email != "") {
         document.getElementById("email_shop_badge").innerHTML = userSettingsData.email
         document.getElementById("email_store_txt_home").innerHTML = userSettingsData.email
+        document.getElementById("account_setting_shop_email").value = userSettingsData.email
     }
     if (userSettingsData.bussiness_name != "") {
         document.getElementById("name_shop_badge").innerHTML = userSettingsData.bussiness_name
         document.getElementById("store_name_txt_home").innerHTML = userSettingsData.bussiness_name
+        document.getElementById("account_setting_shop_name").value = userSettingsData.bussiness_name
     }
     if(userSettingsData.mobile != ""){
         document.getElementById("mobile_store_txt_home").innerHTML = userSettingsData.mobile
+        document.getElementById("account_setting_shop_mobile").value = userSettingsData.mobile
     }
     if(userSettingsData.address != ""){
         document.getElementById("address_store_txt_home").innerHTML = userSettingsData.address
+        document.getElementById("addressinput_account_settings").value = userSettingsData.address
     }
     if(userSettingsData.profile_pic_url != ""){
         document.getElementById("user_profile_home").src = userSettingsData.profile_pic_url
