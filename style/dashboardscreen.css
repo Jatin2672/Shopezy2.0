@@ -1001,4 +1001,14 @@ margin-bottom: 20px;
     width: 200px;
     height: 200px;
 }
+
+/* -------------------------------Analytics---------------------------- */
+#analytics_page{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.analytic_sub_graphs{
+    height: 100%;
+}
 /* -------------------------------Invoice---------------------------- */

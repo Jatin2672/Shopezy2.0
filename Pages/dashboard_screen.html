@@ -58,7 +58,7 @@
     <!------------------------------------P A G E S------------------------------>
     <div id="dashboard_right_section">
       <!-------------------- Home Page ---------------------------->
-      <div id="home_page" class="main_pages" style="display: flex;">
+      <div id="home_page" class="main_pages" style="display: none;">
         <div id="left_home_section">
 
           <!------------------------Top Blue Cover----------------->
@@ -113,14 +113,6 @@
                   </tr>
                 </thead>
                 <tbody id="mini_invoice_history">
-                  <tr>
-                    <td>00928746</td>
-                    <td>198.45</td>
-                  </tr>
-                  <tr>
-                    <td>90823742</td>
-                    <td>$80</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -321,8 +313,11 @@
       </div>
 
       <!-------------------- Analytics Page ---------------------------->
-      <div id="analytics_page" class="main_pages" style="display: none;">
-        Analytics
+      <div id="analytics_page" class="main_pages" style="display: grid;">
+        <div id="analytics_graph_1" class="debug analytic_sub_graphs"></div>
+        <div id="analytics_graph_2" class="debug analytic_sub_graphs">1</div>
+        <div id="analytics_graph_3" class="debug analytic_sub_graphs">1</div>
+        <div id="analytics_graph_4" class="debug analytic_sub_graphs">1</div>
       </div>
 
       <!-------------------- Stock Page ---------------------------->
@@ -557,11 +552,38 @@
   let bar_graph_home_width = parent_graph_home.getBoundingClientRect().width;
   // draw graphs on home and other pages
   let bar_graph_home = new JGraph('bar' , 'home_page_graph',  ['MON' ,'WED', 'TUES' , 'THUR' , 'FRI', 'SAT' , 'SUN'] , [130 , 300 , 100,200,300,400, 450])
-  bar_graph_home.style = "light"
+  bar_graph_home.style = "lightV"
   bar_graph_home.canvas_width = bar_graph_home_width;
   bar_graph_home.canvas_height = 200;
-  bar_graph_home.background= "#EAEAEA"
+  bar_graph_home.grids = true
   bar_graph_home.plot()
+
+  let analytic_graph_parent = document.getElementById("analytics_graph_1");
+  let analytic_graph_width = analytic_graph_parent.getBoundingClientRect().width;
+  let analytic_graph_height = analytic_graph_parent.getBoundingClientRect().height;
+  let bar_graph_analytics_2 = new JGraph('bar' , 'analytics_graph_1',  ['MON' ,'WED', 'TUES' , 'THUR' , 'FRI', 'SAT' , 'SUN'] , [130 , 300 , 100,200,300,400, 450])
+  bar_graph_analytics_2.style = "lightV"
+  bar_graph_analytics_2.canvas_width = analytic_graph_width;
+  bar_graph_analytics_2.canvas_height = analytic_graph_height;
+  bar_graph_analytics_2.plot()
+
+  let bar_graph_analytics_3 = new JGraph('bar' , 'analytics_graph_2',  ['MON' ,'WED', 'TUES' , 'THUR' , 'FRI', 'SAT' , 'SUN'] , [130 , 300 , 100,200,300,400, 450])
+  bar_graph_analytics_3.style = "lightV"
+  bar_graph_analytics_3.canvas_width = analytic_graph_width;
+  bar_graph_analytics_3.canvas_height = analytic_graph_height;
+  bar_graph_analytics_3.plot()
+
+  let bar_graph_analytics_4 = new JGraph('bar' , 'analytics_graph_3',  ['MON' ,'WED', 'TUES' , 'THUR' , 'FRI', 'SAT' , 'SUN'] , [130 , 300 , 100,200,300,400, 450])
+  bar_graph_analytics_4.style = "lightV"
+  bar_graph_analytics_4.canvas_width = analytic_graph_width;
+  bar_graph_analytics_4.canvas_height = analytic_graph_height;
+  bar_graph_analytics_4.plot()
+  
+  let bar_graph_analytics_5 = new JGraph('bar' , 'analytics_graph_4',  ['MON' ,'WED', 'TUES' , 'THUR' , 'FRI', 'SAT' , 'SUN'] , [130 , 300 , 100,200,300,400, 450])
+  bar_graph_analytics_5.style = "lightV"
+  bar_graph_analytics_5.canvas_width = analytic_graph_width;
+  bar_graph_analytics_5.plot()
+  bar_graph_analytics_5.canvas_height = analytic_graph_height;
 </script>
 
 </html>
