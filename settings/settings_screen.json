@@ -1,0 +1,104 @@
+{
+    "settings_page_text":{
+        "hi":"सेटिंग्स",
+        "en":"Settings"
+    },
+    "account_background_settings":{
+        "hi":"अकाउंट",
+        "en":"Account"
+    },
+    "invoice_background_settings":{
+        "hi":"इनवॉइस",
+        "en":"Invoice"
+    },
+    "personalisation_background_settings":{
+        "hi":"पर्सनॅलिसातिओं",
+        "en":"Personalisation"
+    },
+    "stocks_background_settings":{
+        "hi":"स्टॉक्स",
+        "en":"Stocks"
+    },
+    "integration_background_settings":{
+        "hi":"एकीकरण",
+        "en":"Integration"
+    },
+    "acc_settings":{
+        "hi":"अकाउंट",
+        "en":"Account"
+    },
+    "upl1_account_settings":{
+        "hi":"अपलोड",
+        "en":"Upload"
+    },
+    "remove_account_settings":{
+        "hi":"हटाए",
+        "en":"Remove"
+    },
+    "leftinfo_text1":{
+        "hi":"दुकान या व्यवसाय का नाम",
+        "en":"Shop or Bussiness Name"
+    },
+    "leftinfo_text2":{
+        "hi":"ईमेल",
+        "en":"Email"
+    },
+    "leftinfo_text3":{
+        "hi":"पता",
+        "en":"Address"
+    },
+    "rightinfo_text1":{
+        "hi":"दुकान या व्यवसाय के मालिक का नाम",
+        "en":"Shop or Bussiness owner’s Name"
+    },
+    "rightinfo_text2":{
+        "hi":"मोबाइल नंबर",
+        "en":"Mobile Number"
+    },
+    "rightinfo_text3":{
+        "hi":"व्यवसाय श्रेणी",
+        "en":"Bussiness Category"
+    },
+    "buisnessoption_settings_1":{
+        "hi":"पालतू जानवरों की दुकान",
+        "en":"Pet shop"
+    },
+    "buisnessoption_settings_2":{
+        "hi":"दवाओं",
+        "en":"Drugs"
+    },
+    "buisnessoption_settings_3":{
+        "hi":"किराना",
+        "en":"Grocery"
+    },
+    "buisnessoption_settings_4":{
+        "hi":"शराब",
+        "en":"Alchohol"
+    },
+    "label_account_settings_text":{
+        "hi":"रिक्वेस्ट वेरीफिकेशन",
+        "en":"Request Veryfication"
+    },
+    
+    "btn_account_settings_requestverification":{
+        "hi":"रिक्वेस्ट वेरीफिकेशन",
+        "en":"Request Veryfication"
+    },
+    "savebtn_account_settings":{
+        "hi":"परिवर्तनों को सुरक्षित करें",
+        "en":"Save changes"
+    },
+    "add_local_passcode_text":{
+        "hi":"स्थानीय पासकोड जोड़ें",
+        "en":"Add Local Passcode"
+    },
+    "add_local_passcode_paragraph":{
+        "hi":"एक स्थानीय पासकोड आपके खाते को अधिक सुरक्षित और निजी रखता है",
+        "en":"A local passcode keeps your account more secured and private"
+    },
+    "add_local_passcode_btn":{
+        "hi":"स्थानीय पासकोड जोड़ें",
+        "en":"Add Local Passcode"
+    },
+    ""
+}
