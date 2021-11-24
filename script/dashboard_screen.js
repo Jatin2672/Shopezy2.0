@@ -29,6 +29,7 @@ yes_btn_cnfrm_addItm , no_btn_cnfrm_addItm
 let connect_android_btn_home , disconnect_android_btn_home , connect_to_android_page , close_connect_client_btn
 
 let mini_invoice_history , stock_out_table
+let add_itm_subpage_main
 
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
@@ -133,6 +134,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     mini_invoice_history = document.getElementById("mini_invoice_history")
     stock_out_table = document.getElementById("stock_out_table")
+
+    add_itm_subpage_main = document.getElementById("add_itm_subpage_main")
 
 
     // a small delay for data to be added to tables
@@ -574,6 +577,7 @@ function createServer() {
                     itemListReceived.push(params)
                     res.end("ADDEDITEM");
                     console.log("add item :" + params);
+                    addAllItemToStockPage(params)
                 }else{
                     res.end("SAMEITEM");
                 }
@@ -612,4 +616,44 @@ function deviceConnectedSuccess(deviceName){
     document.getElementById("client_connected_success_txt").style.display = "flex"
     document.getElementById("no_android_client_txt").style.display = "none"
     disconnect_android_btn_home.style.display = "flex"
+}
+let allItemToAppendToStock = {}
+function addAllItemToStockPage(barcode_item_received){
+    let barcode_item_data = {
+        "item_name": " ",
+        "item_cost_price": 100,
+        "item_selling_price": 120,
+        "item_quantity": 20
+    }
+    allItemToAppendToStock[barcode_item_received] = barcode_item_data
+    toAppendItemToAddStockItemCard(barcode_item_received)
+    console.log(allItemToAppendToStock)
+}
+
+function toAppendItemToAddStockItemCard(barcode_item_received){
+    let html_to_append = `<div class="add_item_card">
+    <div class="add_item_card_top">
+      <p>${[barcode_item_received]}</p>
+      <img src="../media/add_itm/dustbinIcon.svg" alt="" class="remove_itm_Btn">
+    </div>
+    <div class="add_item_card_txt">
+      <p>Product Name</p>
+      <input type="text" name="product_name" id="add_item_card_input_txt">
+    </div>
+    <div>
+      <div class="Pricediv">
+        <p>Cost Price</p>
+        <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+      </div>
+      <div class="Pricediv">
+        <p>Sell Price</p>
+        <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+      </div>
+      <div class="Pricediv">
+        <p>Stock quantity</p>
+        <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+      </div>
+    </div>
+  </div>`
+  add_itm_subpage_main.innerHTML += html_to_append
 }
