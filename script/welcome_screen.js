@@ -207,18 +207,16 @@ function checkEmail(email){
 
 //function check sanity of the mobile number
 function checkMobile(mobile){
-    let mobileRegex = /^[6-9]\d{9}$/
+    let mobileRegex = /^[0-9]{10}$/
     return mobileRegex.test(mobile)
 }
 
 //function check sanity of the bussiness name
 function checkBussinessName(bussiness_name){
-    let bussinessNameRegex = /^[a-zA-Z0-9]+$/
-    return bussinessNameRegex.test(bussiness_name)
+    return bussiness_name.length>=3
 }
 
 // function check sanity of the bussiness owner name
 function checkBussinessOwnerName(bussiness_owner_name){
-    let bussinessOwnerNameRegex = /^[a-zA-Z]+$/
-    return bussinessOwnerNameRegex.test(bussiness_owner_name)
+    return bussiness_owner_name.length>=3
 }

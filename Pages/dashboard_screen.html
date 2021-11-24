@@ -425,7 +425,7 @@
             
             <h1 id="acc_settings">Account</h1>
             <div id="upl_settings">
-                <div class="acc_1_settings" id="icon"><img src="../media/userphoto.png" alt=""></div>
+                <div class="acc_1_settings"  id="account_pic_ico" ><img id="account_setting_profile_pic" src="../media/userphoto.png" alt=""></div>
                 <div class="acc_1_settings" id="upl1_account_settings">Upload</div>
                 <div class="acc_1_settings" id="remove_account_settings">Remove</div>
 
@@ -498,7 +498,7 @@
                 <span class="acc_1_settings" id="cash_invoice_settings">Cash Payment</span>
             </div>
             <div >
-                <div id="paymentoption_add_invoice_settings"><img src="../Media/paymentModeAddOption.png" alt=""></div>
+                <!-- <div id="paymentoption_add_invoice_settings"><img src="../Media/paymentModeAddOption.png" alt=""></div> -->
             </div>
             <div>
                 <span class="acc_1_settings" id="invoice_accountantdirector_text">Accountant Director</span>
@@ -533,24 +533,16 @@
           <div id="settings_sub_pages_stocks" class="setting_subpage " style="display: none;">
             
             <h1 class="stocks_initial_settings">Stocks</h1>
-           <div class="text_fetchEnable_personalisation_settings">
-               <span>Fetch Product Details From Server</span>
-               <img class="enable_disable_personalisation_settings" src="../Media/enablebtn.svg" alt="">
-           </div>
-           <div class="text_fetchEnable_personalisation_settings">
-            <span>Remind  for product  unavailability</span>
-            <img class="enable_disable_personalisation_settings" src="../Media/disablebtn.svg" alt="">
-           </div>
            <div id="quantity_text_stocks_settings">Quantity</div>
            <div id="quantity_option_stocks_settings">
             <span class="acc_1_settings" id="unit_stocks_settings">Units</span>
             <span class="acc_1_settings" id="weight_stocks_settings">Kilograms</span>
             <span class="acc_1_settings" id="meter_stocks_settings">Meters</span>
             <span class="acc_1_settings" id="quantity_stocks_settings">Litres</span>
-            <img id="addoption_quantity_stocks_settings" src="../Media/addOption.svg" alt="">
+            <!-- <img id="addoption_quantity_stocks_settings" src="../Media/addOption.svg" alt=""> -->
            </div>
            <div>
-               <img id="realstocksadd_stocks_settings" src="../Media/realstocksadd.svg" alt="">
+               <!-- <img id="realstocksadd_stocks_settings" src="../Media/realstocksadd.svg" alt=""> -->
            </div>
            <div class="savebtn_div_settings">
             <button id="savebtn_stocks_settings">Save changes</button>
@@ -733,19 +725,19 @@
   bar_graph_analytics_2.canvas_height = analytic_graph_height;
   bar_graph_analytics_2.plot()
 
-  let bar_graph_analytics_3 = new JGraph('bar' , 'analytics_graph_2',  ['MON' ,'WED', 'TUES' , 'THUR' , 'FRI', 'SAT' , 'SUN'] , [130 , 300 , 100,200,300,400, 450])
+  let bar_graph_analytics_3 = new JGraph('pie' , 'analytics_graph_2',  ['MON' ,'WED', 'TUES' , 'THUR' , 'FRI', 'SAT' , 'SUN'] , [130 , 300 , 100,200,300,400, 450])
   bar_graph_analytics_3.style = "lightV"
   bar_graph_analytics_3.canvas_width = analytic_graph_width;
   bar_graph_analytics_3.canvas_height = analytic_graph_height;
   bar_graph_analytics_3.plot()
 
-  let bar_graph_analytics_4 = new JGraph('bar' , 'analytics_graph_3',  ['MON' ,'WED', 'TUES' , 'THUR' , 'FRI', 'SAT' , 'SUN'] , [130 , 300 , 100,200,300,400, 450])
+  let bar_graph_analytics_4 = new JGraph('lines' , 'analytics_graph_3',  ['MON' ,'WED', 'TUES' , 'THUR' , 'FRI', 'SAT' , 'SUN'] , [130 , 300 , 100,200,300,400, 450])
   bar_graph_analytics_4.style = "lightV"
   bar_graph_analytics_4.canvas_width = analytic_graph_width;
   bar_graph_analytics_4.canvas_height = analytic_graph_height;
   bar_graph_analytics_4.plot()
   
-  let bar_graph_analytics_5 = new JGraph('bar' , 'analytics_graph_4',  ['MON' ,'WED', 'TUES' , 'THUR' , 'FRI', 'SAT' , 'SUN'] , [130 , 300 , 100,200,300,400, 450])
+  let bar_graph_analytics_5 = new JGraph('pie' , 'analytics_graph_4',  ['MON' ,'WED', 'TUES' , 'THUR' , 'FRI', 'SAT' , 'SUN'] , [130 , 300 , 100,200,300,400, 450])
   bar_graph_analytics_5.style = "lightV"
   bar_graph_analytics_5.canvas_width = analytic_graph_width;
   bar_graph_analytics_5.plot()

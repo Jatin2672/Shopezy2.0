@@ -219,6 +219,11 @@ function userSettingsUpdate() {
     if(userSettingsData.address != ""){
         document.getElementById("address_store_txt_home").innerHTML = userSettingsData.address
     }
+    if(userSettingsData.profile_pic_url != ""){
+        document.getElementById("user_profile_home").src = userSettingsData.profile_pic_url
+        document.getElementById("photo_shop_badge").src = userSettingsData.profile_pic_url
+        document.getElementById("account_setting_profile_pic").src = userSettingsData.profile_pic_url
+    }
 }
 
 function changePage(pageNumber) {
