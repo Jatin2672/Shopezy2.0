@@ -205,9 +205,17 @@ function changeLanguage(languageName) {
 function userSettingsUpdate() {
     if (userSettingsData.email != "") {
         document.getElementById("email_shop_badge").innerHTML = userSettingsData.email
+        document.getElementById("email_store_txt_home").innerHTML = userSettingsData.email
     }
     if (userSettingsData.bussiness_name != "") {
         document.getElementById("name_shop_badge").innerHTML = userSettingsData.bussiness_name
+        document.getElementById("store_name_txt_home").innerHTML = userSettingsData.bussiness_name
+    }
+    if(userSettingsData.mobile != ""){
+        document.getElementById("mobile_store_txt_home").innerHTML = userSettingsData.mobile
+    }
+    if(userSettingsData.address != ""){
+        document.getElementById("address_store_txt_home").innerHTML = userSettingsData.address
     }
 }
 
@@ -459,7 +467,7 @@ function addItemsToStockTable() {
     let no_of_row_added = 0
     stock_out_table.innerHTML = ""
     for(let i = 0; i < all_items_in_stocks.length; i++){
-        if(all_items_in_stocks[i].quantity - all_items_in_stocks[i].sold_quantity < 10 && no_of_row_added<10){
+        if(all_items_in_stocks[i].quantity - all_items_in_stocks[i].sold_quantity < 10 && no_of_row_added<9){
         html_to_add2 += `<tr>
         <td>${[all_items_in_stocks[i].product_name]}</td>
         <td>${[all_items_in_stocks[i].barcode]}</td>
