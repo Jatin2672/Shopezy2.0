@@ -1,5 +1,5 @@
 {
-    "settings_page_text":{
+    "settings_title_txt":{
         "hi":"सेटिंग्स",
         "en":"Settings"
     },
@@ -99,6 +99,6 @@
     "add_local_passcode_btn":{
         "hi":"स्थानीय पासकोड जोड़ें",
         "en":"Add Local Passcode"
-    },
-    ""
+    }
+    
 }
