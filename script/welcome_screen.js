@@ -3,6 +3,8 @@ const { ipcRenderer } = require('electron');
 const fs = require('fs');
 let languageData , settingsData
 
+let profile_pic_url = "../media/userphoto.png"
+
 
 // ----------------------------------------------------------------------------------------
 let bussiness_category_inpt, email_inpt, bussiness_name_inpt,
@@ -32,6 +34,40 @@ window.addEventListener("DOMContentLoaded", () => {
         console.log(settingsData)
     });
 
+// ----------------------
+let imgDiv = document.getElementById('dpContainer');
+let img = document.getElementById('photo');
+let file = document.getElementById('file');
+let uploadBtn = document.getElementById('uploadBtn');
+let CamUpl_btn = document.getElementById("Cam_btn");
+
+imgDiv.addEventListener('mouseenter', ()=>{
+    uploadBtn.style.display = "block";
+});
+
+
+imgDiv.addEventListener('mouseleave', ()=>{
+    uploadBtn.style.display = "none";
+});
+file.addEventListener('change',function(){
+    const chooseFile=this.files[0];
+
+    if(chooseFile){
+        const reader = new FileReader();
+
+        reader.addEventListener('load',()=>{
+            img.setAttribute('src',reader.result);
+            profile_pic_url = reader.result;
+        });
+        reader.readAsDataURL(chooseFile)
+    }
+})
+// ----------------------
+// CamUpl_btn.addEventListener('click',()=>{
+//     file.click()
+// })
+// ----------------------
+
     // --------------------Validate fn ----------------------------
     bussiness_category_inpt=document.getElementById("bussiness_type_regPage")
     email_inpt=document.getElementById("email_regPage")
@@ -53,7 +89,8 @@ window.addEventListener("DOMContentLoaded", () => {
             mobile=mobile_inpt.value
             bussiness_owner_name=bussiness_owner_name_inpt.value
 
-            registerUser(bussiness_name, bussiness_category ,email , mobile ,address , bussiness_owner_name , "");
+            registerUser(bussiness_name, bussiness_category ,email , mobile ,address , bussiness_owner_name , profile_pic_url);
+
 
             ipcRenderer.send('welcome:register');
         }

@@ -107,6 +107,48 @@ body{
     margin-top: 147px;
     margin-left: 228px;
 }
+/* ---------------------------------------- */
+
+#dpContainer{
+    position: absolute;
+    margin-top: 147px;
+    margin-left: 228px;
+    height: 95px;
+    width: 95px;
+    border: 1px solid #222428;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#photo{
+    height: 100%;
+    width: 100%;
+}
+#file{
+    display: none;
+}
+#uploadBtn{
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.541);
+    color: wheat;
+    line-height: 100px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
+#Cam_btn{
+    position: relative;
+    /* top: ; */
+    z-index: 4;
+}
+/* ---------------------------------------- */
+
 .accountinfo_text{
     color: #EEEEEE;
     display: block;
