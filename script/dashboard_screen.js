@@ -28,8 +28,9 @@ yes_btn_cnfrm_addItm , no_btn_cnfrm_addItm
 
 let connect_android_btn_home , disconnect_android_btn_home , connect_to_android_page , close_connect_client_btn
 
-let mini_invoice_history , stock_out_table
-let add_itm_subpage_main
+let mini_invoice_history , stock_out_table, add_itm_subpage_main
+
+let Enable_product_detail , remind_product_unavailability
 
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
@@ -138,6 +139,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     add_itm_subpage_main = document.getElementById("add_itm_subpage_main")
 
+    Enable_product_detail = document.getElementById("Enable_product_detail")
+    Enable_product_detail.addEventListener("click", () => {
+        toogleButtonFun("Enable_product_detail_svg")
+    });
+    remind_product_unavailability = document.getElementById("remind_product_unavailability")
+    remind_product_unavailability.addEventListener("click", () => {
+        toogleButtonFun("remind_product_unavailability_svg")
+    });
 
     // a small delay for data to be added to tables
     setTimeout(() => {
@@ -658,4 +667,20 @@ function toAppendItemToAddStockItemCard(barcode_item_received){
     </div>
   </div>`
   add_itm_subpage_main.innerHTML += html_to_append
+}
+
+function toogleButtonFun(svgId){
+    let toggleButton = document.getElementById(svgId)
+    if(toggleButton.classList.contains("toggle_btn_off")){
+        toggleButton.classList.remove("toggle_btn_off")
+        toggleButton.classList.add("toggle_btn_on")
+        toggleButton.getElementsByTagName("circle")[0].style.fill = "#4087F3"
+        toggleButton.getElementsByTagName("circle")[0].setAttribute("cx", "46")
+        
+    }else{
+        toggleButton.classList.remove("toggle_btn_on")
+        toggleButton.classList.add("toggle_btn_off")
+        toggleButton.getElementsByTagName("circle")[0].style.fill = "#6B6B6B"
+        toggleButton.getElementsByTagName("circle")[0].setAttribute("cx", "14")
+    }
 }
