@@ -8,6 +8,8 @@
   <title>ShopEzy - Home</title>
   <link rel="stylesheet" href="../style/dashboardscreen.css" />
   <script src="../script/qrcode.min.js"></script>
+  <script src="../script/p5.js"></script>
+  <script src="../script/JGraph.js"></script>
 </head>
 
 <body>
@@ -133,14 +135,6 @@
                   </tr>
                 </thead>
                 <tbody id="stock_out_table">
-                  <tr>
-                    <td>Poha</td>
-                    <td>19883837</td>
-                  </tr>
-                  <tr>
-                    <td>Toy</td>
-                    <td>12839477</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -188,8 +182,7 @@
                 </div>
               </div>
             </div>
-            <div id="home_page_graph" class="debug">
-              some sort of graph goes here
+            <div id="home_page_graph">
             </div>
           </div>
         </div>
@@ -560,6 +553,15 @@
       runtimes++;
     }
   });
+  let parent_graph_home = document.getElementById("home_page_graph");
+  let bar_graph_home_width = parent_graph_home.getBoundingClientRect().width;
+  // draw graphs on home and other pages
+  let bar_graph_home = new JGraph('bar' , 'home_page_graph',  ['MON' ,'WED', 'TUES' , 'THUR' , 'FRI', 'SAT' , 'SUN'] , [130 , 300 , 100,200,300,400, 450])
+  bar_graph_home.style = "light"
+  bar_graph_home.canvas_width = bar_graph_home_width;
+  bar_graph_home.canvas_height = 200;
+  bar_graph_home.background= "#EAEAEA"
+  bar_graph_home.plot()
 </script>
 
 </html>

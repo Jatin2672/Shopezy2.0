@@ -618,6 +618,7 @@ function deviceConnectedSuccess(deviceName){
     disconnect_android_btn_home.style.display = "flex"
 }
 let allItemToAppendToStock = {}
+
 function addAllItemToStockPage(barcode_item_received){
     let barcode_item_data = {
         "item_name": " ",
