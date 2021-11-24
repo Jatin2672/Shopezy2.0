@@ -1181,28 +1181,28 @@ margin-bottom: 20px;
     /* display: flex; */
 }
 #info_accountant1_invoice_settings{
-    display:flex;
-    margin-left: 60px;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    padding: 15px;
 }
 
-
-
 #info_accountant2_invoice_settings{
-    display: flex;
-    margin-left: 60px;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    padding: 15px;
 }
 
 #info_accountant3_invoice_settings{
-    display:flex;
-    margin-left: 60px;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    padding: 15px;
 }
 #signature_directors1_invoice_settings{
     background: #EEEEEE;
     border-radius: 12px;
-    margin-left: 194px;
     width: 215px;
     /* height: 56px; */
     text-align: center;
@@ -1211,7 +1211,6 @@ margin-bottom: 20px;
 #signature_directors2_invoice_settings{
     background: #EEEEEE;
     border-radius: 12px;
-    margin-left: 180px;
     width: 215px;
     /* height: 56px; */
     text-align: center;
@@ -1220,14 +1219,14 @@ margin-bottom: 20px;
 #signature_directors3_invoice_settings{
     background: #EEEEEE;
     border-radius: 12px;
-    margin-left: 180px;
     width: 215px;
     /* height: 56px; */
     text-align: center;
     padding: 15px;
 }
-.director_option_invoice_settings{
-    margin-left: 200px;
+.director_option_invoice_settings:hover{
+    cursor: pointer;
+    animation: bounce 2s ease-in-out infinite;
 }
 #newaccountdirector_invoice_settings{
     margin-top: 45px;
