@@ -93,6 +93,7 @@ window.addEventListener("DOMContentLoaded", () => {
     home_page = document.getElementById("home_page")
     invoice_page = document.getElementById("invoice_page")
     analytics_page = document.getElementById("analytics_page")
+    analytics_page.style.display = "none"
     stocks_page = document.getElementById("stocks_page")
     transaction_page = document.getElementById("transactions_page")
     settings_page = document.getElementById("settings_page")
@@ -254,7 +255,7 @@ function changePage(pageNumber) {
         case 2:
             analytics_page.animate([{ opacity: 0 }, { opacity: 1 }
             ], { duration: 500, })
-            analytics_page.style.display = "flex"
+            analytics_page.style.display = "grid"
             break
         case 3:
             stocks_page.animate([{ opacity: 0 }, { opacity: 1 }
