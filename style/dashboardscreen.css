@@ -970,8 +970,9 @@ margin-bottom: 20px;
     font-size: 18px;
     font-weight: 700;
 }
-.threeDot_option_card{
+.threeDot_option_card:hover{
     cursor: pointer;
+    animation: bounce 2s ease-in-out infinite;
 }
 .discount_card_invo{
     color: #4087F3;

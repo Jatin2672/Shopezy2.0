@@ -190,6 +190,8 @@ window.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    midBtnaction();
+
 })
 
 
@@ -364,6 +366,44 @@ function changeSettingsPage(pageNumber) {
     selectedSettingsPage = pageNumber
 }
 
+// ------------------------------- MID Btn function --------------------------------------------
+
+function midBtnaction(){
+    let invo_mid_btn=document.getElementById("invo_mid_btn")
+    let stock_mid_btn=document.getElementById("stock_mid_btn")
+    let search_mid_btn=document.getElementById("search_mid_btn")
+    let analytics_mid_btn=document.getElementById("analytics_mid_btn")
+    let edit_account_icon_home=document.getElementById("edit_account_icon_home")
+    
+    let invoice_btn=document.getElementById("invoice_btn")
+    let analytics_btn=document.getElementById("analytics_btn")
+    let stocks_btn=document.getElementById("stocks_btn")
+    let transaction_btn=document.getElementById("transaction_btn")
+    let settings_btn=document.getElementById("settings_btn")
+    let account_setting_btn=document.getElementById("account_setting_btn")
+    
+    invo_mid_btn.addEventListener('click',()=>{
+    invoice_btn.click();
+    })
+    stock_mid_btn.addEventListener('click',()=>{
+    stocks_btn.click();
+    })
+    search_mid_btn.addEventListener('click',()=>{
+    transaction_btn.click();
+    })
+    analytics_mid_btn.addEventListener('click',()=>{
+    analytics_btn.click();
+    })
+    edit_account_icon_home.addEventListener('click',()=>{
+    settings_btn.click();
+    setTimeout(() => {
+        account_setting_btn.click();
+    }, 1000);
+    })
+    
+}
+
+// ------------------------------- MID Btn --------------------------------------------
 function addStockButtonClick() {
     add_stock_btn.addEventListener("click", function () {
         model_box_container.style.display = "block"
