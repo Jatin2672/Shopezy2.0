@@ -142,7 +142,11 @@ body{
     cursor: pointer;
     display: none;
 }
-
+#Cam_btn{
+    position: relative;
+    /* top: ; */
+    z-index: 4;
+}
 /* ---------------------------------------- */
 
 .accountinfo_text{

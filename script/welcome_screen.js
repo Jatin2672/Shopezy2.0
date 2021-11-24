@@ -39,7 +39,7 @@ let imgDiv = document.getElementById('dpContainer');
 let img = document.getElementById('photo');
 let file = document.getElementById('file');
 let uploadBtn = document.getElementById('uploadBtn');
-
+let CamUpl_btn = document.getElementById("Cam_btn");
 
 imgDiv.addEventListener('mouseenter', ()=>{
     uploadBtn.style.display = "block";
@@ -62,7 +62,10 @@ file.addEventListener('change',function(){
         reader.readAsDataURL(chooseFile)
     }
 })
-
+// ----------------------
+// CamUpl_btn.addEventListener('click',()=>{
+//     file.click()
+// })
 // ----------------------
 
     // --------------------Validate fn ----------------------------
