@@ -3,7 +3,7 @@ const { ipcMain, app, BrowserWindow, nativeTheme } = require("electron")
 const path = require("path")
 const fs = require("fs")
 
-let welcomeWindow , dashboardWindow , passcodeWindow
+let welcomeWindow , dashboardWindow , passcodeWindow , invoicePreviewWindow
 var registeredState , hasPasscode
 
 
@@ -58,6 +58,23 @@ function createPasscodeWindow() {
   passcodeWindow.loadFile("pages/passcode.html");
 }
 
+function createInvoicePreviewWindow() {
+  // Create the browser window.
+  invoicePreviewWindow = new BrowserWindow({
+    width: 1280,
+    height: 720,
+    minWidth: 1280,
+    minHeight: 720,
+    webPreferences: {
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      preload: path.join(__dirname, "script/invoice_screen.js"),
+    },
+  });
+  invoicePreviewWindow.removeMenu()
+  invoicePreviewWindow.loadFile("pages/invoice_screen.html");
+}
+
 //when app is ready check if user is already registered
 app.whenReady().then(() => { 
   checkRegisteredState()
@@ -83,6 +100,11 @@ function checkRegisteredState() {
         }
   })
 }
+
+ipcMain.on("preview_invoice" , (e , invoice_number) => {
+  createInvoicePreviewWindow()
+  invoicePreviewWindow.webContents.send("invoice_number" , invoice_number)
+})
 
 ipcMain.on("passcode:authenticated" , ()=>{
   createDashboardWindow()
