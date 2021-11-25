@@ -94,7 +94,6 @@ function loadItemData(invoice_id) {
             console.log(err.message);
             return;
         }
-        console.log(row)
         htmlDataToInsert += `<tr>
         <td>${[i]}</td>
         <td>${[row.name]}</td>
@@ -121,7 +120,7 @@ function loadCustomerData(id){
             return;
         }
         if(row){
-            document.getElementById("customer_name").innerHTML = row.name
+        document.getElementById("customer_name").innerHTML = row.name
         document.getElementById("customer_email").innerHTML += row.email
         document.getElementById("customer_phone").innerHTML += row.phone_number
         }        
