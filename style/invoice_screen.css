@@ -1,0 +1,189 @@
+body{
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    margin: 0%;
+}
+.debug{
+    border: 2px double #ff00ea99;
+}
+#top_menu_bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 10px;
+    color: #fff;
+    font-size: 20px;
+    height: 50px;
+}
+#edit_icon{
+    margin-right: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    margin: 0px 10px;
+    background-color: #fff;
+}
+#edit_icon:hover{
+    cursor: pointer;
+    filter: invert(100%);
+}
+#delete_icon{
+    margin-right: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ff0000;
+    margin: 0px 10px;
+    background-color: #fff;
+}
+#delete_icon:hover{
+    cursor: pointer;
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+#settings_icon{
+    margin-right: 20px;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    margin: 0px 10px;
+    background-color: #fff;
+}
+#settings_icon:hover{
+    cursor: pointer;
+    filter: invert(100%);
+}
+#print_btn{
+    background-color: rgb(58, 150, 255);
+    padding: 10px;
+    border-radius: 4px;
+    border:none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0px 10px;
+}
+#print_btn:hover{
+    cursor: pointer;
+    background-color: #000;
+}
+#print_icon{
+    margin-right: 15px;
+}
+#share_btn{
+    background-color: rgb(58, 150, 255);
+    padding: 10px;
+    border-radius: 4px;
+    border:none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0px 10px;
+}
+#share_btn:hover{
+    cursor: pointer;
+    background-color: #000;
+}
+#share_icon{
+    margin-right: 15px;
+}
+#Invoice_container{
+    background-color: #d0ecff;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: auto;
+    height: calc(100vh - 60px);
+    width: 99.7%;
+    justify-content: center;
+    
+}
+#invoice_page{
+    width: 210mm;
+    height: auto;
+    background-color: #fff;
+    display: block;
+}
+#heading_invoice{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    margin-top: 3mm;
+}
+#shop_profile_pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 1px solid #000;
+}
+#shop_info1{
+    display: flex;
+    width: 80mm;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+#shop_address{
+   font-size: 3mm;
+}
+#shop_name{
+    font-size: 4mm;
+}
+#shop_address_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#shop_Mail{
+    font-size: 3mm;
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    width: 50mm;
+    justify-content: space-around;
+}
+#email_shop{
+    padding: 10px;
+}
+#shop_phone{
+    width: 40mm;
+    font-size: 3mm;
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#phone_shop{
+    padding: 10px;
+}
+.side_lines{
+    width: 8mm;
+    display: block;
+}
+.side_lines hr{
+    width: 8mm;
+    height: 2mm;
+    background-color: #2F2F2F;
+    color: 2F2F2F;
+}
+#side_lines1{
+    margin-left: -1mm;
+}
+#side_lines2{
+    margin-right: -1mm;
+}
+.grey_hr{
+    background-color: #4F4F4F !important;
+    color: #4F4F4F !important;
+}
