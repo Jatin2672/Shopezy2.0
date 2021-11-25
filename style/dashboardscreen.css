@@ -1499,8 +1499,9 @@ margin-bottom: 20px;
     grid-template-columns: 1fr;
 }
 .update_item_card{
+    background-color: var(--gray_card);
     margin: auto;
-    width: 50%;
+    width: 400px;
     border: 1px solid var(--transparent-color);
     color: white;
     padding: 2% 5%;
@@ -1539,4 +1540,19 @@ margin-bottom: 20px;
     cursor: pointer;
 }
 
+.button_upd_itm{
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: calc(50% - 140px);
+    cursor: pointer;
+}
+#update_stock_item{
+    color: var(--white);
+    background-color: var(--darkBlack);
+}
+#discard_and_close{
+    background-color: var(--yes_btn);
+}
 /* ------------------------------- Update Stock ends ---------------------------- */

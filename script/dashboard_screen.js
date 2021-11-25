@@ -37,6 +37,8 @@ let preview_btn_invoice_page
 
 let profile_pic_url
 
+let updateModelBox
+
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -145,6 +147,7 @@ window.addEventListener("DOMContentLoaded", () => {
     stock_out_table = document.getElementById("stock_out_table")
 
     add_itm_subpage_main = document.getElementById("add_itm_subpage_main")
+    updateModelBox = document.getElementById("update_itm_subpage_main")
 
     Enable_product_detail = document.getElementById("Enable_product_detail")
     Enable_product_detail.addEventListener("click", () => {
@@ -203,37 +206,37 @@ window.addEventListener("DOMContentLoaded", () => {
         ipcRenderer.send("preview_invoice", "3")
     })
 
-// ------------------------------------------------------- Setting Account image ---------------------------------------------------
+    // ------------------------------------------------------- Setting Account image ---------------------------------------------------
 
-let renderImgdiv=document.getElementById("renderImg_acc_settings")
-let Image_of_user=document.getElementById("Dp_img_select_accSet")
-let file=document.getElementById("file_acc_setting")
-let Upload_btn=document.getElementById("Upload_btn_acc_setting")
-let remove_btn=document.getElementById("remove_btn_acc_setting")
+    let renderImgdiv = document.getElementById("renderImg_acc_settings")
+    let Image_of_user = document.getElementById("Dp_img_select_accSet")
+    let file = document.getElementById("file_acc_setting")
+    let Upload_btn = document.getElementById("Upload_btn_acc_setting")
+    let remove_btn = document.getElementById("remove_btn_acc_setting")
 
-Upload_btn.addEventListener('click',()=>{
-    file.click()
-})
+    Upload_btn.addEventListener('click', () => {
+        file.click()
+    })
 
-file.addEventListener('change',function(){
-    const chooseFile=this.files[0];
+    file.addEventListener('change', function () {
+        const chooseFile = this.files[0];
 
-    if(chooseFile){
-        const reader = new FileReader();
+        if (chooseFile) {
+            const reader = new FileReader();
 
-        reader.addEventListener('load',()=>{
-            Dp_img_select_accSet.setAttribute('src',reader.result);
-            profile_pic_url = reader.result;
-        });
-        reader.readAsDataURL(chooseFile)
-    }
-})
+            reader.addEventListener('load', () => {
+                Dp_img_select_accSet.setAttribute('src', reader.result);
+                profile_pic_url = reader.result;
+            });
+            reader.readAsDataURL(chooseFile)
+        }
+    })
 
-remove_btn.addEventListener('click',()=>{
-    profile_pic_url="../media/userphoto.png";
-    Dp_img_select_accSet.setAttribute('src',profile_pic_url);
-})
-// --------------------------------------------------- Setting Account image ----------------------------------------------
+    remove_btn.addEventListener('click', () => {
+        profile_pic_url = "../media/userphoto.png";
+        Dp_img_select_accSet.setAttribute('src', profile_pic_url);
+    })
+    // --------------------------------------------------- Setting Account image ----------------------------------------------
 
 })
 
@@ -242,7 +245,11 @@ remove_btn.addEventListener('click',()=>{
 function changeLanguage(languageName) {
     // loop all the key 
     for (let key in languageData) {
-        document.getElementById(key).innerHTML = languageData[key][languageName]
+        try {
+            document.getElementById(key).innerHTML = languageData[key][languageName]
+        } catch (error) {
+            console.log(key)
+        }
     }
 }
 
@@ -539,7 +546,7 @@ function addItemsToStockTable() {
     let html_to_add = ""
     stock_table_body.innerHTML = ""
     for (let i = 0; i < all_items_in_stocks.length; i++) {
-        html_to_add += `<tr>
+        html_to_add += `<tr id="${[all_items_in_stocks[i].barcode]}item">
         <td>${[all_items_in_stocks[i].barcode]}</td>
         <td>${[all_items_in_stocks[i].product_name]}</td>
         <td>${[all_items_in_stocks[i].cost_price]}</td>
@@ -552,6 +559,14 @@ function addItemsToStockTable() {
         </tr>`
     }
     stock_table_body.innerHTML = html_to_add
+
+    for (let i = 0; i < all_items_in_stocks.length; i++) {
+        document.getElementById(`${[all_items_in_stocks[i].barcode]}item`)
+            .addEventListener("click", () => {
+                openItemUpdateDialog(all_items_in_stocks[i].barcode, all_items_in_stocks[i].product_name, all_items_in_stocks[i].cost_price, all_items_in_stocks[i].selling_price, all_items_in_stocks[i].quantity - all_items_in_stocks[i].sold_quantity)
+            })
+    }
+
     let html_to_add2 = ""
     let no_of_row_added = 0
     stock_out_table.innerHTML = ""
@@ -566,6 +581,64 @@ function addItemsToStockTable() {
         }
     }
     stock_out_table.innerHTML = html_to_add2
+}
+
+
+function openItemUpdateDialog(barcode, name, price, sellPrice, quantity) {
+    model_box_container.style.display = "block"
+    updateModelBox.style.display = "flex"
+    document.getElementById("upd_item_barcode").innerHTML = barcode
+    document.getElementById("upd_itm_prod_name").value = name
+    document.getElementById("upd_cost_price").value = price
+    document.getElementById("upd_sell_price").value = sellPrice
+    document.getElementById("quantity_in_stock").value = quantity
+
+    document.getElementById("discard_and_close")
+        .removeEventListener("click", () => { })
+    document.getElementById("discard_and_close")
+        .addEventListener("click", () => {
+            model_box_container.style.display = "none"
+            updateModelBox.style.display = "none"
+        })
+    document.getElementById("update_stock_item")
+        .removeEventListener("click", () => { })
+    document.getElementById("update_stock_item")
+        .addEventListener("click", () => {
+            updateDataFromModelBox()
+            model_box_container.style.display = "none"
+            updateModelBox.style.display = "none"
+        })
+
+    document.getElementById("upd_itm_delete")
+    .addEventListener("click" , ()=>{
+        deleteItemFromStock(barcode)
+        model_box_container.style.display = "none"
+        updateModelBox.style.display = "none"
+    })
+
+}
+
+function updateDataFromModelBox() {
+    let barcode = document.getElementById("upd_item_barcode").innerHTML
+    let prod_name = document.getElementById("upd_itm_prod_name").value
+    let cp = document.getElementById("upd_cost_price").value
+    let sp = document.getElementById("upd_sell_price").value
+    let qty = document.getElementById("quantity_in_stock").value
+    let soldQty = 0
+    let dates = (new Date()).getTime()
+    updateStockData(barcode, prod_name, cp, sp, qty, soldQty, dates)
+    alert("updated Reload Page To See Effect")
+}
+
+function updateStockData(barcode, prod_name, cp, sp, qty, soldQty, date) {
+
+    // update data in stockitem table
+    db.run(`UPDATE stockitem SET product_name = "${[prod_name]}",
+     cost_price = ${[cp]}, selling_price = ${[sp]},
+     quantity = ${[qty]}, sold_quantity = ${[soldQty]},
+     date_added = ${[date]}
+     WHERE barcode = ${[barcode]}`)
+
 }
 
 // function get all item from stock in ascending order of date added
@@ -612,11 +685,11 @@ function addItemsToInvoiceHistoryTable() {
     console.log(html_to_add)
     invoice_his_table_body.innerHTML = html_to_add
 
-    for(let i = 0; i < all_items_in_invoice.length; i++){
+    for (let i = 0; i < all_items_in_invoice.length; i++) {
         document.getElementById(`${[all_items_in_invoice[i].invoice_id]}invoice_row`)
-        .addEventListener("click",()=>{
-            ipcRenderer.send("preview_invoice" , all_items_in_invoice[i].invoice_id)
-        })
+            .addEventListener("click", () => {
+                ipcRenderer.send("preview_invoice", all_items_in_invoice[i].invoice_id)
+            })
     }
 
     let html_to_add2 = ""
