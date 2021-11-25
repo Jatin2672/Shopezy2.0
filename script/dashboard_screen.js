@@ -458,9 +458,6 @@ function addConnectButtonClick(){
     })
 }
 
-// import sql
-const sql = require('sqlite3').verbose()
-
 // connect to database
 const sqlite3 = require("sqlite3").verbose();
 

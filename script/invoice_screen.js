@@ -25,6 +25,10 @@ window.addEventListener('DOMContentLoaded' , () => {
         printToPDF()
     })
 
+    ipcRenderer.on('invoice_number' , (e, invoice_number) => {
+        loadDataForInvoice(invoice_number)
+    })
+
 })
 
 
@@ -44,4 +48,18 @@ function changeLanguage(languageName) {
     for (let key in languageData) {
         document.getElementById(key).innerHTML = languageData[key][languageName]
     }
+}
+
+// connect to database
+const sqlite3 = require("sqlite3").verbose();
+
+let db = new sqlite3.Database("database/masterDatabase.db", (err) => {
+    if (err) {
+        console.log(err.message);
+    }
+    console.log("connected to database");
+});
+
+function loadDataForInvoice(invoice_number) {
+    
 }
