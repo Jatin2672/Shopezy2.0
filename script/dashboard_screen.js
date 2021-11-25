@@ -39,6 +39,8 @@ let profile_pic_url
 
 let updateModelBox
 
+let savebtn_account_settings
+
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -148,6 +150,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     add_itm_subpage_main = document.getElementById("add_itm_subpage_main")
     updateModelBox = document.getElementById("update_itm_subpage_main")
+    savebtn_account_settings = document.getElementById("savebtn_account_settings")
 
     Enable_product_detail = document.getElementById("Enable_product_detail")
     Enable_product_detail.addEventListener("click", () => {
@@ -204,6 +207,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     preview_btn_invoice_page.addEventListener("click", () => {
         ipcRenderer.send("preview_invoice", "3")
+    })
+
+    savebtn_account_settings.addEventListener("click", () => {
+        updateSettings()
+        alert("Successfully Updated ! Refresh to see changes")
     })
 
     // ------------------------------------------------------- Setting Account image ---------------------------------------------------
@@ -858,4 +866,18 @@ function toogleButtonFun(svgId) {
         toggleButton.getElementsByTagName("circle")[0].style.fill = "#6B6B6B"
         toggleButton.getElementsByTagName("circle")[0].setAttribute("cx", "14")
     }
+}
+
+function updateSettings(){
+    userSettingsData.profile_pic_url = profile_pic_url
+    userSettingsData.bussiness_name = document.getElementById("account_setting_shop_name").value
+    userSettingsData.bussiness_category = document.getElementById("bussiness_category_acc").value
+    userSettingsData.address = document.getElementById("addressinput_account_settings").value
+    userSettingsData.mobile = document.getElementById("account_setting_shop_mobile").value
+    userSettingsData.email = document.getElementById("account_setting_shop_email").value
+
+    fs.writeFile("./settings/usersettings.json", JSON.stringify(userSettingsData), (err) => {
+        if (err) throw err
+        console.log("The file has been saved!")
+    })
 }

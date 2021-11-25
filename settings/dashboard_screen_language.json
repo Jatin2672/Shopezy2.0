@@ -1,575 +1,578 @@
 {
-    "shopezy_side_bar_txt":{
-        "en" : "shopEzy",
-        "hi" : "शॉपइजी"
+    "shopezy_side_bar_txt": {
+        "en": "shopEzy",
+        "hi": "शॉपइजी"
     },
-    "home_side_bar_txt":{
-        "en" : "Home",
-        "hi" : "होम"
+    "home_side_bar_txt": {
+        "en": "Home",
+        "hi": "होम"
     },
-    "invoice_side_bar_txt":{
-        "en" : "Invoice",
-        "hi" : "चालान"
+    "invoice_side_bar_txt": {
+        "en": "Invoice",
+        "hi": "चालान"
     },
-    "analytics_side_bar_txt":{
-        "en" : "Analytics",
-        "hi" : "विश्लेषण"
+    "analytics_side_bar_txt": {
+        "en": "Analytics",
+        "hi": "विश्लेषण"
     },
-    "stocks_side_bar_txt":{
-        "en" : "Stocks",
-        "hi" : "स्टॉक्स"
+    "stocks_side_bar_txt": {
+        "en": "Stocks",
+        "hi": "स्टॉक्स"
     },
-    "transaction_side_bar_txt":{
-        "en" : "Transactions",
-        "hi" : "लेनदेन"
+    "transaction_side_bar_txt": {
+        "en": "Transactions",
+        "hi": "लेनदेन"
     },
-    "settings_side_bar_txt":{
-        "en" : "Settings",
-        "hi" : "सेटिंग्स"
+    "settings_side_bar_txt": {
+        "en": "Settings",
+        "hi": "सेटिंग्स"
     },
-    "account_setting_btn":{
-        "en" : "Account ",
-        "hi" : "खाता"
+    "account_setting_btn": {
+        "en": "Account ",
+        "hi": "खाता"
     },
-    "invoice_setting_btn":{
-        "en" : "Invoice ",
-        "hi" : "चालान"
+    "invoice_setting_btn": {
+        "en": "Invoice ",
+        "hi": "चालान"
     },
-    "analytics_setting_btn":{
-        "en" : "Analytics ",
-        "hi" : "विश्लेषण"
+    "analytics_setting_btn": {
+        "en": "Analytics ",
+        "hi": "विश्लेषण"
     },
-    "stocks_setting_btn":{
-        "en" : "Stocks ",
-        "hi" : "स्टॉक्स"
+    "stocks_setting_btn": {
+        "en": "Stocks ",
+        "hi": "स्टॉक्स"
     },
-    "personalization_setting_btn":{
-        "en" : "Personalization ",
-        "hi" : "निजीकरण"
+    "personalization_setting_btn": {
+        "en": "Personalization ",
+        "hi": "निजीकरण"
     },
-   "mobile_client_txt":{
-       "en" : "Connect to Android Mobile Client 123@1991",
-       "hi" : "Android मोबाइल क्लाइंट से कनेक्टेड 123@1991"
-   }, 
-    "Add_itm_btn" : {
-        "en" : "Add Item",
-        "hi" : "सामान जोडें"
+    "mobile_client_txt": {
+        "en": "Connect to Android Mobile Client 123@1991",
+        "hi": "Android मोबाइल क्लाइंट से कनेक्टेड 123@1991"
     },
-    "barcode_stocks_txt" : {
-        "en" : "BARCODE",
-        "hi" : "बारकोड"
-    },"prod_name_stock_txt":{
-        "en":"PRODUCT NAME",
-        "hi":"प्रोडक्ट का नाम"
+    "Add_itm_btn": {
+        "en": "Add Item",
+        "hi": "सामान जोडें"
     },
-    "cost_price_txt":{
+    "barcode_stocks_txt": {
+        "en": "BARCODE",
+        "hi": "बारकोड"
+    },
+    "prod_name_stock_txt": {
+        "en": "PRODUCT NAME",
+        "hi": "प्रोडक्ट का नाम"
+    },
+    "cost_price_txt": {
         "en": "COST PRICE",
-        "hi":"लागत मूल्य"
-    },
-    "sell_price_txt":{
-        "en":"SELL PRICE",
-        "hi":"विक्रय मूल्य"
-    },
-    "profit_txt":{
-        "en":"PROFIT",
-        "hi":"फायदा"
-    },
-    "stoct_qty_txt":{
-        "en":"STOCK QTY",
-        "hi":"स्टॉक मात्रा"
-    },
-    "discount_off_txt":{
-        "en":"DISCOUNT OFF",
-        "hi":"छूट बंद"
-    },
-    "estm_sell_txt":{
-        "en":"ESTIMATED SELL",
-        "hi":"अनुमानित बिक्री"
-    },
-    "updt_on_txt":{
-        "en":"UPDATED ON",
-        "hi":"को अपडेट किया"
-    },
-    "timestamp_txt":{
-        "en":"TIMESTAMP",
-        "hi":"टाइमस्टैम्प"
-    },
-    "invoice_no_txt":{
-        "en":"INVOICE NUMBER",
-        "hi":"  इनवॉइस संख्या"
-    },
-    "custmer_name_txt":{
-        "en":"CUSTOMER'S NAME",
-        "hi":"ग्राहक का नाम"
-    },
-    "total_amnt_txt":{
-        "en":"TOTAL AMOUNT",
-        "hi":"कुल राशि"
-    },
-    "payment_method_txt":{
-        "en":"PAYMENT METHOD",
-        "hi":"भुगतान विधि"
-    },
-    "accountant_txt":{
-        "en":"ACCOUNTANT",
-        "hi":"मुनीम"
-    },
-    "settings_title_txt":{
-        "hi":"सेटिंग्स",
-        "en":"Settings"
-    },
-    "acc_settings":{
-        "hi":"अकाउंट",
-        "en":"Account"
-    },
-    "upl1_account_settings":{
-        "hi":"अपलोड",
-        "en":"Upload"
-    },
-    "remove_account_settings":{
-        "hi":"हटाए",
-        "en":"Remove"
-    },
-    "leftinfo_text1":{
-        "hi":"दुकान या व्यवसाय का नाम",
-        "en":"Shop or Bussiness Name"
-    },
-    "leftinfo_text2":{
-        "hi":"ईमेल",
-        "en":"Email"
-    },
-    "leftinfo_text3":{
-        "hi":"पता",
-        "en":"Address"
-    },
-    "rightinfo_text1":{
-        "hi":"दुकान या व्यवसाय के मालिक का नाम",
-        "en":"Shop or Bussiness owner’s Name"
-    },
-    "rightinfo_text2":{
-        "hi":"मोबाइल नंबर",
-        "en":"Mobile Number"
-    },
-    "rightinfo_text3":{
-        "hi":"व्यवसाय श्रेणी",
-        "en":"Bussiness Category"
-    },
-    "buisnessoption_settings_1":{
-        "hi":"पालतू जानवरों की दुकान",
-        "en":"Pet shop"
-    },
-    "buisnessoption_settings_2":{
-        "hi":"दवाओं",
-        "en":"Drugs"
-    },
-    "buisnessoption_settings_3":{
-        "hi":"किराना",
-        "en":"Grocery"
-    },
-    "buisnessoption_settings_4":{
-        "hi":"शराब",
-        "en":"Alchohol"
-    },
-    "label_account_settings_text":{
-        "hi":"रिक्वेस्ट वेरीफिकेशन",
-        "en":"Request Veryfication"
-    },
-    
-    "btn_account_settings_requestverification":{
-        "hi":"रिक्वेस्ट वेरीफिकेशन",
-        "en":"Request Veryfication"
-    },
-    "savebtn_account_settings":{
-        "hi":"परिवर्तनों को सुरक्षित करें",
-        "en":"Save changes"
-    },
-    "add_local_passcode_text":{
-        "hi":"स्थानीय पासकोड जोड़ें",
-        "en":"Add Local Passcode"
-    },
-    "add_local_passcode_paragraph":{
-        "hi":"एक स्थानीय पासकोड आपके खाते को अधिक सुरक्षित और निजी रखता है",
-        "en":"A local passcode keeps your account more secured and private"
-    },
-    "add_local_passcode_btn":{
-        "hi":"स्थानीय पासकोड जोड़ें",
-        "en":"Add Local Passcode"
-    },
-    "setting_invoice_heading_text":{
-        "hi":"इनवॉइस",
-        "en":"Invoice "
-    },
-    "setting_invoice_text_template":{
-        "hi":"टेम्पलेट",
-        "en":"Template"
-    },
-    "text_statement_invoice_settings":{
-        "hi":"भुगतान मोड स्वीकृत",
-        "en":"Payment Mode Accepted"
-    },
-    "credit_invoice_settings":{
-        "hi":"क्रेडिट कार्ड",
-        "en":"Credit Card"
-    },
-    "debit_invoice_settings":{
-        "hi":"डेबिट कार्ड",
-        "en":"Debit Card"
-    },
-    "Upi_invoice_settings":{
-        "hi":"यूपीआई भुगतान",
-        "en":"Upi Payment"
-    },
-    "cash_invoice_settings":{
-        "hi":"नकद भुगतान",
-        "en":"Cash Payment"
-    },
-    "invoice_accountantdirector_text":{
-        "hi":"लेखाकार निदेशक",
-        "en":"Accountant Director"
-    },
-    "annette_blact_text":{
-        "hi":"एनेट ब्लैक",
-        "en":"Annette Black"
-    },
-    "bessie_cooper_text":{
-        "hi":"बेस्सी कूपर",
-        "en":"Bessie Cooper"
-    },
-    "jacob_jones_text":{
-        "hi":"जैकब जोन्स",
-        "en":"Jacob Jones"
-    },
-    "newaccountdirector_invoice_settings":{
-        "hi":"नया लेखाकार निदेशक",
-        "en":"New Accountant Director"
-    },
-    "savebtn_invoice_settings":{
-        "hi":"परिवर्तनों को सुरक्षित करें",
-        "en":"Save changes"
-    },
-    "settings_stockes_heading_text":{
-        "hi":"स्टॉक्स",
-        "en":"Stocks"
-    },
-    "settings_stocks_fetchproductdetails":{
-        "hi":"सर्वर से उत्पाद विवरण प्राप्त करें",
-        "en":"Fetch Product Details From Server"
-    },
-    "settings_stocks_remindforunavailability":{
-        "hi":"उत्पाद अनुपलब्धता के लिए याद दिलाएं",
-        "en":"Remind  for product  unavailability"
-    },
-    "quantity_text_stocks_settings":{
-        "hi":"मात्रा",
-        "en":"Quantity"
-    },
-    "unit_stocks_settings":{
-        "hi":"यूनिट्स",
-        "en":"Units"
-    },
-    "weight_stocks_settings":{
-        "hi":"किलोग्राम",
-        "en":"Kilograms"
-    },
-    "meter_stocks_settings":{
-        "hi":"मीटर",
-        "en":"Meters"
-    },
-    "quantity_stocks_settings":{
-        "hi":"लीटर",
-        "en":"Litres"
-    },
-    "savebtn_stocks_settings":{
-        "hi":"परिवर्तनों को सुरक्षित करें",
-        "en":"Save changes"
-    },
-    "settings_personalisation_heading_text":{
-        "hi":"वैयक्तिकरण",
-        "en":"Personalisation"
-    },
-    "settings_personalisation_language_text":{
-        "hi":"भाषा",
-        "en":"Language"
-    },
-    "settings_personalisation_languageselect":{
-        "hi":"चुने",
-        "en":"Select"
-    },
-    "settings_personalisation_languageselect2":{
-        "hi":"अंग्रेज़ी",
-        "en":"English"
-    },
-    "settings_personalisation_languageselect1":{
-        "hi":"हिंदी",
-        "en":"Hindi"
-    },
-    "settings_personalisation_currency_text":{
-        "hi":"मुद्रा",
-        "en":"Currency"
-    },
-    "settings_personalisation_select_currency":{
-        "hi":"चुने",
-        "en":"Select" 
-    },
-    "settings_personalisation_select_currency1":{
-        "hi":"डॉलर",
-        "en":"Dollar"
-    },
-    "settings_personalisation_select_currency2":{
-        "hi":"पौंड",
-        "en":"Pound"
-    },
-    "settings_personalisation_select_currency3":{
-        "hi":"रुपया",
-        "en":"Rupee"
-    },
-    "settings_personalisation_fetchproductdetails":{
-        "hi":"सर्वर से उत्पाद विवरण प्राप्त करें",
-        "en":"Fetch Product Details From Server"
-    },
-    "settings_personalsation_remindforunavailability":{
-        "hi":"उत्पाद अनुपलब्धता के लिए याद दिलाएं",
-        "en":"Remind  for product  unavailability"
-    },
-    "savebtn_personalisation_settings":{
-        "hi":"परिवर्तनों को सुरक्षित करें",
-        "en":"Save changes"
-    },
-    "how_to_connect_lbl":{
-        "hi":"कैसे जुड़े?",
-        "en":"How to Connect?"
-    },
-    "download_and_install_lbl":{
-        "hi":"डाउनलोड करो और इंस्टॉल करो",
-        "en":"Download and install"
-    },
-    "client_shopexzy_lbl":{
-        "hi":"शॉपीजी क्लाइंट ऐप",
-        "en":"shopezy client app"
-    },
-    "click_to_connect_lbl":{
-        "hi":"कनेक्ट करने के लिए स्कैन पर क्लिक करें",
-        "en":"Click on Scan to Connect"
-    },
-    "make_sure_lbl":{
-        "hi":"सुनिश्चित करें कि मोबाइल और डेस्कटॉप दोनों एक ही नेटवर्क पर हों",
-        "en":"Make sure both mobile and desktop are on same network"
-    },
-    "scan_connect_lbl_txt":{
-        "hi":"कनेक्ट करने के लिए स्कैन करें",
-        "en":"Scan To Connect"
-    },
-    "check_connect_client_lbl":{
-        "hi":"मुझे साइन इन बनाए रखें",
-        "en":"Keep me signed in"
-    },
-    "add_itm_header_txt":{
-        "hi":"नया उत्पाद जोड़ें",
-        "en":"add new product"
-    },
-    "device_card_continuescan_txt":{
-        "hi":"उत्पाद जोड़ने के लिए स्कैन जारी रखें",
-        "en":"Continue Scan To Add Products"
-    },
-    "connected_device_connectwith_txt":{
-        "hi":"साथ जुड़े",
-        "en":"Connected With"
-    },
-    "updateStockBtn":{
-        "hi":"स्टॉक अपडेट करें",
-        "en":"Update Stocks"
-    },
-    "popup_screen_discard_question":{
-        "hi":"क्या आप वाकई परिवर्तनों को त्यागना चाहते हैं?",
-        "en":"Do you really want to discard changes ?"
-    },
-    "yes_btn_cnfrm_addItm":{
-        "hi":"हां",
-        "en":"YES"
-    },
-    "no_btn_cnfrm_addItm":{
-        "hi":"नहीं",
-        "en":"NO"
-    },
-    "timestamp_txt":{
-        "hi":"टीमस्टम्प",
-        "en":"TIMESTAMP"
-    },
-    "invoice_no_txt":{
-        "hi":"बीजक संख्या",
-        "en":"INVOICE NUMBER"
-    },
-    "custmer_name_txt":{
-        "hi":"ग्राहक का नाम",
-        "en":"CUSTOMER'S NAME"
-    },
-    "total_amnt_txt":{
-        "hi":"कुल राशि",
-        "en":"TOTAL AMOUNT"
-    },
-    "payment_method_txt":{
-        "hi":"भुगतान विधि",
-        "en":"PAYMENT METHOD"
-    },
-    "accountant_txt":{
-        "hi":"मुनीम",
-        "en":"ACCOUNTANT"
-    },
-    "barcode_stocks_txt":{
-        "hi":"बारकोड",
-        "en":"BARCODE"
-    },
-    "prod_name_stock_txt":{
-        "hi":"प्रोडक्ट का नाम",
-        "en":"PRODUCT NAME"
-    },
-
-    "cost_price_txt":{
-        "hi":"लागत मूल्य",
-        "en":"COST PRICE"
-    },
-    "sell_price_txt":{
-        "hi":"विक्रय मूल्य",
-        "en":"SELL PRICE"
-    },
-    "profit_txt":{
-        "hi":"फायदा",
-        "en":"PROFIT"
-    },
-    "stoct_qty_txt":{
-        "hi":"स्टॉक मात्रा",
-        "en":"STOCK QTY"
-    },
-    "discount_off_txt":{
-        "hi":"छूट",
-        "en":"DISCOUNT OFF"
-    },
-    "estm_sell_txt":{
-        "hi":"अनुमानित बिक्री",
-        "en":"ESTIMATED SELL"
-    },
-    "updt_on_txt":{
-        "hi":"को अपडेट किया",
-        "en":"UPDATED ON"
-    },
-    "Add_itm_btn":{
-        "hi":"सामान जोडें",
-        "en":"Add Item"
-    },
-    "continue_scan_to_add_text_devicecard":{
-        "hi":"उत्पाद जोड़ने के लिए स्कैन जारी रखें",
-        "en":"Continue Scan To Add Products"
-    },
-    "welcome_txt_home":{
-        "hi":"ShopEzy में आपका स्वागत है",
-        "en":"Welcome to ShopEzy"
-    },
-    "invo_mid_btn":{
-        "hi":"नया चालान",
-        "en":"New Invoice"
-    },
-    "stock_mid_btn":{
-        "hi":"स्टॉक में उत्पाद जोड़ें",
-        "en":"Add Products to Stock"
-    },
-    "nav_home_btn_txt":{
-        "hi":"उत्पादों को खोजे",
-        "en":"Search Products"
-    },
-    "analytics_mid_btn":{
-        "hi":"विश्लेषिकी देखें",
-        "en":"View Analytics"
-    },
-    "last_min_invoice_txt":{
-        "hi":"अंतिम मिनी चालान इतिहास",
-        "en":"Last mini Invoice History"
-    },
-    "dashboard_invoicepage_invoiceno":{
-        "hi":"बीजक संख्या",
-        "en":"Invoice Number"
-    },
-    "dashboard_invoicepage_totalprice":{
-        "hi":"कुल कीमत",
-        "en":"Total Price"
-    },
-    "product_out_stock_txt":{
-        "hi":"उत्पाद जो स्टॉक में नहीं हैं",
-        "en":"Product that are out of stock"
-    },
-    "dashboard_invoice_tablesummary1":{
-        "hi":"नाम",
-        "en":"Name"
-    },
-    "dashboard_invoice_tablesummary2":{
-        "hi":"उत्पाद संख्या",
-        "en":"Product Number"
-    },
-    "dashboard_invoice_tablesummary3":{
-        "hi":"मात्रा शेष",
-        "en":"Quantity Left"
-    },
-    "no_android_client_txt":{
-        "hi":"कोई एंड्राइड क्लाइंट कनेक्ट नहीं है",
-        "en":"No android client connected"
-    },
-    "connect_android_btn_home":{
-        "hi":"एंड्राइड क्लाइंट कनेक्ट करें",
-        "en":"Connect Android Client"
-    },
-    "disconnect_android_btn_home":{
-        "hi":"डिस्कनेक्ट",
-        "en":"Disconnect"
-    },
-    "term_period_selection1":{
-        "hi":"आखिरी 7 दिन",
-        "en":"Last 7 Days"
-    },
-    "term_period_selection2":{
-        "hi":"पिछले 14 दिन",
-        "en":"Last 14 Days"
-    },
-    "term_period_selection3":{
-        "hi":"पिछले 28 दिन",
-        "en":"Last 28 Days"
-    },
-    "term_period_selection4":{
-        "hi":"पिछले 6 महीने",
-        "en":"Last 6 Months"
-    },
-    "top_left_section_invoicePage1":{
-        "hi":"ग्राहक का नाम",
-        "en":"Custumer's Name"
-    },
-    "top_left_section_invoicePage2":{
-        "hi":"ग्राहक का ईमेल",
-        "en":"Custumer's Email"
-    },
-    "top_left_section_invoicePage3":{
-        "hi":"ग्राहक का मोबाइल नंबर",
-        "en":"Custumer's Mobile Number"
-    },
-    "dashboard_top_parts_paymentmethod":{
-        "hi":"भुगतान विधि",
-        "en":"Payment Method"
-    },
-    "dashboard_top_parts_paymentmethod1":{
-        "hi":"---चुने---",
-        "en":"---Select---"
-    },
-    "dashboard_top_parts_paymentmethod2":{
-        "hi":"क्रेडिट/डेबिट",
-        "en":"Credit/Debit"
-    },
-    "dashboard_top_parts_paymentmethod3":{
-        "hi":"फोनपे/यूपीआई",
-        "en":"Phonepay/UPI"
-    },
-    "dashboard_top_parts_invoice_template":{
-        "hi":"बीजक का स्वरुप",
-        "en":"Invoice Template"
-    },
-    "dashboard_top_parts_accountant_director":{
-        "hi":"लेखाकार निदेशक",
-        "en":"Accountant Director"
-    }  
+        "hi": "लागत मूल्य"
+    },
+    "sell_price_txt": {
+        "en": "SELL PRICE",
+        "hi": "विक्रय मूल्य"
+    },
+    "profit_txt": {
+        "en": "PROFIT",
+        "hi": "फायदा"
+    },
+    "stoct_qty_txt": {
+        "en": "STOCK QTY",
+        "hi": "स्टॉक मात्रा"
+    },
+    "discount_off_txt": {
+        "en": "DISCOUNT OFF",
+        "hi": "छूट बंद"
+    },
+    "estm_sell_txt": {
+        "en": "ESTIMATED SELL",
+        "hi": "अनुमानित बिक्री"
+    },
+    "updt_on_txt": {
+        "en": "UPDATED ON",
+        "hi": "को अपडेट किया"
+    },
+    "timestamp_txt": {
+        "en": "TIMESTAMP",
+        "hi": "टाइमस्टैम्प"
+    },
+    "invoice_no_txt": {
+        "en": "INVOICE NUMBER",
+        "hi": "  इनवॉइस संख्या"
+    },
+    "custmer_name_txt": {
+        "en": "CUSTOMER'S NAME",
+        "hi": "ग्राहक का नाम"
+    },
+    "total_amnt_txt": {
+        "en": "TOTAL AMOUNT",
+        "hi": "कुल राशि"
+    },
+    "payment_method_txt": {
+        "en": "PAYMENT METHOD",
+        "hi": "भुगतान विधि"
+    },
+    "accountant_txt": {
+        "en": "ACCOUNTANT",
+        "hi": "मुनीम"
+    },
+    "settings_title_txt": {
+        "hi": "सेटिंग्स",
+        "en": "Settings"
+    },
+    "acc_settings": {
+        "hi": "अकाउंट",
+        "en": "Account"
+    },
+    "upl1_account_settings": {
+        "hi": "अपलोड",
+        "en": "Upload"
+    },
+    "remove_account_settings": {
+        "hi": "हटाए",
+        "en": "Remove"
+    },
+    "leftinfo_text1": {
+        "hi": "दुकान या व्यवसाय का नाम",
+        "en": "Shop or Bussiness Name"
+    },
+    "leftinfo_text2": {
+        "hi": "ईमेल",
+        "en": "Email"
+    },
+    "leftinfo_text3": {
+        "hi": "पता",
+        "en": "Address"
+    },
+    "rightinfo_text1": {
+        "hi": "दुकान या व्यवसाय के मालिक का नाम",
+        "en": "Shop or Bussiness owner’s Name"
+    },
+    "rightinfo_text2": {
+        "hi": "मोबाइल नंबर",
+        "en": "Mobile Number"
+    },
+    "rightinfo_text3": {
+        "hi": "व्यवसाय श्रेणी",
+        "en": "Bussiness Category"
+    },
+    "buisnessoption_settings_1": {
+        "hi": "पालतू जानवरों की दुकान",
+        "en": "Pet shop"
+    },
+    "buisnessoption_settings_2": {
+        "hi": "दवाओं",
+        "en": "Drugs"
+    },
+    "buisnessoption_settings_3": {
+        "hi": "किराना",
+        "en": "Grocery"
+    },
+    "buisnessoption_settings_4": {
+        "hi": "शराब",
+        "en": "Alchohol"
+    },
+    "label_account_settings_text": {
+        "hi": "रिक्वेस्ट वेरीफिकेशन",
+        "en": "Request Veryfication"
+    },
+    "btn_account_settings_requestverification": {
+        "hi": "रिक्वेस्ट वेरीफिकेशन",
+        "en": "Request Veryfication"
+    },
+    "savebtn_account_settings": {
+        "hi": "परिवर्तनों को सुरक्षित करें",
+        "en": "Save changes"
+    },
+    "add_local_passcode_text": {
+        "hi": "स्थानीय पासकोड जोड़ें",
+        "en": "Add Local Passcode"
+    },
+    "add_local_passcode_paragraph": {
+        "hi": "एक स्थानीय पासकोड आपके खाते को अधिक सुरक्षित और निजी रखता है",
+        "en": "A local passcode keeps your account more secured and private"
+    },
+    "add_local_passcode_btn": {
+        "hi": "स्थानीय पासकोड जोड़ें",
+        "en": "Add Local Passcode"
+    },
+    "setting_invoice_heading_text": {
+        "hi": "इनवॉइस",
+        "en": "Invoice "
+    },
+    "setting_invoice_text_template": {
+        "hi": "टेम्पलेट",
+        "en": "Template"
+    },
+    "text_statement_invoice_settings": {
+        "hi": "भुगतान मोड स्वीकृत",
+        "en": "Payment Mode Accepted"
+    },
+    "credit_invoice_settings": {
+        "hi": "क्रेडिट कार्ड",
+        "en": "Credit Card"
+    },
+    "debit_invoice_settings": {
+        "hi": "डेबिट कार्ड",
+        "en": "Debit Card"
+    },
+    "Upi_invoice_settings": {
+        "hi": "यूपीआई भुगतान",
+        "en": "Upi Payment"
+    },
+    "cash_invoice_settings": {
+        "hi": "नकद भुगतान",
+        "en": "Cash Payment"
+    },
+    "invoice_accountantdirector_text": {
+        "hi": "लेखाकार निदेशक",
+        "en": "Accountant Director"
+    },
+    "annette_blact_text": {
+        "hi": "एनेट ब्लैक",
+        "en": "Annette Black"
+    },
+    "bessie_cooper_text": {
+        "hi": "बेस्सी कूपर",
+        "en": "Bessie Cooper"
+    },
+    "jacob_jones_text": {
+        "hi": "जैकब जोन्स",
+        "en": "Jacob Jones"
+    },
+    "newaccountdirector_invoice_settings": {
+        "hi": "नया लेखाकार निदेशक",
+        "en": "New Accountant Director"
+    },
+    "savebtn_invoice_settings": {
+        "hi": "परिवर्तनों को सुरक्षित करें",
+        "en": "Save changes"
+    },
+    "settings_stockes_heading_text": {
+        "hi": "स्टॉक्स",
+        "en": "Stocks"
+    },
+    "settings_stocks_fetchproductdetails": {
+        "hi": "सर्वर से उत्पाद विवरण प्राप्त करें",
+        "en": "Fetch Product Details From Server"
+    },
+    "settings_stocks_remindforunavailability": {
+        "hi": "उत्पाद अनुपलब्धता के लिए याद दिलाएं",
+        "en": "Remind  for product  unavailability"
+    },
+    "quantity_text_stocks_settings": {
+        "hi": "मात्रा",
+        "en": "Quantity"
+    },
+    "unit_stocks_settings": {
+        "hi": "यूनिट्स",
+        "en": "Units"
+    },
+    "weight_stocks_settings": {
+        "hi": "किलोग्राम",
+        "en": "Kilograms"
+    },
+    "meter_stocks_settings": {
+        "hi": "मीटर",
+        "en": "Meters"
+    },
+    "quantity_stocks_settings": {
+        "hi": "लीटर",
+        "en": "Litres"
+    },
+    "savebtn_stocks_settings": {
+        "hi": "परिवर्तनों को सुरक्षित करें",
+        "en": "Save changes"
+    },
+    "settings_personalisation_heading_text": {
+        "hi": "वैयक्तिकरण",
+        "en": "Personalisation"
+    },
+    "settings_personalisation_language_text": {
+        "hi": "भाषा",
+        "en": "Language"
+    },
+    "settings_personalisation_languageselect": {
+        "hi": "चुने",
+        "en": "Select"
+    },
+    "settings_personalisation_languageselect2": {
+        "hi": "अंग्रेज़ी",
+        "en": "English"
+    },
+    "settings_personalisation_languageselect1": {
+        "hi": "हिंदी",
+        "en": "Hindi"
+    },
+    "settings_personalisation_currency_text": {
+        "hi": "मुद्रा",
+        "en": "Currency"
+    },
+    "settings_personalisation_select_currency": {
+        "hi": "चुने",
+        "en": "Select"
+    },
+    "settings_personalisation_select_currency1": {
+        "hi": "डॉलर",
+        "en": "Dollar"
+    },
+    "settings_personalisation_select_currency2": {
+        "hi": "पौंड",
+        "en": "Pound"
+    },
+    "settings_personalisation_select_currency3": {
+        "hi": "रुपया",
+        "en": "Rupee"
+    },
+    "settings_personalisation_fetchproductdetails": {
+        "hi": "सर्वर से उत्पाद विवरण प्राप्त करें",
+        "en": "Fetch Product Details From Server"
+    },
+    "settings_personalsation_remindforunavailability": {
+        "hi": "उत्पाद अनुपलब्धता के लिए याद दिलाएं",
+        "en": "Remind  for product  unavailability"
+    },
+    "savebtn_personalisation_settings": {
+        "hi": "परिवर्तनों को सुरक्षित करें",
+        "en": "Save changes"
+    },
+    "how_to_connect_lbl": {
+        "hi": "कैसे जुड़े?",
+        "en": "How to Connect?"
+    },
+    "download_and_install_lbl": {
+        "hi": "डाउनलोड करो और इंस्टॉल करो",
+        "en": "Download and install"
+    },
+    "client_shopexzy_lbl": {
+        "hi": "शॉपीजी क्लाइंट ऐप",
+        "en": "shopezy client app"
+    },
+    "click_to_connect_lbl": {
+        "hi": "कनेक्ट करने के लिए स्कैन पर क्लिक करें",
+        "en": "Click on Scan to Connect"
+    },
+    "make_sure_lbl": {
+        "hi": "सुनिश्चित करें कि मोबाइल और डेस्कटॉप दोनों एक ही नेटवर्क पर हों",
+        "en": "Make sure both mobile and desktop are on same network"
+    },
+    "scan_connect_lbl_txt": {
+        "hi": "कनेक्ट करने के लिए स्कैन करें",
+        "en": "Scan To Connect"
+    },
+    "check_connect_client_lbl": {
+        "hi": "मुझे साइन इन बनाए रखें",
+        "en": "Keep me signed in"
+    },
+    "add_itm_header_txt": {
+        "hi": "नया उत्पाद जोड़ें",
+        "en": "add new product"
+    },
+    "device_card_continuescan_txt": {
+        "hi": "उत्पाद जोड़ने के लिए स्कैन जारी रखें",
+        "en": "Continue Scan To Add Products"
+    },
+    "connected_device_connectwith_txt": {
+        "hi": "साथ जुड़े",
+        "en": "Connected With"
+    },
+    "updateStockBtn": {
+        "hi": "स्टॉक अपडेट करें",
+        "en": "Update Stocks"
+    },
+    "popup_screen_discard_question": {
+        "hi": "क्या आप वाकई परिवर्तनों को त्यागना चाहते हैं?",
+        "en": "Do you really want to discard changes ?"
+    },
+    "yes_btn_cnfrm_addItm": {
+        "hi": "हां",
+        "en": "YES"
+    },
+    "no_btn_cnfrm_addItm": {
+        "hi": "नहीं",
+        "en": "NO"
+    },
+    "timestamp_txt": {
+        "hi": "टीमस्टम्प",
+        "en": "TIMESTAMP"
+    },
+    "invoice_no_txt": {
+        "hi": "बीजक संख्या",
+        "en": "INVOICE NUMBER"
+    },
+    "custmer_name_txt": {
+        "hi": "ग्राहक का नाम",
+        "en": "CUSTOMER'S NAME"
+    },
+    "total_amnt_txt": {
+        "hi": "कुल राशि",
+        "en": "TOTAL AMOUNT"
+    },
+    "payment_method_txt": {
+        "hi": "भुगतान विधि",
+        "en": "PAYMENT METHOD"
+    },
+    "accountant_txt": {
+        "hi": "मुनीम",
+        "en": "ACCOUNTANT"
+    },
+    "barcode_stocks_txt": {
+        "hi": "बारकोड",
+        "en": "BARCODE"
+    },
+    "prod_name_stock_txt": {
+        "hi": "प्रोडक्ट का नाम",
+        "en": "PRODUCT NAME"
+    },
+    "cost_price_txt": {
+        "hi": "लागत मूल्य",
+        "en": "COST PRICE"
+    },
+    "sell_price_txt": {
+        "hi": "विक्रय मूल्य",
+        "en": "SELL PRICE"
+    },
+    "profit_txt": {
+        "hi": "फायदा",
+        "en": "PROFIT"
+    },
+    "stoct_qty_txt": {
+        "hi": "स्टॉक मात्रा",
+        "en": "STOCK QTY"
+    },
+    "discount_off_txt": {
+        "hi": "छूट",
+        "en": "DISCOUNT OFF"
+    },
+    "estm_sell_txt": {
+        "hi": "अनुमानित बिक्री",
+        "en": "ESTIMATED SELL"
+    },
+    "updt_on_txt": {
+        "hi": "को अपडेट किया",
+        "en": "UPDATED ON"
+    },
+    "Add_itm_btn": {
+        "hi": "सामान जोडें",
+        "en": "Add Item"
+    },
+    "continue_scan_to_add_text_devicecard": {
+        "hi": "उत्पाद जोड़ने के लिए स्कैन जारी रखें",
+        "en": "Continue Scan To Add Products"
+    },
+    "welcome_txt_home": {
+        "hi": "ShopEzy में आपका स्वागत है",
+        "en": "Welcome to ShopEzy"
+    },
+    "invo_mid_btn": {
+        "hi": "नया चालान",
+        "en": "New Invoice"
+    },
+    "stock_mid_btn": {
+        "hi": "स्टॉक में उत्पाद जोड़ें",
+        "en": "Add Products to Stock"
+    },
+    "nav_home_btn_txt": {
+        "hi": "उत्पादों को खोजे",
+        "en": "Search Products"
+    },
+    "analytics_mid_btn": {
+        "hi": "विश्लेषिकी देखें",
+        "en": "View Analytics"
+    },
+    "last_min_invoice_txt": {
+        "hi": "अंतिम मिनी चालान इतिहास",
+        "en": "Last mini Invoice History"
+    },
+    "dashboard_invoicepage_invoiceno": {
+        "hi": "बीजक संख्या",
+        "en": "Invoice Number"
+    },
+    "dashboard_invoicepage_totalprice": {
+        "hi": "कुल कीमत",
+        "en": "Total Price"
+    },
+    "product_out_stock_txt": {
+        "hi": "उत्पाद जो स्टॉक में नहीं हैं",
+        "en": "Product that are out of stock"
+    },
+    "dashboard_invoice_tablesummary1": {
+        "hi": "नाम",
+        "en": "Name"
+    },
+    "dashboard_invoice_tablesummary2": {
+        "hi": "उत्पाद संख्या",
+        "en": "Product Number"
+    },
+    "dashboard_invoice_tablesummary3": {
+        "hi": "मात्रा शेष",
+        "en": "Quantity Left"
+    },
+    "no_android_client_txt": {
+        "hi": "कोई एंड्राइड क्लाइंट कनेक्ट नहीं है",
+        "en": "No android client connected"
+    },
+    "connect_android_btn_home": {
+        "hi": "एंड्राइड क्लाइंट कनेक्ट करें",
+        "en": "Connect Android Client"
+    },
+    "disconnect_android_btn_home": {
+        "hi": "डिस्कनेक्ट",
+        "en": "Disconnect"
+    },
+    "term_period_selection1": {
+        "hi": "आखिरी 7 दिन",
+        "en": "Last 7 Days"
+    },
+    "term_period_selection2": {
+        "hi": "पिछले 14 दिन",
+        "en": "Last 14 Days"
+    },
+    "term_period_selection3": {
+        "hi": "पिछले 28 दिन",
+        "en": "Last 28 Days"
+    },
+    "term_period_selection4": {
+        "hi": "पिछले 6 महीने",
+        "en": "Last 6 Months"
+    },
+    "top_left_section_invoicePage1": {
+        "hi": "ग्राहक का नाम",
+        "en": "Custumer's Name"
+    },
+    "top_left_section_invoicePage2": {
+        "hi": "ग्राहक का ईमेल",
+        "en": "Custumer's Email"
+    },
+    "top_left_section_invoicePage3": {
+        "hi": "ग्राहक का मोबाइल नंबर",
+        "en": "Custumer's Mobile Number"
+    },
+    "dashboard_top_parts_paymentmethod": {
+        "hi": "भुगतान विधि",
+        "en": "Payment Method"
+    },
+    "dashboard_top_parts_paymentmethod1": {
+        "hi": "---चुने---",
+        "en": "---Select---"
+    },
+    "dashboard_top_parts_paymentmethod2": {
+        "hi": "क्रेडिट/डेबिट",
+        "en": "Credit/Debit"
+    },
+    "dashboard_top_parts_paymentmethod3": {
+        "hi": "फोनपे/यूपीआई",
+        "en": "Phonepay/UPI"
+    },
+    "dashboard_top_parts_invoice_template": {
+        "hi": "बीजक का स्वरुप",
+        "en": "Invoice Template"
+    },
+    "dashboard_top_parts_accountant_director": {
+        "hi": "लेखाकार निदेशक",
+        "en": "Accountant Director"
+    },
+    "label_account_settings_txt": {
+        "hi": "बधाई! आप एक सत्यापित व्यवसाय के लिए योग्य हैं . हमें आपकी दुकान को भौतिक रूप से सत्यापित करने की आवश्यकता हैआपको Shopezy की व्यावसायिक श्रृंखला में जोड़ने का आदेश। Shopezy की व्यावसायिक श्रृंखला में शामिल होने से आपको मिलेगाहमारी टीम से तकनीकी सहायता। Shopezy की खाद्य श्रृंखला में शामिल होने से 33% तक की वृद्धि हुई हैदुनिया भर में व्यापार में वृद्धि। Shopezy के सत्यापित खाते के बारे में अधिक जानने के लिए। Shopezy's पर जाएँव्यापार श्रृंखला सुविधा पृष्ठ।",
+        "en": "Congratulation ! You are eligible for a verified bussiness . We need to physically verify your shop in order to add you to Shopezy’s bussiness chain. By joining Shopezy’s bussiness chain you will get technical support from our team. By joining Shopezy’s food chain there has been an increase of upto 33% growth in bussiness across globe. To know more about Shopezy’s verified account . Visit Shopezy’s bussiness chain feature page."
+    }
 }
