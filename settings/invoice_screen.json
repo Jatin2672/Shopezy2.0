@@ -1,0 +1,34 @@
+{
+    "print_icon":{
+        "hi":"प्रिंट",
+        "en":"Print"
+    },
+    "share_icon":{
+        "hi":"शेयर",
+        "en":"Share"
+    },
+    "Invoice_To_txt":{
+        "hi":"इसके लिए इनवॉइस",
+        "en":"Invoice To"
+    },
+    "Invoice_txt":{
+        "hi":"बीजक",
+        "en":"Invoice"
+    },
+    "payment_method_txt":{
+        "hi":"भुगतान विधि",
+        "en":"Payment Method"
+    },
+    "extra_payment_txt":{
+        "hi":"हम स्वीकार करते हैं : चेक | नकद भुगतान | अमेरिकन एक्सप्रेस | वीजा | मास्टर",
+        "en":"We accept : CHEQUE | CASH PAYMENTS | AMERICAN EXPRESS | VISA | MASTER"
+    },
+    "thanking_customer_text1":{
+        "hi":"Shopezy . द्वारा संचालित चालान सेवा",
+        "en":"Invoice service powered by Shopezy"
+    },
+    "thanking_customer_text2":{
+        "hi":"लेसिल फैशन स्टोर में खरीदारी के लिए धन्यवाद!",
+        "en":"Thank you for shopping at Lesile Fashion Store !"
+    }
+}
