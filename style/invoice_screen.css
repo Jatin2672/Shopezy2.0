@@ -1,7 +1,7 @@
 body{
     display: flex;
     flex-direction: column;
-    overflow-y: hidden;
+    overflow-y: auto;
     margin: 0%;
 }
 .debug{
@@ -95,9 +95,6 @@ body{
 #Invoice_container{
     background-color: #d0ecff;
     display: flex;
-    overflow-y: auto;
-    overflow-x: auto;
-    height: calc(100vh - 60px);
     width: 99.7%;
     justify-content: center;
     
@@ -111,7 +108,7 @@ body{
 #heading_invoice{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-top: 3mm;
 }
@@ -177,10 +174,10 @@ body{
     color: 2F2F2F;
 }
 #side_lines1{
-    margin-left: -1mm;
+    margin-left: -0.5mm;
 }
 #side_lines2{
-    margin-right: -1mm;
+    margin-right: -0.5mm;
 }
 .grey_hr{
     background-color: #4F4F4F !important;
@@ -241,7 +238,7 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: 3mm;
+    margin-top: 8mm;
     padding: 0px 15px;
 }
 #payment_method{
@@ -271,7 +268,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 3mm;
+    margin-top: 10mm;
     padding: 0px 15px;
     font-size: 3mm;
 }
@@ -279,9 +276,62 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 3mm;
+    margin-top: 8mm;
     padding: 1.5mm 0mm;
     font-size: 3mm;
     background-color: #000;
     color: #fff;
+}
+#accountant_signature{
+    height: 6mm;
+    margin-bottom: 2mm;
+}
+#payment_method_txt{
+    font-size: 4mm;
+    font-weight: bold;
+}
+#payment_method_info{
+    font-size: 4mm;
+    margin-bottom: 2mm;
+}
+#items_tables{
+    width: 100%;
+    padding: 5mm;
+}
+#heading_row{
+    background-color: #000;
+    color: #fff;
+}
+/* add background to even rows*/
+#table_body tr:nth-child(even) {
+    background-color: #EAEAEA;
+}
+#purchase_item{
+    margin-top: 10px;
+}
+
+@media print{
+    @page {
+        margin: 0;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    #top_menu_bar{
+        display: none;
+    }
+    #Invoice_container{
+        width: 100% !important;
+    }
+    #side_lines{
+        width: 6mm !important;
+        margin-left: 0mm;
+    }
+    #side_lines hr{
+        width: 6mm !important;
+    }
+    #heading_invoice{
+        margin-top: 8mm !important;
+    }
 }
