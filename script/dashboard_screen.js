@@ -192,6 +192,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
     midBtnaction();
 
+    let update_itm_subpage=document.getElementById("update_itm_subpage");
+    let update_itm_close_btn=document.getElementById("update_itm_close_btn");
+
+    let stocks_tbl=document.getElementById("stocks_tbl")
+    stocks_tbl.addEventListener('click',()=>{
+        model_box_container.style.display='block';
+        update_itm_subpage.style.display='block';
+    })
+    update_itm_close_btn.addEventListener("click",()=>{
+        model_box_container.style.display='none';
+        update_itm_subpage.style.display='none';
+    })
 })
 
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/temps.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <div id="add_stock_item_dialog_page" style="display: none;"> -->
+
+    <!-- Add Item Subpage -->
+    <div id="update_itm_subpage">
+
+        <div class="update_itm_subpage_header">
+            <div id="update_itm_header_txt">Update product</div>
+            <div><img src="../media/passcode/close.svg" alt="" id="update_itm_close_btn"></div>
+        </div>
+
+        <!-- Add item main Div -->
+        <div id="update_itm_subpage_main" class="update_itm_subpage_main">
+
+            <!-- Add item card using javascript-->
+            <div class="update_item_card">
+
+                <div class="update_item_card_top">
+                    <p>40879453222</p>
+                    <img src="../media/add_itm/dustbinIcon.svg" alt="" class="update_remove_itm_Btn">
+                </div>
+                <div class="update_item_card_txt">
+                    <p>Product Name</p>
+                    <input type="text" name="product_name" id="add_item_card_input_txt">
+                </div>
+                <div>
+                    <div class="Pricediv">
+                        <p>Cost Price</p>
+                        <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+                    </div>
+                    <div class="Pricediv">
+                        <p>Sell Price</p>
+                        <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+                    </div>
+                    <div class="Pricediv">
+                        <p>Stock quantity</p>
+                        <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Connected Device card -->
+            <div class="update_item_card Connected_device">
+                <h5>Continue Scan To Add Products</h5>
+                <img src="../media/add_itm/Group_307.png" alt="">
+                <p>Connected With <span id="Conneted_device_txt_update_stock">SM F21</span></p>
+            </div>
+            <!-- Connected Device card -->
+
+        </div>
+        <!-- Add item main Div -->
+
+        <!--  Update button   -->
+        <div class="UpdateStockContainer">
+            <button id="updateStockBtn_update_stock">
+                Update Stocks
+            </button>
+        </div>
+        <!--  Update button   -->
+
+    </div>
+
+    <!-- </div> -->
+
+</body>
+
+</html>
