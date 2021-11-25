@@ -35,6 +35,8 @@ let Enable_product_detail, remind_product_unavailability
 
 let preview_btn_invoice_page
 
+let profile_pic_url
+
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -201,6 +203,38 @@ window.addEventListener("DOMContentLoaded", () => {
         ipcRenderer.send("preview_invoice", "3")
     })
 
+// ------------------------------------------------------- Setting Account image ---------------------------------------------------
+
+let renderImgdiv=document.getElementById("renderImg_acc_settings")
+let Image_of_user=document.getElementById("Dp_img_select_accSet")
+let file=document.getElementById("file_acc_setting")
+let Upload_btn=document.getElementById("Upload_btn_acc_setting")
+let remove_btn=document.getElementById("remove_btn_acc_setting")
+
+Upload_btn.addEventListener('click',()=>{
+    file.click()
+})
+
+file.addEventListener('change',function(){
+    const chooseFile=this.files[0];
+
+    if(chooseFile){
+        const reader = new FileReader();
+
+        reader.addEventListener('load',()=>{
+            Dp_img_select_accSet.setAttribute('src',reader.result);
+            profile_pic_url = reader.result;
+        });
+        reader.readAsDataURL(chooseFile)
+    }
+})
+
+remove_btn.addEventListener('click',()=>{
+    profile_pic_url="../media/userphoto.png";
+    Dp_img_select_accSet.setAttribute('src',profile_pic_url);
+})
+// --------------------------------------------------- Setting Account image ----------------------------------------------
+
 })
 
 
@@ -235,7 +269,7 @@ function userSettingsUpdate() {
     if (userSettingsData.profile_pic_url != "") {
         document.getElementById("user_profile_home").src = userSettingsData.profile_pic_url
         document.getElementById("photo_shop_badge").src = userSettingsData.profile_pic_url
-        document.getElementById("account_setting_profile_pic").src = userSettingsData.profile_pic_url
+        document.getElementById("Dp_img_select_accSet").src = userSettingsData.profile_pic_url
     }
 }
 
