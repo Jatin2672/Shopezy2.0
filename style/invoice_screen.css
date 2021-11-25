@@ -113,7 +113,6 @@ body{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    border-bottom: 1px solid #000;
     margin-top: 3mm;
 }
 #shop_profile_pic{
@@ -186,4 +185,103 @@ body{
 .grey_hr{
     background-color: #4F4F4F !important;
     color: #4F4F4F !important;
+}
+#customer_info_head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 3mm;
+    text-transform: uppercase;
+    padding: 0px 15px;
+}
+#customer_info_head_2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px 15px;
+}
+#customer_info_3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0px 15px;
+}
+#customer_phone_email{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 3mm;
+    font-size: 3mm;
+}
+#Invoice_To_txt{
+    font-size: 5mm;
+    font-weight: bold;
+}
+#Invoice_txt{
+    font-size: 8mm;
+    font-weight: bold;
+}
+#customer_name{
+    font-size: 5mm;
+    font-weight: bold;
+}
+#invoice_number{
+    font-size: 3mm;
+    font-weight: bold;
+}
+#invoice_date{
+    font-size: 4mm;
+    font-weight: bold;
+}
+#payment_director_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 3mm;
+    padding: 0px 15px;
+}
+#payment_method{
+    display: flex;
+    flex-direction: column;
+}
+#extra_payment_txt{
+    max-width: 70mm;
+    font-size: 3mm;
+}
+#accountant_director{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3mm;
+    padding: 0px 15px;
+}
+#accountant_name{
+    font-size: 4mm;
+    font-weight: bold;
+}
+#accountant_position{
+    font-size: 4mm;
+}
+#shops_tc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 3mm;
+    padding: 0px 15px;
+    font-size: 3mm;
+}
+#thanking_customer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3mm;
+    padding: 1.5mm 0mm;
+    font-size: 3mm;
+    background-color: #000;
+    color: #fff;
 }
