@@ -1,7 +1,11 @@
 {
-    "language_select":{
+    "welcomescreeem_languageselect2":{
         "hi":"अंग्रेजी",
         "en":"English"
+    },
+    "welcomescreeem_languageselect1":{
+        "hi":" हिंदी",
+        "en":"Hindi"
     },
     "shopezy_text":{
         "hi":"शोपिज़ी",
@@ -19,21 +23,49 @@
         "hi":"खाता बनाएं",
         "en":"Create an account"
     },
-    "accountinfo_userinput":{
+    "uploadBtn":{
+        "hi":"फोटो चुने",
+        "en":"Choose Photo"
+    },
+    "accountinfo_userinput1":{
        "hi":"दुकान या व्यवसाय का नाम",
        "en":"Shop or Bussiness Name"
     },
-    "accountinfo_userinput":{
+    "accountinfo_userinput2":{
         "hi":"व्यवसाय श्रेणी",
         "en":"Bussiness Category"
      },
-     "accountinfo_userinput":{
+     "accountinfo_userinput3":{
+         "hi":"व्यवसाय के मालिक का नाम",
+         "en":"Bussiness Owner's Name"
+     },
+     "accountinfo_userinput4":{
         "hi":"ईमेल",
         "en":"Email"
      },
-     "accountinfo_userinput":{
+     "accountinfo_userinput5":{
+         "hi":"मोबाइल नंबर",
+         "en":"Mobile Number"
+     },
+     "accountinfo_userinput6":{
         "hi":"पता",
         "en":"Address"
+     },
+     "bussiness_type_regPage1":{
+        "hi":"किराना",
+        "en":"Grocery"
+     },
+     "bussiness_type_regPage2":{
+        "hi":"जनरल",
+        "en":"Genaral"
+     },
+     "bussiness_type_regPage3":{
+        "hi":"फार्मेसी",
+        "en":"pharmacy"
+     },
+     "bussiness_type_regPage4":{
+        "hi":"अन्य",
+        "en":"Other"
      },
     "continue_btn":{
         "hi":"जारी रखें",
@@ -62,5 +94,30 @@
     "docs_heading":{
         "hi":"दस्तावेज़ीकरण और गाइड",
         "en":"Documentations & Guide"
+    },
+    "terms_text":{
+        "hi":"सेवा की शर्तें और गोपनीयता नीति",
+        "en":"Term Of Service & Privacy Policy"
+    },
+    "heading_1":{
+        "hi":"सेवा की अवधि",
+        "en":"Term Of Service"
+    },
+    "heading_2":{
+        "hi":"गोपनीयता नीति",
+        "en":"Privacy Policy"
+    },
+    "docs_heading":{
+        "hi":"दस्तावेज़ीकरण और गाइड",
+        "en":"Documentations & Guide"
+    },
+    "faq_heading":{
+        "hi":"फॉक्स",
+        "en":"FAQs"
+    },
+    "docs_heading1":{
+        "hi":"सॉफ्टवेयर का उपयोग करने के लिए गाइड",
+        "en":"Guide To Using Software"
     }
+    
 }
