@@ -2,8 +2,9 @@ const { ipcRenderer } = require('electron')
 const path = require('path')
 const fs = require('fs')
 
-let printBtn , shareBtn
-window.addEventListener('DOMContentLoaded' , () => {
+let printBtn, shareBtn
+
+window.addEventListener('DOMContentLoaded', () => {
 
     // read a json file using fs
     fs.readFile("./settings/invoice_screen.json", (err, data) => {
@@ -17,16 +18,17 @@ window.addEventListener('DOMContentLoaded' , () => {
     printBtn = document.getElementById('print_btn')
     shareBtn = document.getElementById('share_btn')
 
-    printBtn.addEventListener('click' , () => {
+    printBtn.addEventListener('click', () => {
         window.print()
     })
 
-    shareBtn.addEventListener('click' , () => {
+    shareBtn.addEventListener('click', () => {
         printToPDF()
     })
 
-    ipcRenderer.on('invoice_number' , (e, invoice_number) => {
+    ipcRenderer.on('invoice_number', (e, invoice_number) => {
         loadDataForInvoice(invoice_number)
+        console.log("1:", invoice_number)
     })
 
 })
@@ -38,8 +40,8 @@ function printToPDF() {
     ipcRenderer.send('invoice:print')
     setTimeout(() => {
         // share file using bluetooth
-        
-    }, 100)    
+
+    }, 100)
 }
 
 // function to change language
@@ -60,6 +62,68 @@ let db = new sqlite3.Database("database/masterDatabase.db", (err) => {
     console.log("connected to database");
 });
 
+
 function loadDataForInvoice(invoice_number) {
+    console.log(invoice_number)
+    let rowData = []
+    // get data for invoice number from invoice_detail table
+    db.get("SELECT * FROM invoice_detail WHERE invoice_id = ?", [invoice_number], (err, row) => {
+        if (err) {
+            console.log(err.message);
+            return;
+        }
+        // push data to a variable
+        document.getElementById('invoice_number').innerHTML = "#" + row.invoice_id
+        document.getElementById('invoice_date').innerHTML = row.invoice_date
+        document.getElementById('total_items').innerHTML = row.total_items
+        document.getElementById('accountant_name').innerHTML = row.accountant_director
+        document.getElementById('total_price').innerHTML = row.invoice_total_amount
+        loadCustomerData(row.customer_id)
+
+    })
+    loadItemData(invoice_number)
     
+}
+
+function loadItemData(invoice_id) {
+    let htmlDataToInsert = ""
+    console.log(invoice_id)
+    let i = 1;
+    db.each("SELECT * FROM invoice_items WHERE invoice_id = ?", [invoice_id], (err, row) => {
+        if (err) {
+            console.log(err.message);
+            return;
+        }
+        console.log(row)
+        htmlDataToInsert += `<tr>
+        <td>${[i]}</td>
+        <td>${[row.name]}</td>
+        <td>${[row.unit_price]}</td>
+        <td>${[row.quantity]}</td>
+        <td>${[row.discount]}%</td>
+        <td>${[row.total_price]}%</td>
+        </tr>`
+        i++;
+    })
+
+    setTimeout(() => {
+        console.log(htmlDataToInsert)
+        document.getElementById("table_body").innerHTML = htmlDataToInsert
+            + document.getElementById("table_body").innerHTML
+
+    }, 200)
+    
+}
+function loadCustomerData(id){
+    db.get("SELECT * FROM customer_info WHERE id = ?", [id], (err, row) => {
+        if (err) {
+            console.log(err.message);
+            return;
+        }
+        if(row){
+            document.getElementById("customer_name").innerHTML = row.name
+        document.getElementById("customer_email").innerHTML += row.email
+        document.getElementById("customer_phone").innerHTML += row.phone_number
+        }        
+    })
 }
