@@ -4,6 +4,10 @@
     --white : #FFF;
     --red : #ff3333;
 }
+* {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;       
+}
 body{
     display: flex;
     flex-direction: column;
@@ -22,19 +26,6 @@ body{
     color: var(--white);
     font-size: 20px;
     height: 50px;
-}
-#delete_icon{
-    margin-right: 20px;
-    padding: 8px;
-    border-radius: 8px;
-    border: 1px solid var(--red);
-    margin: 0px 10px;
-    background-color: #fff;
-}
-#delete_icon:hover{
-    cursor: pointer;
-    background-color: var(--black);
-    border: 1px solid var(--black);
 }
 #print_btn{
     background-color: var(--primary-color);
