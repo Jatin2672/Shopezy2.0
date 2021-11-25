@@ -1,4 +1,5 @@
 //import file system
+const { ipcRenderer } = require('electron');
 const fs = require('fs');
 let languageData, userSettingsData
 
@@ -31,6 +32,8 @@ let connect_android_btn_home , disconnect_android_btn_home , connect_to_android_
 let mini_invoice_history , stock_out_table, add_itm_subpage_main
 
 let Enable_product_detail , remind_product_unavailability
+
+let preview_btn_invoice_page
 
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
@@ -134,6 +137,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     addConnectButtonClick()
 
+    preview_btn_invoice_page = document.getElementById("preview_btn_invoice_page")
+
     mini_invoice_history = document.getElementById("mini_invoice_history")
     stock_out_table = document.getElementById("stock_out_table")
 
@@ -192,18 +197,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     midBtnaction();
 
-    let update_itm_subpage=document.getElementById("update_itm_subpage");
-    let update_itm_close_btn=document.getElementById("update_itm_close_btn");
+    preview_btn_invoice_page.addEventListener("click", () => {
+        ipcRenderer.send("preview_invoice" , "12345678")
+    })
 
-    let stocks_tbl=document.getElementById("stocks_tbl")
-    stocks_tbl.addEventListener('click',()=>{
-        model_box_container.style.display='block';
-        update_itm_subpage.style.display='block';
-    })
-    update_itm_close_btn.addEventListener("click",()=>{
-        model_box_container.style.display='none';
-        update_itm_subpage.style.display='none';
-    })
 })
 
 

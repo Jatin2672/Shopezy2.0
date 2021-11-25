@@ -4,10 +4,6 @@
     --white : #FFF;
     --red : #ff3333;
 }
-* {
-    -webkit-print-color-adjust: exact !important;
-    color-adjust: exact !important;       
-}
 body{
     display: flex;
     flex-direction: column;
@@ -26,6 +22,43 @@ body{
     color: var(--white);
     font-size: 20px;
     height: 50px;
+}
+#edit_icon{
+    margin-right: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    margin: 0px 10px;
+    background-color: var(--white);
+}
+#edit_icon:hover{
+    cursor: pointer;
+    filter: invert(100%);
+}
+#delete_icon{
+    margin-right: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--red);
+    margin: 0px 10px;
+    background-color: #fff;
+}
+#delete_icon:hover{
+    cursor: pointer;
+    background-color: var(--black);
+    border: 1px solid var(--black);
+}
+#settings_icon{
+    margin-right: 20px;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid var(--black);
+    margin: 0px 10px;
+    background-color: var(--white);
+}
+#settings_icon:hover{
+    cursor: pointer;
+    filter: invert(100%);
 }
 #print_btn{
     background-color: var(--primary-color);
@@ -80,7 +113,7 @@ body{
 }
 #heading_invoice{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     margin-top: 3mm;
@@ -94,9 +127,9 @@ body{
 #shop_info1{
     display: flex;
     width: 80mm;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 #shop_address{
    font-size: 3mm;
@@ -138,7 +171,7 @@ body{
 }
 .side_lines{
     width: 8mm;
-    display: block;
+    display: none;
 }
 .side_lines hr{
     width: 8mm;
@@ -208,7 +241,7 @@ body{
 }
 #payment_director_info{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-end;
     margin-top: 8mm;
@@ -247,7 +280,7 @@ body{
 }
 #thanking_customer{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-around;
     margin-top: 8mm;
     padding: 1.5mm 0mm;
@@ -270,10 +303,11 @@ body{
 #items_tables{
     width: 100%;
     padding: 5mm;
+    border: 1px solid var(--black);
 }
 #heading_row{
-    background-color: var(--black);
-    color: var(--white);
+    color: var(--black);
+    text-align: left;
 }
 /* add background to even rows*/
 #table_body tr:nth-child(even) {

@@ -881,7 +881,7 @@ margin-bottom: 20px;
 .top_right_sec_btn{
     display: flex;
 }
-#previewBtn{
+#preview_btn_invoice_page{
     background-color: #4087F3;
     padding: 8px;
     width: 135px;
