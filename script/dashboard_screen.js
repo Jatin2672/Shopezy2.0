@@ -568,7 +568,7 @@ function addItemsToInvoiceHistoryTable(){
     let html_to_add = ""
     invoice_his_table_body.innerHTML = ""
     for (let i = 0; i < all_items_in_invoice.length; i++) {
-        html_to_add += `<tr>
+        html_to_add += `<tr class="invoice_history_row">
         <td>${[all_items_in_invoice[i].invoice_date]}</td>
         <td>${[all_items_in_invoice[i].invoice_id]}</td>
         <td>${[all_items_in_invoice[i].customer_id]}</td>
