@@ -246,6 +246,94 @@
     "savebtn_invoice_settings":{
         "hi":"परिवर्तनों को सुरक्षित करें",
         "en":"Save changes"
+    },
+    "settings_stockes_heading_text":{
+        "hi":"स्टॉक्स",
+        "en":"Stocks"
+    },
+    "settings_stocks_fetchproductdetails":{
+        "hi":"सर्वर से उत्पाद विवरण प्राप्त करें",
+        "en":"Fetch Product Details From Server"
+    },
+    "settings_stocks_remindforunavailability":{
+        "hi":"उत्पाद अनुपलब्धता के लिए याद दिलाएं",
+        "en":"Remind  for product  unavailability"
+    },
+    "quantity_text_stocks_settings":{
+        "hi":"मात्रा",
+        "en":"Quantity"
+    },
+    "unit_stocks_settings":{
+        "hi":"यूनिट्स",
+        "en":"Units"
+    },
+    "weight_stocks_settings":{
+        "hi":"किलोग्राम",
+        "en":"Kilograms"
+    },
+    "meter_stocks_settings":{
+        "hi":"मीटर",
+        "en":"Meters"
+    },
+    "quantity_stocks_settings":{
+        "hi":"लीटर",
+        "en":"Litres"
+    },
+    "savebtn_stocks_settings":{
+        "hi":"परिवर्तनों को सुरक्षित करें",
+        "en":"Save changes"
+    },
+    "settings_personalisation_heading_text":{
+        "hi":"वैयक्तिकरण",
+        "en":"Personalisation"
+    },
+    "settings_personalisation_language_text":{
+        "hi":"भाषा",
+        "en":"Language"
+    },
+    "settings_personalisation_languageselect":{
+        "hi":"चुने",
+        "en":"Select"
+    },
+    "settings_personalisation_languageselect2":{
+        "hi":"अंग्रेज़ी",
+        "en":"English"
+    },
+    "settings_personalisation_languageselect1":{
+        "hi":"हिंदी",
+        "en":"Hindi"
+    },
+    "settings_personalisation_currency_text":{
+        "hi":"मुद्रा",
+        "en":"Currency"
+    },
+    "settings_personalisation_select_currency":{
+        "hi":"चुने",
+        "en":"Select" 
+    },
+    "settings_personalisation_select_currency1":{
+        "hi":"डॉलर",
+        "en":"Dollar"
+    },
+    "settings_personalisation_select_currency2":{
+        "hi":"पौंड",
+        "en":"Pound"
+    },
+    "settings_personalisation_select_currency3":{
+        "hi":"रुपया",
+        "en":"Rupee"
+    },
+    "settings_personalisation_fetchproductdetails":{
+        "hi":"सर्वर से उत्पाद विवरण प्राप्त करें",
+        "en":"Fetch Product Details From Server"
+    },
+    "settings_personalsation_remindforunavailability":{
+        "hi":"उत्पाद अनुपलब्धता के लिए याद दिलाएं",
+        "en":"Remind  for product  unavailability"
+    },
+    "savebtn_personalisation_settings":{
+        "hi":"परिवर्तनों को सुरक्षित करें",
+        "en":"Save changes"
     }
     
 }
