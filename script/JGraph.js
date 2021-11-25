@@ -33,6 +33,8 @@ class JGraph {
 
         this.styleName = " "
 
+        this.selectedDataPoint = 0 ;
+
 
 
         parentObj[plotNumber] = this
@@ -94,6 +96,15 @@ class JGraph {
     //enable and disable y ticks
     set enableYTicks(YTicks) { this.YTicks = YTicks }
     get enableYTicks() { return this.YTicks }
+
+    // set selected data point
+    set selectedDataPoint(selectedDataPoint) {
+        this.selectedDataPoint = selectedDataPoint
+    }
+    // get selected data point
+    get selectedDataPoint() {
+        return this.selectedDataPoint
+    }
 
     set style(styleName) {
         this.styleName = styleName
