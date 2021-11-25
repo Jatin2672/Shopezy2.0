@@ -108,8 +108,8 @@
               <table class="table_summary_home">
                 <thead>
                   <tr>
-                    <th>Invoice Number</th>
-                    <th>Total Price</th>
+                    <th id="dashboard_invoicepage_invoiceno">Invoice Number</th>
+                    <th id="dashboard_invoicepage_totalprice">Total Price</th>
                   </tr>
                 </thead>
                 <tbody id="mini_invoice_history">
@@ -121,9 +121,9 @@
               <table class="table_summary_home">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Product Number</th>
-                    <th>Quantity Left</th>
+                    <th id="dashboard_invoice_tablesummary1">Name</th>
+                    <th id="dashboard_invoice_tablesummary2">Product Number</th>
+                    <th id="dashboard_invoice_tablesummary3">Quantity Left</th>
                   </tr>
                 </thead>
                 <tbody id="stock_out_table">
@@ -145,10 +145,10 @@
 
           <div id="sell_summary_graph_section">
             <select id="term_period_selection">
-              <option>Last 7 Days</option>
-              <option>Last 14 Days</option>
-              <option>Last 28 Days</option>
-              <option>Last 6 Months</option>
+              <option id="term_period_selection1">Last 7 Days</option>
+              <option id="term_period_selection2">Last 14 Days</option>
+              <option id="term_period_selection3">Last 28 Days</option>
+              <option id="term_period_selection4">Last 6 Months</option>
             </select>
             <div id="parent_summary_container">
               <div id="left_summary_container" class="half_graph_area_home">
@@ -192,25 +192,25 @@
           <div class="top_left_section_invoicePage">
 
             <div>
-              <p>Cutomer's Name</p> <input type="text" name="Name" id="Name">
-              <p>Customer's Email</p> <input type="email" name="email" id="email">
-              <p>Cutomer's Mobile Number</p> <input type="number" name="No" id="No">
+              <p id="top_left_section_invoicePage1">Custumer's Name</p> <input type="text" name="Name" id="Name">
+              <p id="top_left_section_invoicePage2">Custumer's Email</p> <input type="email" name="email" id="email">
+              <p id="top_left_section_invoicePage3">Custumer's Mobile Number</p> <input type="number" name="No" id="No">
             </div>
 
             <div>
-              <p>Payment Method</p>
+              <p id="dashboard_top_parts_paymentmethod">Payment Method</p>
               <select name="Payment" id="Payment" class="dropdown">
-                <option value="">---Select---</option>
-                <option value="Card">Credit/Debit</option>
-                <option value="">Phonepay/UPI</option>
+                <option value="" id="dashboard_top_parts_paymentmethod1">---Select---</option>
+                <option value="Card" id="dashboard_top_parts_paymentmethod2">Credit/Debit</option>
+                <option value="" id="dashboard_top_parts_paymentmethod3">Phonepay/UPI</option>
               </select>
-              <p>Accountant Director</p>
+              <p id="dashboard_top_parts_accountant_director">Accountant Director</p>
               <select name="Payment" id="Accountant" class="dropdown">
                 <option value="">---Select---</option>
                 <option value="Card">Credit/Debit</option>
                 <option value="UPI">Phonepay/UPI</option>
               </select>
-              <p>Invoice Templtate</p>
+              <p id="dashboard_top_parts_invoice_template">Invoice Template</p>
               <select name="Payment" id="invo" class="dropdown">
                 <option value="">---Select---</option>
                 <option value="Card">Credit/Debit</option>
@@ -306,7 +306,7 @@
 
           <!-- Connected Device Card -->
           <div class="item_card Connected_device">
-            <h5>Continue Scan To Add Products</h5>
+            <h5 id="continue_scan_to_add_text_devicecard">Continue Scan To Add Products</h5>
             <img src="../media/add_itm/Group_307.png" alt="">
             <p>Connected With <span id="Conneted_device_txt">SM F21</span></p>
           </div>
@@ -396,7 +396,7 @@
             <thead>
               <tr>
                 <th id="timestamp_txt">TIMESTAMP</th>
-                <th id="invoice_no_txt">iNVOICE NUMBER</th>
+                <th id="invoice_no_txt">INVOICE NUMBER</th>
                 <th id="custmer_name_txt">CUSTOMER'S NAME</th>
                 <th id="total_amnt_txt">TOTAL AMOUNT</th>
                 <th id="payment_method_txt">PAYMENT METHOD</th>
@@ -681,9 +681,9 @@
 
           <!-- Connected Device card -->
           <div class="add_item_card Connected_device">
-            <h5>Continue Scan To Add Products</h5>
+            <h5 id="device_card_continuescan_txt">Continue Scan To Add Products</h5>
             <img src="../media/add_itm/Group_307.png" alt="">
-            <p>Connected With <span id="Conneted_device_txt">SM F21</span></p>
+            <p id="connected_device_connectwith_txt">Connected With <span id="Conneted_device_txt">SM F21</span></p>
           </div>
           <!-- Connected Device card -->
 
@@ -703,7 +703,7 @@
       <div id="popUp_screen_cnfrm_addItm" style="display: none;">
 
         <div class="Confirm_popUp_addItm">
-          <p>Do you really want to discard changes ?</p>
+          <p id="popup_screen_discard_question">Do you really want to discard changes ?</p>
           <div class="popUP_btn_addItm">
             <button class="PopUp_btn_chng_addItm" id="yes_btn_cnfrm_addItm">YES</button>
             <button class="PopUp_btn_chng_addItm" id="no_btn_cnfrm_addItm">NO</button>
