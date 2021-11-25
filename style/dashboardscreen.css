@@ -1409,3 +1409,92 @@ margin-bottom: 20px;
     background-color: var(--primary-color) !important;
     color: var(--gray1);
 }
+/* ------------------------------- Update Stock  ---------------------------- */
+#update_itm_subpage{
+    width: 50%;
+    background-color: var(--gray_card);
+    border-radius: 8px;
+    margin: 0 auto;
+    /* z-index: 8; */
+    
+}
+#update_itm_header_txt{
+   font-size: 22px;
+    text-align: right; 
+}
+#update_itm_subpage_header{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    background-color: inherit;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 30px;
+}
+.update_itm_subpage_header{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    background-color: inherit;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 30px;
+}
+#update_itm_close_btn{
+    padding: 8px;
+    border-radius: 8px;
+    margin-left: 90%;
+}
+#update_itm_close_btn:hover{
+    background-color: red;
+    cursor: pointer;
+}
+.update_itm_subpage_main{
+    margin-top: 5%;
+    display: grid;
+    align-items: center;
+    padding: 0 5%;
+    grid-template-columns: 1fr;
+}
+.update_item_card{
+    margin: auto;
+    width: 50%;
+    border: 1px solid var(--transparent-color);
+    color: white;
+    padding: 2% 5%;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 18px;
+}
+.update_item_card_top{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.update_item_card_txt input{
+    background-color: var(--input_black);
+    width: 95%;
+    border: 1px solid var(--transparent-color);
+    height: 30px;
+    color: white;
+    border-radius: 5px;
+}
+.update_remove_itm_Btn:hover{
+    cursor: pointer;
+    animation: bounce 2s ease-in-out infinite;
+}
+#updateStockBtn_update_stock{
+    background-color: var(--primary-color);
+    color: white;
+    width: 220px;
+    height: 50px;
+    border: 0;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ------------------------------- Update Stock ends ---------------------------- */
