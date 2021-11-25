@@ -15,23 +15,23 @@ let account_setting_page, invoice_setting_page,
     personalization_setting_page
 
 let stock_table_body, all_items_in_stocks = []
-let invoice_his_table_body , all_items_in_invoice = []
+let invoice_his_table_body, all_items_in_invoice = []
 
 let expand_sidebar_btn, is_sidebar_expanded = false
 
 let last_selected_settings_btn = "account_setting_btn", last_selected_btn = "home_btn"
 
 
-let model_box_container , 
-add_stock_btn , add_stock_item_dialog_page , add_stock_itm_subpage , 
-popUp_screen_cnfrm_addItm , add_itm_close_btn ,
-yes_btn_cnfrm_addItm , no_btn_cnfrm_addItm 
+let model_box_container,
+    add_stock_btn, add_stock_item_dialog_page, add_stock_itm_subpage,
+    popUp_screen_cnfrm_addItm, add_itm_close_btn,
+    yes_btn_cnfrm_addItm, no_btn_cnfrm_addItm
 
-let connect_android_btn_home , disconnect_android_btn_home , connect_to_android_page , close_connect_client_btn
+let connect_android_btn_home, disconnect_android_btn_home, connect_to_android_page, close_connect_client_btn
 
-let mini_invoice_history , stock_out_table, add_itm_subpage_main
+let mini_invoice_history, stock_out_table, add_itm_subpage_main
 
-let Enable_product_detail , remind_product_unavailability
+let Enable_product_detail, remind_product_unavailability
 
 let preview_btn_invoice_page
 
@@ -198,7 +198,7 @@ window.addEventListener("DOMContentLoaded", () => {
     midBtnaction();
 
     preview_btn_invoice_page.addEventListener("click", () => {
-        ipcRenderer.send("preview_invoice" , "12345678")
+        ipcRenderer.send("preview_invoice", "3")
     })
 
 })
@@ -224,15 +224,15 @@ function userSettingsUpdate() {
         document.getElementById("store_name_txt_home").innerHTML = userSettingsData.bussiness_name
         document.getElementById("account_setting_shop_name").value = userSettingsData.bussiness_name
     }
-    if(userSettingsData.mobile != ""){
+    if (userSettingsData.mobile != "") {
         document.getElementById("mobile_store_txt_home").innerHTML = userSettingsData.mobile
         document.getElementById("account_setting_shop_mobile").value = userSettingsData.mobile
     }
-    if(userSettingsData.address != ""){
+    if (userSettingsData.address != "") {
         document.getElementById("address_store_txt_home").innerHTML = userSettingsData.address
         document.getElementById("addressinput_account_settings").value = userSettingsData.address
     }
-    if(userSettingsData.profile_pic_url != ""){
+    if (userSettingsData.profile_pic_url != "") {
         document.getElementById("user_profile_home").src = userSettingsData.profile_pic_url
         document.getElementById("photo_shop_badge").src = userSettingsData.profile_pic_url
         document.getElementById("account_setting_profile_pic").src = userSettingsData.profile_pic_url
@@ -386,39 +386,39 @@ function changeSettingsPage(pageNumber) {
 
 // ------------------------------- MID Btn function --------------------------------------------
 
-function midBtnaction(){
-    let invo_mid_btn=document.getElementById("invo_mid_btn")
-    let stock_mid_btn=document.getElementById("stock_mid_btn")
-    let search_mid_btn=document.getElementById("search_mid_btn")
-    let analytics_mid_btn=document.getElementById("analytics_mid_btn")
-    let edit_account_icon_home=document.getElementById("edit_account_icon_home")
-    
-    let invoice_btn=document.getElementById("invoice_btn")
-    let analytics_btn=document.getElementById("analytics_btn")
-    let stocks_btn=document.getElementById("stocks_btn")
-    let transaction_btn=document.getElementById("transaction_btn")
-    let settings_btn=document.getElementById("settings_btn")
-    let account_setting_btn=document.getElementById("account_setting_btn")
-    
-    invo_mid_btn.addEventListener('click',()=>{
-    invoice_btn.click();
+function midBtnaction() {
+    let invo_mid_btn = document.getElementById("invo_mid_btn")
+    let stock_mid_btn = document.getElementById("stock_mid_btn")
+    let search_mid_btn = document.getElementById("search_mid_btn")
+    let analytics_mid_btn = document.getElementById("analytics_mid_btn")
+    let edit_account_icon_home = document.getElementById("edit_account_icon_home")
+
+    let invoice_btn = document.getElementById("invoice_btn")
+    let analytics_btn = document.getElementById("analytics_btn")
+    let stocks_btn = document.getElementById("stocks_btn")
+    let transaction_btn = document.getElementById("transaction_btn")
+    let settings_btn = document.getElementById("settings_btn")
+    let account_setting_btn = document.getElementById("account_setting_btn")
+
+    invo_mid_btn.addEventListener('click', () => {
+        invoice_btn.click();
     })
-    stock_mid_btn.addEventListener('click',()=>{
-    stocks_btn.click();
+    stock_mid_btn.addEventListener('click', () => {
+        stocks_btn.click();
     })
-    search_mid_btn.addEventListener('click',()=>{
-    transaction_btn.click();
+    search_mid_btn.addEventListener('click', () => {
+        transaction_btn.click();
     })
-    analytics_mid_btn.addEventListener('click',()=>{
-    analytics_btn.click();
+    analytics_mid_btn.addEventListener('click', () => {
+        analytics_btn.click();
     })
-    edit_account_icon_home.addEventListener('click',()=>{
-    settings_btn.click();
-    setTimeout(() => {
-        account_setting_btn.click();
-    }, 1000);
+    edit_account_icon_home.addEventListener('click', () => {
+        settings_btn.click();
+        setTimeout(() => {
+            account_setting_btn.click();
+        }, 1000);
     })
-    
+
 }
 
 // ------------------------------- MID Btn --------------------------------------------
@@ -447,12 +447,12 @@ function addStockButtonClick() {
     })
 }
 
-function addConnectButtonClick(){
-    connect_android_btn_home.addEventListener("click" , () => {
+function addConnectButtonClick() {
+    connect_android_btn_home.addEventListener("click", () => {
         model_box_container.style.display = "block"
         connect_to_android_page.style.display = "flex"
     })
-    close_connect_client_btn.addEventListener("click" , () =>{
+    close_connect_client_btn.addEventListener("click", () => {
         model_box_container.style.display = "none"
         connect_to_android_page.style.display = "none"
     })
@@ -521,14 +521,14 @@ function addItemsToStockTable() {
     let html_to_add2 = ""
     let no_of_row_added = 0
     stock_out_table.innerHTML = ""
-    for(let i = 0; i < all_items_in_stocks.length; i++){
-        if(all_items_in_stocks[i].quantity - all_items_in_stocks[i].sold_quantity < 10 && no_of_row_added<9){
-        html_to_add2 += `<tr>
+    for (let i = 0; i < all_items_in_stocks.length; i++) {
+        if (all_items_in_stocks[i].quantity - all_items_in_stocks[i].sold_quantity < 10 && no_of_row_added < 9) {
+            html_to_add2 += `<tr>
         <td>${[all_items_in_stocks[i].product_name]}</td>
         <td>${[all_items_in_stocks[i].barcode]}</td>
         <td>${[all_items_in_stocks[i].quantity - all_items_in_stocks[i].sold_quantity]}</td>
         </tr>`
-        no_of_row_added++
+            no_of_row_added++
         }
     }
     stock_out_table.innerHTML = html_to_add2
@@ -548,7 +548,7 @@ getAllItemFromStock()
 
 
 // function to add new row to invoice_detail table of masterdatabase
-function addNewInvoiceData(customer_id , invoice_total_amount, payment_mode, accountant_director, total_items) {
+function addNewInvoiceData(customer_id, invoice_total_amount, payment_mode, accountant_director, total_items) {
     let added_date = new Date().getTime()
     db.run(`INSERT INTO invoice_detail (customer_id ,invoice_date , invoice_total_amount , payment_mode , accountant_director , total_items  ) VALUES 
     ( '${customer_id}','${added_date}' , ${invoice_total_amount} , '${payment_mode}' , '${accountant_director}' , ${total_items} )`, (err) => {
@@ -561,11 +561,12 @@ function addNewInvoiceData(customer_id , invoice_total_amount, payment_mode, acc
 }
 
 // add item to html template table
-function addItemsToInvoiceHistoryTable(){
+function addItemsToInvoiceHistoryTable() {
     let html_to_add = ""
     invoice_his_table_body.innerHTML = ""
     for (let i = 0; i < all_items_in_invoice.length; i++) {
-        html_to_add += `<tr class="invoice_history_row">
+        html_to_add += `<tr class="invoice_history_row" 
+        id="${[all_items_in_invoice[i].invoice_id]}invoice_row">
         <td>${[all_items_in_invoice[i].invoice_date]}</td>
         <td>${[all_items_in_invoice[i].invoice_id]}</td>
         <td>${[all_items_in_invoice[i].customer_id]}</td>
@@ -577,9 +578,16 @@ function addItemsToInvoiceHistoryTable(){
     console.log(html_to_add)
     invoice_his_table_body.innerHTML = html_to_add
 
+    for(let i = 0; i < all_items_in_invoice.length; i++){
+        document.getElementById(`${[all_items_in_invoice[i].invoice_id]}invoice_row`)
+        .addEventListener("click",()=>{
+            ipcRenderer.send("preview_invoice" , all_items_in_invoice[i].invoice_id)
+        })
+    }
+
     let html_to_add2 = ""
     mini_invoice_history.innerHTML = ""
-    for (let i = 0; i < Math.min(all_items_in_invoice.length ,10 ); i++) {
+    for (let i = 0; i < Math.min(all_items_in_invoice.length, 10); i++) {
         html_to_add2 += `<tr>
         <td>${[all_items_in_invoice[i].invoice_id]}</td>
         <td>${[all_items_in_invoice[i].invoice_total_amount]}</td>
@@ -589,7 +597,7 @@ function addItemsToInvoiceHistoryTable(){
 
 }
 // function get all item from invoice in ascending order of date added
-function getAllItemFromInvoiceHistory(){
+function getAllItemFromInvoiceHistory() {
     db.each(`SELECT * FROM invoice_detail ORDER BY invoice_date ASC`, (err, row) => {
         if (err) {
             console.log(err.message)
@@ -603,12 +611,9 @@ const port = 8080;
 //--------------------------get ip of the pc----------------------------
 const { networkInterfaces } = require("os");
 let getLocalExternalIP = () =>
-    []
-        .concat(...Object.values(networkInterfaces()))
-        .find((details) => details.family === "IPv4" && !details.internal)
-        .address;
+    [].concat(...Object.values(networkInterfaces())).find((details) => details.family === "IPv4" && !details.internal).address;
 
-function writeIP_forQR(){
+function writeIP_forQR() {
     document.getElementById("hiddenIP").innerHTML = getLocalExternalIP() + ":" + port.toString()
 }
 
@@ -651,7 +656,7 @@ function createServer() {
                     res.end("ADDEDITEM");
                     console.log("add item :" + params);
                     addAllItemToStockPage(params)
-                }else{
+                } else {
                     res.end("SAMEITEM");
                 }
                 break;
@@ -661,9 +666,9 @@ function createServer() {
                 break;
             case "/scanStatus":
                 res.writeHead(200)
-                if(scanStatus){
+                if (scanStatus) {
                     res.end("STARTSCAN")
-                }else{
+                } else {
                     res.end("STOPSCAN")
                 }
                 break
@@ -681,7 +686,7 @@ function createServer() {
     });
 }
 
-function deviceConnectedSuccess(deviceName){
+function deviceConnectedSuccess(deviceName) {
     model_box_container.style.display = "none"
     connect_android_btn_home.style.display = "none"
     connect_android_btn_home.style.display = "none"
@@ -692,7 +697,7 @@ function deviceConnectedSuccess(deviceName){
 }
 let allItemToAppendToStock = {}
 
-function addAllItemToStockPage(barcode_item_received){
+function addAllItemToStockPage(barcode_item_received) {
     let barcode_item_data = {
         "item_name": " ",
         "item_cost_price": 100,
@@ -704,7 +709,7 @@ function addAllItemToStockPage(barcode_item_received){
     console.log(allItemToAppendToStock)
 }
 
-function toAppendItemToAddStockItemCard(barcode_item_received){
+function toAppendItemToAddStockItemCard(barcode_item_received) {
     let html_to_append = `<div class="add_item_card">
     <div class="add_item_card_top">
       <p>${[barcode_item_received]}</p>
@@ -729,18 +734,18 @@ function toAppendItemToAddStockItemCard(barcode_item_received){
       </div>
     </div>
   </div>`
-  add_itm_subpage_main.innerHTML += html_to_append
+    add_itm_subpage_main.innerHTML += html_to_append
 }
 
-function toogleButtonFun(svgId){
+function toogleButtonFun(svgId) {
     let toggleButton = document.getElementById(svgId)
-    if(toggleButton.classList.contains("toggle_btn_off")){
+    if (toggleButton.classList.contains("toggle_btn_off")) {
         toggleButton.classList.remove("toggle_btn_off")
         toggleButton.classList.add("toggle_btn_on")
         toggleButton.getElementsByTagName("circle")[0].style.fill = "#4087F3"
         toggleButton.getElementsByTagName("circle")[0].setAttribute("cx", "46")
-        
-    }else{
+
+    } else {
         toggleButton.classList.remove("toggle_btn_on")
         toggleButton.classList.add("toggle_btn_off")
         toggleButton.getElementsByTagName("circle")[0].style.fill = "#6B6B6B"
