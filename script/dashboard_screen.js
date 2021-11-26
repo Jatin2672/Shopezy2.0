@@ -266,6 +266,9 @@ window.addEventListener("DOMContentLoaded", () => {
     let add_passcode_modal=document.getElementById("add_passcode_modal")
     let add_local_passcode_btn=document.getElementById("add_local_passcode_btn")
     let close_passcode_btn_addPass=document.getElementById("close_passcode_btn_addPass")
+    let update_passcode_btn=document.getElementById("update_passcode_btn")
+    let new_passcode_input=document.getElementById("new_passcode_input")
+    let re_new_passcode_input=document.getElementById("re_new_passcode_input")
     
     add_local_passcode_btn.addEventListener('click',()=>{
         model_box_container.style.display="flex"
@@ -277,6 +280,28 @@ window.addEventListener("DOMContentLoaded", () => {
         add_passcode_modal.style.display="none"
     })
 
+    update_passcode_btn.addEventListener('click',()=>{
+        if(new_passcode_input.value!=re_new_passcode_input.value)
+        {
+            alert("PassCode Not Matched!!!");
+            re_new_passcode_input.style.border="1px solid red"
+        }
+        else if(new_passcode_input.value.length<4)
+        {
+            new_passcode_input.style.border="1px solid red"
+            alert("PassCode length must be greater than 4 character")
+        }
+        else{
+            userSettingsData.passcodeApplied="true"
+            userSettingsData.passcode=re_new_passcode_input.value
+            fs.writeFile("./settings/usersettings.json", JSON.stringify(userSettingsData), (err) => {
+                if (err) throw err
+                console.log("The file has been saved!")
+            })
+            alert("Passcode Updated Successfully!!!")
+            close_passcode_btn_addPass.click()
+        }
+    })
 
     // --------------------------------------------------- Add PassCode Madal Ends --------------------------------------------------
 
