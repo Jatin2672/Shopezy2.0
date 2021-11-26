@@ -1643,5 +1643,34 @@ margin-bottom: 20px;
 #add_local_passcode_btn{
     cursor: pointer;
 }
-
 /* ---------------------------------Add passcode modal ends --------------------------- */
+
+/* ---------------------------------  Message alert modal --------------------------- */
+
+#message_alert_modal{
+    width: 300px;
+    height: 15vh;
+    background-color: var(--gray_card);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 8px var(--yes_btn);
+    position: absolute;
+    top: 450px;
+    left: 700px;
+}
+#message_alert_title{
+    text-align: center;
+    height: 20%;
+    color: white;
+    font-size: 18px;
+    text-shadow: 0 0 4px var(--yes_btn);
+    border-bottom: 1px solid var(--yes_btn);
+    font-family: audiowide;
+}
+#message_section_alert{
+    text-align: center;
+    color: white;
+    line-height: 30px;
+}
+
+/* ---------------------------------  Message alert modal ends --------------------------- */
