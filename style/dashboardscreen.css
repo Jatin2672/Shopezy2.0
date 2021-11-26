@@ -1655,7 +1655,7 @@ margin-bottom: 20px;
     padding: 10px;
     box-shadow: 0 0 8px var(--yes_btn);
     position: absolute;
-    top: 450px;
+    top: 350px;
     left: 700px;
 }
 #message_alert_title{
