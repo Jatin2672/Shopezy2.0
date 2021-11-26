@@ -320,7 +320,24 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // --------------------------------------------------- Message Modal Ends --------------------------------------------------
+    
+    // --------------------------------------------------- Notification Modal  --------------------------------------------------
 
+    let notification_icon_home=document.getElementById("notification_icon_home")
+    let close_notify_modal=document.getElementById("close_notify_modal")
+    let notification_modal=document.getElementById("notification_modal")
+    
+    notification_icon_home.addEventListener('click',()=>{
+        model_box_container.style.display="block"
+        notification_modal.style.display="block"
+    })
+    
+    close_notify_modal.addEventListener('click',()=>{
+        model_box_container.style.display="none"
+        notification_modal.style.display="none"
+    })
+
+    // --------------------------------------------------- Notification Modal Ends --------------------------------------------------
 
 })
 

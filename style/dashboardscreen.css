@@ -6,7 +6,7 @@
     --red : #ff3333;
     --gray1: #EAEAEA;
     --card-color : #393E3A;
-
+    --gray2: #F5F5F5;
     --gray_card: #36393F;
     --input_black: #303339;
     --link: #4087F3;
@@ -1674,3 +1674,64 @@ margin-bottom: 20px;
 }
 
 /* ---------------------------------  Message alert modal ends --------------------------- */
+
+/* --------------------------------- Notfication modal ----------------------------------- */
+
+#notification_modal{
+    width: 550px;
+    height: 70vh;
+    margin: auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: auto;
+}
+#notification_modal_title{
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    justify-items: end;
+    height: 5%;
+    padding: 5px;
+    font-size: 18px;
+    text-shadow: 0 0 4px var(--yes_btn);
+    border-bottom: 1px solid var(--yes_btn);
+    font-family: audiowide;
+    color: var(--gray1);
+}
+#close_notify_modal{
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#close_notify_modal:hover{
+    background-color: red;
+}
+#notification_table{
+    padding: 5px 10px;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+#notification_table tr:nth-child(odd){
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+#notification_table tr:nth-child(even){
+    background-color: var(--gray2);
+    height: auto;
+    line-height: 20px;
+    border-bottom: 5px solid white;
+    color: black;
+}
+#notification_table tr td{
+    padding: 5px 10px;
+}
+.Date_notify_bar{
+    border-radius: 10px 10px 0 0;
+}
+.notify_bar_txt{
+    border-radius: 0 0 10px 10px;
+
+}
+/* --------------------------------- Notfication modal ----------------------------------- */
