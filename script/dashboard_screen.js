@@ -283,13 +283,13 @@ window.addEventListener("DOMContentLoaded", () => {
     update_passcode_btn.addEventListener('click',()=>{
         if(new_passcode_input.value!=re_new_passcode_input.value)
         {
-            alert("PassCode Not Matched!!!");
             re_new_passcode_input.style.border="1px solid red"
+            ErrorAlert("PassCode Not Matched!!!")
         }
         else if(new_passcode_input.value.length<4)
         {
             new_passcode_input.style.border="1px solid red"
-            alert("PassCode length must be greater than 4 character")
+            ErrorAlert("PassCode length must be greater than 4 character")
         }
         else{
             userSettingsData.passcodeApplied="true"
@@ -298,12 +298,29 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (err) throw err
                 console.log("The file has been saved!")
             })
-            alert("Passcode Updated Successfully!!!")
-            close_passcode_btn_addPass.click()
+            ErrorAlert("Passcode Updated Successfully!!!")
+            setTimeout(() => {
+                close_passcode_btn_addPass.click()
+            }, 2001);
         }
     })
 
-    // --------------------------------------------------- Add PassCode Madal Ends --------------------------------------------------
+    // --------------------------------------------------- Add PassCode Modal Ends --------------------------------------------------
+    
+    // --------------------------------------------------- Message Modal --------------------------------------------------
+    
+    let message_alert_modal=document.getElementById("message_alert_modal")
+    let error_message=document.getElementById("error_message_txt")
+    function ErrorAlert(message){
+        message_alert_modal.style.display="block"
+        error_message.innerHTML=message;
+        setTimeout(() => {
+            message_alert_modal.style.display="none"
+        }, 2000);
+    }
+
+    // --------------------------------------------------- Message Modal Ends --------------------------------------------------
+
 
 })
 
