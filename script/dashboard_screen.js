@@ -338,6 +338,10 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
     // --------------------------------------------------- Notification Modal Ends --------------------------------------------------
+    document.getElementById("updateStockBtn")
+    .addEventListener("click", () => {
+        addOrUpdateItemStock()
+    });
 
 })
 
@@ -920,46 +924,48 @@ function deviceConnectedSuccess(deviceName) {
     document.getElementById("no_android_client_txt").style.display = "none"
     disconnect_android_btn_home.style.display = "flex"
 }
-let allItemToAppendToStock = {}
+let allItemToAppendToStock = []
 
 function addAllItemToStockPage(barcode_item_received) {
-    let barcode_item_data = {
-        "item_name": " ",
-        "item_cost_price": 100,
-        "item_selling_price": 120,
-        "item_quantity": 20
-    }
-    allItemToAppendToStock[barcode_item_received] = barcode_item_data
+    allItemToAppendToStock.push(barcode_item_received)
     toAppendItemToAddStockItemCard(barcode_item_received)
     console.log(allItemToAppendToStock)
 }
 
 function toAppendItemToAddStockItemCard(barcode_item_received) {
-    let html_to_append = `<div class="add_item_card">
+    let html_to_append = `<div id="${[barcode_item_received]}card" class="add_item_card">
     <div class="add_item_card_top">
       <p>${[barcode_item_received]}</p>
-      <img src="../media/add_itm/dustbinIcon.svg" alt="" class="remove_itm_Btn">
+      <img id="${[barcode_item_received]}delete_btn" src="../media/add_itm/dustbinIcon.svg" alt="" class="remove_itm_Btn">
     </div>
     <div class="add_item_card_txt">
       <p>Product Name</p>
-      <input type="text" name="product_name" id="add_item_card_input_txt">
+      <input id="${[barcode_item_received]}product_name" type="text" name="product_name">
     </div>
     <div>
       <div class="Pricediv">
         <p>Cost Price</p>
-        <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+        <input id="${[barcode_item_received]}cost_price" type="number" name="no_of_items" class="quantity" min="1" max="20" required>
       </div>
       <div class="Pricediv">
         <p>Sell Price</p>
-        <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+        <input id="${[barcode_item_received]}sell_price" type="number" name="no_of_items" class="quantity" min="1" max="20" required>
       </div>
       <div class="Pricediv">
         <p>Stock quantity</p>
-        <input type="number" name="no_of_items" class="quantity" min="1" max="20" required>
+        <input id="${[barcode_item_received]}qty" type="number" name="no_of_items" class="quantity" min="1" max="20" required>
       </div>
     </div>
   </div>`
     add_itm_subpage_main.innerHTML += html_to_append
+
+    setTimeout(()=>{
+        document.getElementById(`${[barcode_item_received]}delete_btn`)
+        .addEventListener("click" , () => {
+            document.getElementById(`${[barcode_item_received]}card`).remove()
+            all_items_in_stocks.remove(barcode_item_received)
+        })
+    },100);
 }
 
 function toogleButtonFun(svgId) {
@@ -1004,3 +1010,31 @@ function recreateNode(el, withChildren) {
       el.parentNode.replaceChild(newEl, el);
     }
   }
+
+function addOrUpdateItemStock(){
+    for(let i = 0; i < allItemToAppendToStock.length; i++){
+        let item_barcode = allItemToAppendToStock[i]
+        let item_name = document.getElementById(`${item_barcode}product_name`).value
+        let item_cost_price = document.getElementById(`${item_barcode}cost_price`).value
+        let item_sell_price = document.getElementById(`${item_barcode}sell_price`).value
+        let item_qty = document.getElementById(`${item_barcode}qty`).value
+
+        // check if it is already in stock_item database
+        db.get(`SELECT barcode from stockitem where barcode = ${[item_barcode]}`,(err , row) => {
+            if(err) console.log(err)
+            if(row){
+                let date = new Date().getTime()
+                updateStockData(item_barcode, item_name, item_cost_price, item_sell_price, item_qty,0,date)
+            }else{
+                addItemToStock(item_barcode, item_name, item_cost_price, item_sell_price, item_qty)
+            }
+        })
+    }
+    getAllItemFromStock()
+    setTimeout(() => {
+        console.log(all_items_in_stocks)
+        addItemsToStockTable()
+        add_itm_close_btn.click()
+    }, 300);
+
+}
