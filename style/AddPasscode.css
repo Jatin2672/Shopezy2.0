@@ -1,0 +1,91 @@
+:root{
+    --primary-color: #4087F3;
+    --darkBlack : #191919;
+    --transparent-color : #00000044;
+    --gray_card : #36393F;
+}
+@font-face {
+    font-family:audiowide ;
+    src: url(../media/font/Audiowide.ttf);
+}
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+#add_passcode_modal{
+    background-color: var(--gray_card);
+    width: 40vw;
+    height: 60vh;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+#top_title_bar_addPasscode{
+    font-family:audiowide ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid var(--darkBlack);
+}
+#logo_img_AddPass{
+    width: 40px;
+}
+#close_passcode_btn_addPass{
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#close_passcode_btn_addPass:hover{
+    background-color: red;
+}
+#app_name_addPass{
+    font-size: 28px;
+    color: var(--primary-color);
+}
+#center_area_add_passcode{
+    display: flex;
+    flex-direction: column;
+    
+}
+#userphoto_img_add_passcode{
+    width: 100px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    margin: 50px auto;
+}
+#passcode_area_add_passcode{
+    color: white;
+    font-size: 18px;
+    font-family: audiowide;
+}
+.ADDpassCode_input_div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+#new_passcode_input,#re_new_passcode_input{
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--transparent-color);
+    height: 40px;
+    width: 140px;
+    box-shadow: none;
+    border: none;
+    color: white;
+}
+
+#update_passcode_btn{
+    width: 40px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+#update_passcode_btn:hover{
+    box-shadow: 0px 0px 8px 0px #458dfabe;
+    ;
+}
