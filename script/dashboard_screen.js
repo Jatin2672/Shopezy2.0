@@ -261,6 +261,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // --------------------------------------------------- Setting Account image ----------------------------------------------
 
+    // --------------------------------------------------- Add PassCode Madal -------------------------------------------------------
+
+    let add_passcode_modal=document.getElementById("add_passcode_modal")
+    let add_local_passcode_btn=document.getElementById("add_local_passcode_btn")
+    let close_passcode_btn_addPass=document.getElementById("close_passcode_btn_addPass")
+    
+    add_local_passcode_btn.addEventListener('click',()=>{
+        model_box_container.style.display="flex"
+        add_passcode_modal.style.display="block"
+    })
+
+    close_passcode_btn_addPass.addEventListener('click',()=>{
+        model_box_container.style.display="none"
+        add_passcode_modal.style.display="none"
+    })
+
+
+    // --------------------------------------------------- Add PassCode Madal Ends --------------------------------------------------
+
 })
 
 

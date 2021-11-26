@@ -2,7 +2,7 @@
     --primary-color: #4087F3;
     --darkBlack : #191919;
     --transparent-color : #00000044;
-    --darkGray : #36393F;
+    --gray_card : #36393F;
 }
 @font-face {
     font-family:audiowide ;
@@ -14,7 +14,7 @@ body{
     height: 100vh;
 }
 #add_passcode_modal{
-    background-color: var(--darkGray);
+    background-color: var(--gray_card);
     width: 40vw;
     height: 60vh;
     margin: auto;
