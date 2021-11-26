@@ -1,8 +1,8 @@
 
 var data = {
-    "Day": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon" , "Tue"],
-    "profit": [10, 7, 11, 8, 12, 9, 7, 10, 5],
-    "sell": [18, 17, 20, 18, 22, 18, 15, 20, 15]
+    "Day": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "profit": [10, 7, 11, 8, 12, 9, 7],
+    "sell": [18, 17, 20, 18, 22, 18, 15]
 }
 
 let selectedI;
@@ -13,7 +13,7 @@ function bar_graph(p) {
     console.log(p);
     p.setup = function () {
 
-        p.createCanvas(300, 200);
+        p.createCanvas(300, 230);
         p.background("#EAEAEA");
         p.fill(0);
         p.stroke(0);
@@ -71,8 +71,11 @@ function bar_graph(p) {
             p.rect(dataX, 10, barWidth, dataProfit,0,0,5,5);
             p.pop()
             
-            if(p.mouseX > dataX- (barWidth*1.5) && p.mouseX < dataX + (0.5*barWidth) && p.mouseY > 10 && p.mouseY < p.height-20){
+            if(p.mouseX > dataX- (barWidth*1.0) && p.mouseX < dataX + (1.0*barWidth) && p.mouseY > 10 && p.mouseY < p.height-20){
                 selectedI = i;
+                document.getElementById("profit_val_home").innerHTML = "Rs." + data.profit[i];
+                document.getElementById("sell_val_home").innerHTML = "Rs." + data.sell[i];
+                document.getElementById("growth_indicator_txt").innerHTML = ((data.profit[i] / data.sell[i] * 100)).toPrecision(2) + "%";
             }
 
             p.push()
@@ -88,16 +91,24 @@ function bar_graph(p) {
 
         // draw boundries
         p.strokeWeight(1);
-        p.line(10, 10, 10, p.height - 20);
         p.line(10, 10, p.width, 10);
+
+
 
         p.pop()
 
+        // draw curser
+        p.strokeWeight(0.5);
+        p.drawingContext.setLineDash([5,5])
+        p.line(p.mouseX , 0 , p.mouseX , p.height)
+        p.line(0 , p.mouseY , p.width , p.mouseY)
+        p.drawingContext.setLineDash([1,1])
 
     }
 }
-new p5(bar_graph, 'graph1')
+new p5(bar_graph, 'home_page_graph')
 
+/*
 function line_graph(p) {
     console.log(p);
     p.setup = function () {
@@ -203,3 +214,4 @@ function line_graph(p) {
     }
 }
 new p5(line_graph, 'graph2')
+*/

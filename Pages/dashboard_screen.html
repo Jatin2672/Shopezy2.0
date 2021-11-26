@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../style/dashboardscreen.css" />
   <script src="../script/qrcode.min.js"></script>
   <script src="../script/p5.js"></script>
-  <script src="../script/JGraph.js"></script>
+  <script src="../script/analytics.js"></script>
 </head>
 
 <body>
@@ -144,21 +144,15 @@
           </div>
 
           <div id="sell_summary_graph_section">
-            <select id="term_period_selection">
-              <option id="term_period_selection1">Last 7 Days</option>
-              <option id="term_period_selection2">Last 14 Days</option>
-              <option id="term_period_selection3">Last 28 Days</option>
-              <option id="term_period_selection4">Last 6 Months</option>
-            </select>
             <div id="parent_summary_container">
               <div id="left_summary_container" class="half_graph_area_home">
                 <div>
                   <span class="large_text_suummary">Profit</span>
-                  <span class="larger_text_suummary">₹15.0K</span>
+                  <span id="profit_val_home"  class="larger_text_suummary">₹15.0K</span>
                 </div>
                 <div>
                   <span class="large_text_suummary">Sell</span>
-                  <span class="larger_text_suummary">₹50.0K</span>
+                  <span id="sell_val_home" class="larger_text_suummary">₹50.0K</span>
                 </div>
               </div>
               <div id="right_summary_container" class="half_graph_area_home">
@@ -827,42 +821,6 @@
       runtimes++;
     }
   });
-  let parent_graph_home = document.getElementById("home_page_graph");
-  let bar_graph_home_width = parent_graph_home.getBoundingClientRect().width;
-  // draw graphs on home and other pages
-  let bar_graph_home = new JGraph('bar', 'home_page_graph', ['MON', 'WED', 'TUES', 'THUR', 'FRI', 'SAT', 'SUN'], [130, 300, 100, 200, 300, 400, 450])
-  bar_graph_home.style = "lightV"
-  bar_graph_home.canvas_width = bar_graph_home_width;
-  bar_graph_home.canvas_height = 200;
-  bar_graph_home.grids = true
-  bar_graph_home.plot()
-
-  let analytic_graph_parent = document.getElementById("analytics_graph_1");
-  let analytic_graph_width = analytic_graph_parent.getBoundingClientRect().width;
-  let analytic_graph_height = analytic_graph_parent.getBoundingClientRect().height;
-  let bar_graph_analytics_2 = new JGraph('bar', 'analytics_graph_1', ['MON', 'WED', 'TUES', 'THUR', 'FRI', 'SAT', 'SUN'], [130, 300, 100, 200, 300, 400, 450])
-  bar_graph_analytics_2.style = "lightV"
-  bar_graph_analytics_2.canvas_width = analytic_graph_width;
-  bar_graph_analytics_2.canvas_height = analytic_graph_height;
-  bar_graph_analytics_2.plot()
-
-  let bar_graph_analytics_3 = new JGraph('pie', 'analytics_graph_2', ['MON', 'WED', 'TUES', 'THUR', 'FRI', 'SAT', 'SUN'], [130, 300, 100, 200, 300, 400, 450])
-  bar_graph_analytics_3.style = "lightV"
-  bar_graph_analytics_3.canvas_width = analytic_graph_width;
-  bar_graph_analytics_3.canvas_height = analytic_graph_height;
-  bar_graph_analytics_3.plot()
-
-  let bar_graph_analytics_4 = new JGraph('lines', 'analytics_graph_3', ['MON', 'WED', 'TUES', 'THUR', 'FRI', 'SAT', 'SUN'], [130, 300, 100, 200, 300, 400, 450])
-  bar_graph_analytics_4.style = "lightV"
-  bar_graph_analytics_4.canvas_width = analytic_graph_width;
-  bar_graph_analytics_4.canvas_height = analytic_graph_height;
-  bar_graph_analytics_4.plot()
-
-  let bar_graph_analytics_5 = new JGraph('pie', 'analytics_graph_4', ['MON', 'WED', 'TUES', 'THUR', 'FRI', 'SAT', 'SUN'], [130, 300, 100, 200, 300, 400, 450])
-  bar_graph_analytics_5.style = "lightV"
-  bar_graph_analytics_5.canvas_width = analytic_graph_width;
-  bar_graph_analytics_5.plot()
-  bar_graph_analytics_5.canvas_height = analytic_graph_height;
 </script>
 
 </html>
