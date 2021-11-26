@@ -5,6 +5,8 @@ var data = {
     "sell": [18, 17, 20, 18, 22, 18, 15, 20, 15]
 }
 
+let selectedI;
+
 
 
 function bar_graph(p) {
@@ -69,6 +71,9 @@ function bar_graph(p) {
             p.rect(dataX, 10, barWidth, dataProfit,0,0,5,5);
             p.pop()
             
+            if(p.mouseX > dataX- (barWidth*1.5) && p.mouseX < dataX + (0.5*barWidth) && p.mouseY > 10 && p.mouseY < p.height-20){
+                selectedI = i;
+            }
 
             p.push()
             p.textSize(12)
