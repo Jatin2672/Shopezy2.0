@@ -1,5 +1,6 @@
 body{
     height: 100vh;
+    width: 100vw;
     /* display: grid;
     place-items: center; */
     background-color: black;
@@ -7,33 +8,59 @@ body{
 :root{
     --yes_btn: #FF8585;
     --gray_card: #36393F;
+    --primary-color: #4087F3;
 }
 @font-face {
     font-family:audiowide ;
     src: url(../media/font/Audiowide.ttf);
 }
-#message_alert_modal{
-    width: 300px;
-    height: 15vh;
+#notification_modal{
+    width: 550px;
+    height: 70vh;
+    margin: auto;
     background-color: var(--gray_card);
-    border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 0 8px var(--yes_btn);
-    position: absolute;
-    top: 300px;
-    left: 600px;
+    border-radius: 8px;
+    overflow: auto;
 }
-#message_alert_title{
-    text-align: center;
-    height: 20%;
-    color: white;
+#notification_modal_title{
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    justify-items: end;
+    height: 5%;
+    padding: 5px;
     font-size: 18px;
     text-shadow: 0 0 4px var(--yes_btn);
     border-bottom: 1px solid var(--yes_btn);
     font-family: audiowide;
-}
-#message_section_alert{
-    text-align: center;
     color: white;
-    line-height: 30px;
+}
+#close_notify_modal{
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#close_notify_modal:hover{
+    background-color: red;
+}
+#notification_table{
+    padding: 5px 10px;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+#notification_table tr:nth-child(odd){
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+#notification_table tr:nth-child(even){
+    background-color: white;
+    height: auto;
+    line-height: 20px;
+    border-bottom: 5px solid var(--gray_card);
+}
+#notification_table tr td{
+    border-radius: 10px;
+    padding: 5px 10px;
 }
