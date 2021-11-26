@@ -790,7 +790,7 @@ function addNewInvoiceData(customer_id, invoice_total_amount, payment_mode, acco
         if (err) {
             console.log(err.message)
         }
-        max_invoice_detail_id = row.max_id
+        max_invoice_detail_id = row.max_id + 1
     });
     let added_date = new Date().getTime()
     db.run(`INSERT INTO invoice_detail (customer_id ,invoice_date , invoice_total_amount , payment_mode , accountant_director , total_items  ) VALUES 
