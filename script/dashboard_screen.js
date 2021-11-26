@@ -278,7 +278,7 @@ function changeLanguage(languageName) {
     document.getElementById("selectmenu_personalisation_settings").value = languageName
 
     fs.writeFile("./settings/system_settings.json", JSON.stringify(system_settings),(err)=>{
-        console.log(err)
+        if(err) console.log(err)
     })
 }
 
@@ -628,15 +628,13 @@ function openItemUpdateDialog(barcode, name, price, sellPrice, quantity) {
     document.getElementById("upd_sell_price").value = sellPrice
     document.getElementById("quantity_in_stock").value = quantity
 
-    document.getElementById("discard_and_close")
-        .removeEventListener("click", () => { })
+    recreateNode(document.getElementById("discard_and_close"))
     document.getElementById("discard_and_close")
         .addEventListener("click", () => {
             model_box_container.style.display = "none"
             updateModelBox.style.display = "none"
         })
-    document.getElementById("update_stock_item")
-        .removeEventListener("click", () => { })
+    recreateNode(document.getElementById("update_stock_item"))
     document.getElementById("update_stock_item")
         .addEventListener("click", () => {
             updateDataFromModelBox()
@@ -662,7 +660,12 @@ function updateDataFromModelBox() {
     let soldQty = 0
     let dates = (new Date()).getTime()
     updateStockData(barcode, prod_name, cp, sp, qty, soldQty, dates)
-    alert("updated Reload Page To See Effect")
+    getAllItemFromStock()
+    setTimeout(() => {
+        console.log(all_items_in_stocks)
+        addItemsToStockTable()
+    }, 300);
+
 }
 
 function updateStockData(barcode, prod_name, cp, sp, qty, soldQty, date) {
@@ -678,6 +681,7 @@ function updateStockData(barcode, prod_name, cp, sp, qty, soldQty, date) {
 
 // function get all item from stock in ascending order of date added
 function getAllItemFromStock() {
+    all_items_in_stocks = []
     db.each(`SELECT * FROM stockitem ORDER BY date_added ASC`, (err, row) => {
         if (err) {
             console.log(err.message)
@@ -763,7 +767,8 @@ function writeIP_forQR() {
 // -----------------------------------creation of a http server ---------------------------------------
 
 const http = require("http");
-var os = require('os')
+var os = require('os');
+const { setTimeout } = require('timers');
 const host = getLocalExternalIP();
 let itemListReceived = []
 
@@ -908,3 +913,16 @@ function updateSettings(){
         console.log("The file has been saved!")
     })
 }
+
+
+// some special function
+function recreateNode(el, withChildren) {
+    if (withChildren) {
+      el.parentNode.replaceChild(el.cloneNode(true), el);
+    }
+    else {
+      var newEl = el.cloneNode(false);
+      while (el.hasChildNodes()) newEl.appendChild(el.firstChild);
+      el.parentNode.replaceChild(newEl, el);
+    }
+  }
