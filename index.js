@@ -36,7 +36,7 @@ function createDashboardWindow() {
       preload: path.join(__dirname, "script/dashboard_screen.js"),
     },
   });
-  dashboardWindow.removeMenu()
+  //dashboardWindow.removeMenu()
   dashboardWindow.loadFile("pages/dashboard_screen.html");
   dashboardWindow.maximize();
 }
@@ -117,6 +117,14 @@ ipcMain.on("passcode:close", () => {
 ipcMain.on("welcome:register", () => {
   createDashboardWindow()
   welcomeWindow.close()
+})
+
+ipcMain.on("welcome_screen:close" , ()=> {
+  welcomeWindow.close()
+})
+
+ipcMain.on("welcome_screen:minimize" , ()=> {
+  welcomeWindow.minimize()
 })
 
 ipcMain.on("invoice:print", () => {

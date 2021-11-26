@@ -1,7 +1,7 @@
 //import file system
 const { ipcRenderer } = require('electron');
 const fs = require('fs');
-let languageData, userSettingsData
+let system_settings, languageData, userSettingsData
 
 let scanStatus = false
 
@@ -53,7 +53,14 @@ window.addEventListener("DOMContentLoaded", () => {
         if (err) throw err
         // parse the data
         languageData = JSON.parse(data)
-        changeLanguage("hi")
+    })
+
+    fs.readFile("./settings/system_settings.json", (err, data) => {
+        // if error occurs
+        if (err) throw err
+        // parse the data
+        system_settings = JSON.parse(data)
+       
     })
 
     // read a json file using fs for user settings
@@ -166,7 +173,8 @@ window.addEventListener("DOMContentLoaded", () => {
         addItemsToStockTable()
         addItemsToInvoiceHistoryTable()
         writeIP_forQR()
-    }, 300);
+        changeLanguage(system_settings.language)
+    }, 500);
 
     // apply click on all the buttons [sidebar]
     applyEventListeners('home_btn', 0)
@@ -244,6 +252,13 @@ window.addEventListener("DOMContentLoaded", () => {
         profile_pic_url = "../media/userphoto.png";
         Dp_img_select_accSet.setAttribute('src', profile_pic_url);
     })
+
+    document.getElementById("selectmenu_personalisation_settings")
+    .addEventListener("change" , () => {
+        system_settings.language = document.getElementById("selectmenu_personalisation_settings").value
+        changeLanguage(system_settings.language)
+    })
+
     // --------------------------------------------------- Setting Account image ----------------------------------------------
 
 })
@@ -259,6 +274,12 @@ function changeLanguage(languageName) {
             console.log(key)
         }
     }
+
+    document.getElementById("selectmenu_personalisation_settings").value = languageName
+
+    fs.writeFile("./settings/system_settings.json", JSON.stringify(system_settings),(err)=>{
+        console.log(err)
+    })
 }
 
 // function to change name and email on user badge [sidebar]
@@ -285,6 +306,12 @@ function userSettingsUpdate() {
         document.getElementById("user_profile_home").src = userSettingsData.profile_pic_url
         document.getElementById("photo_shop_badge").src = userSettingsData.profile_pic_url
         document.getElementById("Dp_img_select_accSet").src = userSettingsData.profile_pic_url
+    }
+    if(userSettingsData.bussiness_owner_name != ""){
+        document.getElementById("shop_bussiness_name_acc").value = userSettingsData.bussiness_owner_name
+    }
+    if(userSettingsData.bussiness_category != ""){
+        document.getElementById("bussiness_category_acc").value = userSettingsData.bussiness_category
     }
 }
 
