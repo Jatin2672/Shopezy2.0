@@ -1693,10 +1693,10 @@ margin-bottom: 20px;
     height: 5%;
     padding: 5px;
     font-size: 18px;
-    text-shadow: 0 0 4px var(--yes_btn);
     border-bottom: 1px solid var(--yes_btn);
     font-family: audiowide;
-    color: var(--gray1);
+    color: var(--primary-color);
+    font-weight: 600;
 }
 #close_notify_modal{
     padding: 5px;
