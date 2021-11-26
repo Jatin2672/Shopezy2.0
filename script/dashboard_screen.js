@@ -3,7 +3,8 @@ const { ipcRenderer } = require('electron');
 const fs = require('fs');
 let system_settings, languageData, userSettingsData
 
-let scanStatus = false
+let max_invoice_detail_id = 0
+let scanStatus = false, invoice_item_container
 
 let selectedPage = 0
 let home_page, invoice_page, analytics_page,
@@ -60,7 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (err) throw err
         // parse the data
         system_settings = JSON.parse(data)
-       
+
     })
 
     // read a json file using fs for user settings
@@ -155,6 +156,8 @@ window.addEventListener("DOMContentLoaded", () => {
     mini_invoice_history = document.getElementById("mini_invoice_history")
     stock_out_table = document.getElementById("stock_out_table")
 
+    invoice_item_container = document.getElementById("invoice_items_container")
+
     add_itm_subpage_main = document.getElementById("add_itm_subpage_main")
     updateModelBox = document.getElementById("update_itm_subpage_main")
     savebtn_account_settings = document.getElementById("savebtn_account_settings")
@@ -214,7 +217,11 @@ window.addEventListener("DOMContentLoaded", () => {
     midBtnaction();
 
     preview_btn_invoice_page.addEventListener("click", () => {
-        ipcRenderer.send("preview_invoice", "3")
+        generateInvoiceFromData()
+        setTimeout(() => {
+            ipcRenderer.send("preview_invoice", max_invoice_detail_id)
+        },1500)
+        
     })
 
     savebtn_account_settings.addEventListener("click", () => {
@@ -254,46 +261,44 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
     document.getElementById("selectmenu_personalisation_settings")
-    .addEventListener("change" , () => {
-        system_settings.language = document.getElementById("selectmenu_personalisation_settings").value
-        changeLanguage(system_settings.language)
-    })
+        .addEventListener("change", () => {
+            system_settings.language = document.getElementById("selectmenu_personalisation_settings").value
+            changeLanguage(system_settings.language)
+        })
 
     // --------------------------------------------------- Setting Account image ----------------------------------------------
 
     // --------------------------------------------------- Add PassCode Madal -------------------------------------------------------
 
-    let add_passcode_modal=document.getElementById("add_passcode_modal")
-    let add_local_passcode_btn=document.getElementById("add_local_passcode_btn")
-    let close_passcode_btn_addPass=document.getElementById("close_passcode_btn_addPass")
-    let update_passcode_btn=document.getElementById("update_passcode_btn")
-    let new_passcode_input=document.getElementById("new_passcode_input")
-    let re_new_passcode_input=document.getElementById("re_new_passcode_input")
-    
-    add_local_passcode_btn.addEventListener('click',()=>{
-        model_box_container.style.display="flex"
-        add_passcode_modal.style.display="block"
+    let add_passcode_modal = document.getElementById("add_passcode_modal")
+    let add_local_passcode_btn = document.getElementById("add_local_passcode_btn")
+    let close_passcode_btn_addPass = document.getElementById("close_passcode_btn_addPass")
+    let update_passcode_btn = document.getElementById("update_passcode_btn")
+    let new_passcode_input = document.getElementById("new_passcode_input")
+    let re_new_passcode_input = document.getElementById("re_new_passcode_input")
+
+    add_local_passcode_btn.addEventListener('click', () => {
+        model_box_container.style.display = "flex"
+        add_passcode_modal.style.display = "block"
     })
 
-    close_passcode_btn_addPass.addEventListener('click',()=>{
-        model_box_container.style.display="none"
-        add_passcode_modal.style.display="none"
+    close_passcode_btn_addPass.addEventListener('click', () => {
+        model_box_container.style.display = "none"
+        add_passcode_modal.style.display = "none"
     })
 
-    update_passcode_btn.addEventListener('click',()=>{
-        if(new_passcode_input.value!=re_new_passcode_input.value)
-        {
-            re_new_passcode_input.style.border="1px solid red"
+    update_passcode_btn.addEventListener('click', () => {
+        if (new_passcode_input.value != re_new_passcode_input.value) {
+            re_new_passcode_input.style.border = "1px solid red"
             ErrorAlert("PassCode Not Matched!!!")
         }
-        else if(new_passcode_input.value.length<4)
-        {
-            new_passcode_input.style.border="1px solid red"
+        else if (new_passcode_input.value.length < 4) {
+            new_passcode_input.style.border = "1px solid red"
             ErrorAlert("PassCode length must be greater than 4 character")
         }
-        else{
-            userSettingsData.passcodeApplied="true"
-            userSettingsData.passcode=re_new_passcode_input.value
+        else {
+            userSettingsData.passcodeApplied = "true"
+            userSettingsData.passcode = re_new_passcode_input.value
             fs.writeFile("./settings/usersettings.json", JSON.stringify(userSettingsData), (err) => {
                 if (err) throw err
                 console.log("The file has been saved!")
@@ -306,42 +311,42 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
     // --------------------------------------------------- Add PassCode Modal Ends --------------------------------------------------
-    
+
     // --------------------------------------------------- Message Modal --------------------------------------------------
-    
-    let message_alert_modal=document.getElementById("message_alert_modal")
-    let error_message=document.getElementById("error_message_txt")
-    function ErrorAlert(message){
-        message_alert_modal.style.display="block"
-        error_message.innerHTML=message;
+
+    let message_alert_modal = document.getElementById("message_alert_modal")
+    let error_message = document.getElementById("error_message_txt")
+    function ErrorAlert(message) {
+        message_alert_modal.style.display = "block"
+        error_message.innerHTML = message;
         setTimeout(() => {
-            message_alert_modal.style.display="none"
+            message_alert_modal.style.display = "none"
         }, 2000);
     }
 
     // --------------------------------------------------- Message Modal Ends --------------------------------------------------
-    
+
     // --------------------------------------------------- Notification Modal  --------------------------------------------------
 
-    let notification_icon_home=document.getElementById("notification_icon_home")
-    let close_notify_modal=document.getElementById("close_notify_modal")
-    let notification_modal=document.getElementById("notification_modal")
-    
-    notification_icon_home.addEventListener('click',()=>{
-        model_box_container.style.display="block"
-        notification_modal.style.display="block"
+    let notification_icon_home = document.getElementById("notification_icon_home")
+    let close_notify_modal = document.getElementById("close_notify_modal")
+    let notification_modal = document.getElementById("notification_modal")
+
+    notification_icon_home.addEventListener('click', () => {
+        model_box_container.style.display = "block"
+        notification_modal.style.display = "block"
     })
-    
-    close_notify_modal.addEventListener('click',()=>{
-        model_box_container.style.display="none"
-        notification_modal.style.display="none"
+
+    close_notify_modal.addEventListener('click', () => {
+        model_box_container.style.display = "none"
+        notification_modal.style.display = "none"
     })
 
     // --------------------------------------------------- Notification Modal Ends --------------------------------------------------
     document.getElementById("updateStockBtn")
-    .addEventListener("click", () => {
-        addOrUpdateItemStock()
-    });
+        .addEventListener("click", () => {
+            addOrUpdateItemStock()
+        });
 
 })
 
@@ -359,8 +364,8 @@ function changeLanguage(languageName) {
 
     document.getElementById("selectmenu_personalisation_settings").value = languageName
 
-    fs.writeFile("./settings/system_settings.json", JSON.stringify(system_settings),(err)=>{
-        if(err) console.log(err)
+    fs.writeFile("./settings/system_settings.json", JSON.stringify(system_settings), (err) => {
+        if (err) console.log(err)
     })
 }
 
@@ -389,10 +394,10 @@ function userSettingsUpdate() {
         document.getElementById("photo_shop_badge").src = userSettingsData.profile_pic_url
         document.getElementById("Dp_img_select_accSet").src = userSettingsData.profile_pic_url
     }
-    if(userSettingsData.bussiness_owner_name != ""){
+    if (userSettingsData.bussiness_owner_name != "") {
         document.getElementById("shop_bussiness_name_acc").value = userSettingsData.bussiness_owner_name
     }
-    if(userSettingsData.bussiness_category != ""){
+    if (userSettingsData.bussiness_category != "") {
         document.getElementById("bussiness_category_acc").value = userSettingsData.bussiness_category
     }
 }
@@ -410,6 +415,7 @@ function changePage(pageNumber) {
             invoice_page.animate([{ opacity: 1 }, { opacity: 0 }
             ], { duration: 500, })
             invoice_page.style.display = "none"
+            scanStatus = false
             break
         case 2:
             analytics_page.animate([{ opacity: 1 }, { opacity: 0 }
@@ -446,6 +452,7 @@ function changePage(pageNumber) {
             invoice_page.animate([{ opacity: 0 }, { opacity: 1 }
             ], { duration: 500, })
             invoice_page.style.display = "block"
+            scanStatus = true
             break
         case 2:
             analytics_page.animate([{ opacity: 0 }, { opacity: 1 }
@@ -725,11 +732,11 @@ function openItemUpdateDialog(barcode, name, price, sellPrice, quantity) {
         })
 
     document.getElementById("upd_itm_delete")
-    .addEventListener("click" , ()=>{
-        deleteItemFromStock(barcode)
-        model_box_container.style.display = "none"
-        updateModelBox.style.display = "none"
-    })
+        .addEventListener("click", () => {
+            deleteItemFromStock(barcode)
+            model_box_container.style.display = "none"
+            updateModelBox.style.display = "none"
+        })
 
 }
 
@@ -777,15 +784,32 @@ getAllItemFromStock()
 
 // function to add new row to invoice_detail table of masterdatabase
 function addNewInvoiceData(customer_id, invoice_total_amount, payment_mode, accountant_director, total_items) {
+    //get maximum id of invoice_detail table
+    
+    db.each(`SELECT MAX(invoice_id) AS max_id FROM invoice_detail`, (err, row) => {
+        if (err) {
+            console.log(err.message)
+        }
+        max_invoice_detail_id = row.max_id
+    });
     let added_date = new Date().getTime()
     db.run(`INSERT INTO invoice_detail (customer_id ,invoice_date , invoice_total_amount , payment_mode , accountant_director , total_items  ) VALUES 
     ( '${customer_id}','${added_date}' , ${invoice_total_amount} , '${payment_mode}' , '${accountant_director}' , ${total_items} )`, (err) => {
         if (err) {
             console.log(err.message)
         }
-        console.log("invoice data added to master database");
     });
-    db.close()
+    
+}
+
+// function to add new row to invoice_items table of masterdatabase
+function addNewInvoiceItemsData(prod_name ,invoice_id, barcode, quantity, unit_price, discount, total_price) {
+    db.run(`INSERT INTO invoice_items (name , invoice_id , barcode , quantity , unit_price , discount , total_price ) VALUES 
+    ( "${prod_name}",${invoice_id} , ${barcode} , ${quantity} , ${unit_price} , ${discount} , ${total_price} )`, (err) => {
+        if (err) {
+            console.log(err.message)
+        }
+    });
 }
 
 // add item to html template table
@@ -824,6 +848,7 @@ function addItemsToInvoiceHistoryTable() {
     mini_invoice_history.innerHTML = html_to_add2
 
 }
+
 // function get all item from invoice in ascending order of date added
 function getAllItemFromInvoiceHistory() {
     db.each(`SELECT * FROM invoice_detail ORDER BY invoice_date ASC`, (err, row) => {
@@ -925,16 +950,97 @@ function deviceConnectedSuccess(deviceName) {
     disconnect_android_btn_home.style.display = "flex"
 }
 let allItemToAppendToStock = []
+let allItemForInvoice = []
 
 function addAllItemToStockPage(barcode_item_received) {
-    allItemToAppendToStock.push(barcode_item_received)
-    toAppendItemToAddStockItemCard(barcode_item_received)
-    console.log(allItemToAppendToStock)
+    if (selectedPage == "1") {
+        allItemForInvoice.push(barcode_item_received)
+        toAppendItemToInvoice(barcode_item_received)
+    } else {
+        allItemToAppendToStock.push(barcode_item_received)
+        toAppendItemToAddStockItemCard(barcode_item_received)
+        console.log(allItemToAppendToStock)
+    }
+
+}
+
+function toAppendItemToInvoice(barcode_item_received) {
+
+    let html_to_append = ` <div class="item_cards_rows"><span class="item_no">${[barcode_item_received]}</span>
+      <img id="${[barcode_item_received]}deleteIn" src="../media/invoicePage/dustbinIcon.svg" alt="" class="threeDot_option_card">
+    </div>
+    <div id="${[barcode_item_received]}prod_nameIn" class="item_cards_rows item_name_card_invo"></div>
+    <div class="item_cards_rows">
+      <div class="itmPrice_card_invo">
+        <p id="${[barcode_item_received]}sellingPriceIn"></p>
+        <p id="${[barcode_item_received]}MRPIn"class="maxPrc_card_invo"></p>
+      </div>
+      <p id="${[barcode_item_received]}offPriceIn"class="discount_card_invo"></p>
+    </div>
+    <div class="item_cards_rows">
+      <h3>Total Price</h3>
+      <h2 id="${[barcode_item_received]}totalPriceIn"></h2>
+    </div>
+    <div class="item_cards_rows">
+      <p class="itmQn">Quantity</p>
+      <input id="${[barcode_item_received]}quantityIn" type="number" name="no_of_items" class="quantity" min="1" max="20" value="1" required>
+    </div>`
+
+     let x = document.createElement("div"); 
+     x.id = `${[barcode_item_received]}invoiceCard`
+     x.innerHTML = html_to_append;
+     x.className = "item_card"
+    invoice_item_container.appendChild(x)
+
+    setTimeout(() => {
+        document.getElementById(`${[barcode_item_received]}deleteIn`)
+            .addEventListener("click", () => {
+                document.getElementById(`${[barcode_item_received]}invoiceCard`).remove()
+                // remove barcode_item_received from allItemForInvoice
+                allItemForInvoice = allItemForInvoice.filter(item => item != barcode_item_received)
+                itemListReceived = itemListReceived.filter(item => item != barcode_item_received)
+            })
+
+        document.getElementById(`${[barcode_item_received]}quantityIn`)
+            .addEventListener("change", () => {
+                let quantity = document.getElementById(`${[barcode_item_received]}quantityIn`).value
+                let totalPrice = document.getElementById(`${[barcode_item_received]}totalPriceIn`)
+                let selling_price = document.getElementById(`${[barcode_item_received]}sellingPriceIn`).innerHTML
+                selling_price = selling_price.replace("₹", "")
+                selling_price = parseInt(selling_price)
+                let lastPrice = totalPrice.innerHTML
+                lastPrice = lastPrice.replace("₹", "")
+                lastPrice = parseInt(lastPrice)
+                totalPrice.innerHTML = "₹" + (selling_price * quantity).toString()
+                let last_grandTotal = document.getElementById("grandTotalInv")
+                let last_grandTotalValue = last_grandTotal.innerHTML
+                last_grandTotalValue = last_grandTotalValue.replace("₹", "")
+                last_grandTotalValue = parseInt(last_grandTotalValue)
+                last_grandTotal.innerHTML = "₹" + (last_grandTotalValue - lastPrice + (selling_price * quantity)).toString()
+            })
+
+        db.get(`SELECT * FROM stockitem WHERE barcode=${[barcode_item_received]}`, (err, row) => {
+            if (err) console.log(err)
+            document.getElementById(`${[barcode_item_received]}prod_nameIn`).innerHTML = row.product_name
+            document.getElementById(`${[barcode_item_received]}sellingPriceIn`).innerHTML = "₹" + row.selling_price
+            document.getElementById(`${[barcode_item_received]}MRPIn`).innerHTML = "₹" + (row.selling_price + 0.1 * row.selling_price).toString()
+            document.getElementById(`${[barcode_item_received]}offPriceIn`).innerHTML = "10% off"
+            document.getElementById(`${[barcode_item_received]}totalPriceIn`).innerHTML = "₹" + row.selling_price
+
+            let last_grandTotal = document.getElementById("grandTotalInv")
+            let last_grandTotalValue = last_grandTotal.innerHTML
+            last_grandTotalValue = last_grandTotalValue.replace("₹", "")
+            last_grandTotalValue = parseInt(last_grandTotalValue)
+            last_grandTotal.innerHTML = "₹" + (last_grandTotalValue + row.selling_price)
+        })
+
+    }, 20)
+
+
 }
 
 function toAppendItemToAddStockItemCard(barcode_item_received) {
-    let html_to_append = `<div id="${[barcode_item_received]}card" class="add_item_card">
-    <div class="add_item_card_top">
+    let html_to_append = `<div class="add_item_card_top">
       <p>${[barcode_item_received]}</p>
       <img id="${[barcode_item_received]}delete_btn" src="../media/add_itm/dustbinIcon.svg" alt="" class="remove_itm_Btn">
     </div>
@@ -955,19 +1061,75 @@ function toAppendItemToAddStockItemCard(barcode_item_received) {
         <p>Stock quantity</p>
         <input id="${[barcode_item_received]}qty" type="number" name="no_of_items" class="quantity" min="1" max="20" required>
       </div>
-    </div>
-  </div>`
-    add_itm_subpage_main.innerHTML += html_to_append
+    </div>`
+    let x = document.createElement("div")
+    x.id = `${[barcode_item_received]}card`
+    x.innerHTML = html_to_append
+    x.className = "add_item_card"
+    add_itm_subpage_main.appendChild(x)
 
-    setTimeout(()=>{
+    setTimeout(() => {
         document.getElementById(`${[barcode_item_received]}delete_btn`)
-        .addEventListener("click" , () => {
-            document.getElementById(`${[barcode_item_received]}card`).remove()
-            all_items_in_stocks.remove(barcode_item_received)
-        })
-    },100);
+            .addEventListener("click", () => {
+                document.getElementById(`${[barcode_item_received]}card`).remove()
+                // remove barcode_item_received from allItemToAppendToStock
+                allItemToAppendToStock = allItemToAppendToStock.filter(item => item != barcode_item_received)
+                itemListReceived = itemListReceived.filter(item => item != barcode_item_received)
+            })
+    }, 100);
+
 }
 
+function generateInvoiceFromData() {
+    let name = document.getElementById("Name_invoice_new").value
+    let email = document.getElementById("Email_invoice_new").value
+    let phone = document.getElementById("Phone_invoice_new").value
+    let payment_method = document.getElementById("Payment_method_invoice_new").value
+    let accountant_director = document.getElementById("Accountant_director_invoice_new").value
+    let grandTotal = document.getElementById("grandTotalInv").innerHTML
+    grandTotal = grandTotal.replace("₹", "")
+    grandTotal = parseInt(grandTotal)
+    let customer_id = -1
+
+    db.get(`SELECT id FROM customer_info WHERE name ='${[name]}'
+     AND email='${[email]}' AND phone_number='${[phone]}'`, (err , row) => {
+        if(err) console.log(err)
+        if(row) {
+            customer_id = row.id
+        }else{
+            //get max value of id
+            db.get(`SELECT MAX(id) AS max_id FROM customer_info`, (err, row) => {
+                if(err) console.log(err)
+                customer_id = row.max_id + 1
+                db.run(`INSERT INTO customer_info VALUES(${[customer_id]}, '${[name]}', '${[email]}', '${[phone]}')`)
+            })
+        }
+     })
+
+     setTimeout(() => {
+        addNewInvoiceData(customer_id, payment_method, grandTotal , accountant_director , itemListReceived.length+1)
+     }, 200);
+
+     setTimeout(() => {
+         console.log("1",max_invoice_detail_id)
+        for(let i=0; i<itemListReceived.length; i++){
+            let barcode = itemListReceived[i]
+            let quantity = document.getElementById(`${barcode}quantityIn`).value
+            let total_price = document.getElementById(`${barcode}totalPriceIn`).innerHTML
+            total_price = total_price.replace("₹", "")
+            total_price = parseInt(total_price)
+            let discount = 0.1 * total_price
+            let prod_name = document.getElementById(`${barcode}prod_nameIn`).innerHTML
+            let unit_price = total_price/quantity
+
+            addNewInvoiceItemsData(prod_name , max_invoice_detail_id, barcode, quantity, unit_price, discount, total_price)
+        }
+     } , 500);
+     setTimeout(() => {
+        return max_invoice_detail_id
+     } , 700);
+
+}
 function toogleButtonFun(svgId) {
     let toggleButton = document.getElementById(svgId)
     if (toggleButton.classList.contains("toggle_btn_off")) {
@@ -984,7 +1146,7 @@ function toogleButtonFun(svgId) {
     }
 }
 
-function updateSettings(){
+function updateSettings() {
     userSettingsData.profile_pic_url = profile_pic_url
     userSettingsData.bussiness_name = document.getElementById("account_setting_shop_name").value
     userSettingsData.bussiness_category = document.getElementById("bussiness_category_acc").value
@@ -1002,17 +1164,17 @@ function updateSettings(){
 // some special function
 function recreateNode(el, withChildren) {
     if (withChildren) {
-      el.parentNode.replaceChild(el.cloneNode(true), el);
+        el.parentNode.replaceChild(el.cloneNode(true), el);
     }
     else {
-      var newEl = el.cloneNode(false);
-      while (el.hasChildNodes()) newEl.appendChild(el.firstChild);
-      el.parentNode.replaceChild(newEl, el);
+        var newEl = el.cloneNode(false);
+        while (el.hasChildNodes()) newEl.appendChild(el.firstChild);
+        el.parentNode.replaceChild(newEl, el);
     }
-  }
+}
 
-function addOrUpdateItemStock(){
-    for(let i = 0; i < allItemToAppendToStock.length; i++){
+function addOrUpdateItemStock() {
+    for (let i = 0; i < allItemToAppendToStock.length; i++) {
         let item_barcode = allItemToAppendToStock[i]
         let item_name = document.getElementById(`${item_barcode}product_name`).value
         let item_cost_price = document.getElementById(`${item_barcode}cost_price`).value
@@ -1020,12 +1182,12 @@ function addOrUpdateItemStock(){
         let item_qty = document.getElementById(`${item_barcode}qty`).value
 
         // check if it is already in stock_item database
-        db.get(`SELECT barcode from stockitem where barcode = ${[item_barcode]}`,(err , row) => {
-            if(err) console.log(err)
-            if(row){
+        db.get(`SELECT barcode from stockitem where barcode = ${[item_barcode]}`, (err, row) => {
+            if (err) console.log(err)
+            if (row) {
                 let date = new Date().getTime()
-                updateStockData(item_barcode, item_name, item_cost_price, item_sell_price, item_qty,0,date)
-            }else{
+                updateStockData(item_barcode, item_name, item_cost_price, item_sell_price, item_qty, 0, date)
+            } else {
                 addItemToStock(item_barcode, item_name, item_cost_price, item_sell_price, item_qty)
             }
         })
@@ -1038,3 +1200,4 @@ function addOrUpdateItemStock(){
     }, 300);
 
 }
+
