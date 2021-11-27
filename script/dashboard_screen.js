@@ -53,14 +53,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (err) throw err
         // parse the data
         languageData = JSON.parse(data)
-    })
-
-    fs.readFile("./settings/system_settings.json", (err, data) => {
-        // if error occurs
-        if (err) throw err
-        // parse the data
-        system_settings = JSON.parse(data)
-       
+        changeLanguage("en")
     })
 
     // read a json file using fs for user settings
