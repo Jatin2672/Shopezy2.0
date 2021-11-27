@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../style/dashboardscreen.css" />
   <script src="../script/qrcode.min.js"></script>
   <script src="../script/p5.js"></script>
-  <script src="../script/JGraph.js"></script>
+  <script src="../script/analytics1.js"></script>
 </head>
 
 <body>
@@ -144,21 +144,15 @@
           </div>
 
           <div id="sell_summary_graph_section">
-            <select id="term_period_selection">
-              <option id="term_period_selection1">Last 7 Days</option>
-              <option id="term_period_selection2">Last 14 Days</option>
-              <option id="term_period_selection3">Last 28 Days</option>
-              <option id="term_period_selection4">Last 6 Months</option>
-            </select>
             <div id="parent_summary_container">
               <div id="left_summary_container" class="half_graph_area_home">
                 <div>
                   <span class="large_text_suummary">Profit</span>
-                  <span class="larger_text_suummary">₹15.0K</span>
+                  <span id="profit_val_home" class="larger_text_suummary">₹15.0K</span>
                 </div>
                 <div>
                   <span class="large_text_suummary">Sell</span>
-                  <span class="larger_text_suummary">₹50.0K</span>
+                  <span id="sell_val_home" class="larger_text_suummary">₹50.0K</span>
                 </div>
               </div>
               <div id="right_summary_container" class="half_graph_area_home">
@@ -192,29 +186,31 @@
           <div class="top_left_section_invoicePage">
 
             <div>
-              <p id="top_left_section_invoicePage1">Custumer's Name</p> <input type="text" name="Name" id="Name">
-              <p id="top_left_section_invoicePage2">Custumer's Email</p> <input type="email" name="email" id="email">
-              <p id="top_left_section_invoicePage3">Custumer's Mobile Number</p> <input type="number" name="No" id="No">
+              <p id="top_left_section_invoicePage1">Custumer's Name</p> <input type="text" name="Name"
+                id="Name_invoice_new">
+              <p id="top_left_section_invoicePage2">Custumer's Email</p> <input type="email" name="email"
+                id="Email_invoice_new">
+              <p id="top_left_section_invoicePage3">Custumer's Mobile Number</p> <input type="number" name="No"
+                id="Phone_invoice_new">
             </div>
 
             <div>
               <p id="dashboard_top_parts_paymentmethod">Payment Method</p>
-              <select name="Payment" id="Payment" class="dropdown">
-                <option value="" id="dashboard_top_parts_paymentmethod1">---Select---</option>
-                <option value="Card" id="dashboard_top_parts_paymentmethod2">Credit/Debit</option>
-                <option value="" id="dashboard_top_parts_paymentmethod3">Phonepay/UPI</option>
+              <select name="Payment" id="Payment_method_invoice_new" class="dropdown">
+                <option value="0" id="dashboard_top_parts_paymentmethod1">Cash</option>
+                <option value="1" id="dashboard_top_parts_paymentmethod2">Credit/Debit</option>
+                <option value="2" id="dashboard_top_parts_paymentmethod3">Phonepay/UPI</option>
               </select>
               <p id="dashboard_top_parts_accountant_director">Accountant Director</p>
-              <select name="Payment" id="Accountant" class="dropdown">
-                <option value="">---Select---</option>
-                <option value="Card">Credit/Debit</option>
-                <option value="UPI">Phonepay/UPI</option>
+              <select name="Payment" id="Accountant_director_invoice_new" class="dropdown">
+
+                <option value="0">Someone 123</option>
+                <option value="1">Someone 231</option>
               </select>
               <p id="dashboard_top_parts_invoice_template">Invoice Template</p>
               <select name="Payment" id="invo" class="dropdown">
-                <option value="">---Select---</option>
-                <option value="Card">Credit/Debit</option>
-                <option value="UPI">Phonepay/UPI</option>
+                <option value="Card">Light</option>
+                <option value="UPI">Dark</option>
               </select>
             </div>
 
@@ -232,8 +228,8 @@
             <!-- below_btn -->
             <div id="below_btn_card">
               <h2>Total Amount</h2>
-              <h1>₹ 200.0</h1>
-              <p class="discount_card_invo">Savings ₹40</p>
+              <h1 id="grandTotalInv">₹0</h1>
+              <p class="discount_card_invo">Savings ₹0</p>
             </div>
 
           </div>
@@ -242,67 +238,7 @@
         <!-- Top Part Ends Here -->
 
         <!-- Bottom Part Starts Here -->
-        <div class="bottom_section_inviocePage">
-
-          <!-- Item Card -->
-          <div class="item_card">
-
-            <div class="item_cards_rows"><span class="item_no">4562 34613 6136 3</span>
-              <img src="../media/invoicePage/dustbinIcon.svg" alt="" class="threeDot_option_card">
-            </div>
-
-            <div class="item_cards_rows item_name_card_invo">Solid Men Mandarin Collar Blue <br> T-Shirt (Pack of 2)
-            </div>
-
-            <div class="item_cards_rows">
-              <div class="itmPrice_card_invo">
-                <p>₹540</p>
-                <p class="maxPrc_card_invo">₹599</p>
-              </div>
-              <p class="discount_card_invo">10% off</p>
-            </div>
-
-            <div class="item_cards_rows">
-              <h3>Total Price</h3>
-              <h2>₹1080</h2>
-            </div>
-
-            <div class="item_cards_rows">
-              <p class="itmQn">Quantity</p>
-              <input type="text" name="no_of_items" class="quantity" min="1" max="20" required>
-            </div>
-
-          </div>
-
-          <!-- Item Card -->
-          <div class="item_card">
-
-            <div class="item_cards_rows"><span class="item_no">4562 34613 6136 3</span>
-              <img src="../media/invoicePage/dustbinIcon.svg" alt="" class="threeDot_option_card">
-            </div>
-
-            <div class="item_cards_rows item_name_card_invo">Solid Men Mandarin Collar Blue <br> T-Shirt (Pack of 2)
-            </div>
-
-            <div class="item_cards_rows">
-              <div class="itmPrice_card_invo">
-                <p>₹540</p>
-                <p class="maxPrc_card_invo">₹599</p>
-              </div>
-              <p class="discount_card_invo">10% off</p>
-            </div>
-
-            <div class="item_cards_rows">
-              <h3>Total Price</h3>
-              <h2>₹1080</h2>
-            </div>
-
-            <div class="item_cards_rows">
-              <p class="itmQn">Quantity</p>
-              <input type="text" name="no_of_items" class="quantity" min="1" max="20" required>
-            </div>
-
-          </div>
+        <div id="invoice_items_container" class="bottom_section_inviocePage">
 
           <!-- Connected Device Card -->
           <div class="item_card Connected_device">
@@ -431,18 +367,18 @@
             <h1 id="acc_settings">Account</h1>
             <!-- -------------------------------------------------------------------- -->
 
-            
 
-              <div class="container_of_img_settings">
-                <div class="renderImg_acc_settings">
-                    <img src="../media/userphoto.png" id="Dp_img_select_accSet">
-                    <input type="file" name="file" id="file_acc_setting" hidden>
-                </div>
-        
-                <button id="Upload_btn_acc_setting">Upload</button>
-                <button id="remove_btn_acc_setting">Remove</button>
+
+            <div class="container_of_img_settings">
+              <div class="renderImg_acc_settings">
+                <img src="../media/userphoto.png" id="Dp_img_select_accSet">
+                <input type="file" name="file" id="file_acc_setting" hidden>
+              </div>
+
+              <button id="Upload_btn_acc_setting">Upload</button>
+              <button id="remove_btn_acc_setting">Remove</button>
             </div>
-              <!-- -------------------------------------------------------------------- -->
+            <!-- -------------------------------------------------------------------- -->
             <hr class="horizontal_line_account_settings">
             <div id="userinfo_account_settings">
               <div id="leftinfo_account_settings" class="user_info_account_settings">
@@ -473,7 +409,8 @@
             </div>
             <div id="verifycontainer_account_settings">
               <B class="label_account_settings" id="label_account_settings_text">Request Veryfication</B>
-              <p id="label_account_settings_txt">Congratulation ! You are eligible for a verified bussiness . We need to physically verify your shop in
+              <p id="label_account_settings_txt">Congratulation ! You are eligible for a verified bussiness . We need to
+                physically verify your shop in
                 order to add you to Shopezy’s bussiness chain. By joining Shopezy’s bussiness chain you will get
                 technical support from our team. By joining Shopezy’s food chain there has been an increase of upto 33%
                 growth in bussiness across globe. To know more about Shopezy’s verified account . Visit Shopezy’s
@@ -625,6 +562,7 @@
   </div>
 
   <!-----------------M O D E L B O X --- C O N T A I N E R ---------------------->
+  
   <div id="model_box_container" class="debug" style="display: none;">
 
     <!------------------- Connect to Android dialog box ------------------>
@@ -662,23 +600,23 @@
     <!-- Notification Modal window  -->
     <div id="notification_modal" style="display: none;">
       <div id="notification_modal_title">
-          Notifications
-          <img src="../media/passcode/close.svg" id="close_notify_modal">
+        Notifications
+        <img src="../media/close_btnn.svg" id="close_notify_modal">
       </div>
       <table id="notification_table">
-          <tr>
-              <td class="Date_notify_bar">26/11/2021</td>
-          </tr>
-          <tr>
-              <td class="notify_bar_txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptate?
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptate?
-              </td>
-          </tr>
-          
+        <tr>
+          <td class="Date_notify_bar">26/11/2021</td>
+        </tr>
+        <tr>
+          <td class="notify_bar_txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptate?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptate?
+          </td>
+        </tr>
+
 
       </table>
-  </div>
-  <!-- Notification Modal window ends -->
+    </div>
+    <!-- Notification Modal window ends -->
 
     <!------------------- Add product to stock dialog box ------------------>
     <div id="add_stock_item_dialog_page" style="display: none;">
@@ -688,7 +626,7 @@
 
         <div class="add_itm_subpage_header">
           <div id="add_itm_header_txt">add new product</div>
-          <div><img src="../media/close.svg" alt="" id="add_itm_close_btn"></div>
+          <div><img src="../media/passcode/close.svg" alt="" id="add_itm_close_btn"></div>
         </div>
 
         <!-- Add item main Div -->
@@ -766,48 +704,50 @@
     </div>
     <!-- update item main Div end -->
 
-     <!-- Add PassCode Modal -->
-<div id="add_passcode_modal" style="display: none;">
-  <div id="top_title_bar_addPasscode">
-      <img id="logo_img_AddPass" src="../media/logoicon.svg">
-      <span id="app_name_addPass">ShopEzy</span>
-      <img id="close_passcode_btn_addPass" src="../media/passcode/close.svg"/>
-  </div>
-
-  <div id="center_area_add_passcode">
-
-      <img id="userphoto_img_add_passcode" src="../media/userphoto.png" alt="">
-      <div id="passcode_area_add_passcode">
-          <div class="ADDpassCode_input_div">
-              <p>New Passcode : </p>
-              <input id="new_passcode_input" type="password" />
-          </div>
-
-          <div class="ADDpassCode_input_div">
-              <p>Re-Enter Passcode : </p>
-              <input id="re_new_passcode_input" type="password" />
-          </div>
+    <!-- Add PassCode Modal -->
+    <div id="add_passcode_modal" style="display: none;">
+      <div id="top_title_bar_addPasscode">
+        <img id="logo_img_AddPass" src="../media/logoicon.svg">
+        <span id="app_name_addPass">ShopEzy</span>
+        <img id="close_passcode_btn_addPass" src="../media/passcode/close.svg" />
       </div>
-      <img id="update_passcode_btn" src="../media/passcode/back.svg" />
-      
-  </div>
-</div>
-  <!-- Add PassCode Modal Ends -->
 
-  <!-- Message Modal window  -->
-  <div id="message_alert_modal" style="display: none;">
+      <div id="center_area_add_passcode">
 
-    <div id="message_alert_title">
+        <img id="userphoto_img_add_passcode" src="../media/userphoto.png" alt="">
+        <div id="passcode_area_add_passcode">
+          <div class="ADDpassCode_input_div">
+            <p>New Passcode : </p>
+            <input id="new_passcode_input" type="password" />
+          </div>
+
+          <div class="ADDpassCode_input_div">
+            <p>Re-Enter Passcode : </p>
+            <input id="re_new_passcode_input" type="password" />
+          </div>
+        </div>
+        <img id="update_passcode_btn" src="../media/passcode/back.svg" />
+
+      </div>
+    </div>
+    <!-- Add PassCode Modal Ends -->
+
+    <!-- Message Modal window  -->
+    <div id="message_alert_modal" style="display: none;">
+
+      <div id="message_alert_title">
         Error Alert
-    </div>
-    <div id="message_section_alert">
+      </div>
+      <div id="message_section_alert">
         <p id="error_message_txt">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, aliquid?</p>
-    </div>
+      </div>
 
-</div>
-<!-- Message Modal window ends -->
+    </div>
+    <!-- Message Modal window ends -->
 
     <div id="hiddenIP" style="display: none;"></div>
+  </div>
+<!-----------------M O D E L B O X --- C O N T A I N E R --- E N D S ---------------------->
 </body>
 
 <script type="text/javascript" defer>
@@ -827,42 +767,6 @@
       runtimes++;
     }
   });
-  let parent_graph_home = document.getElementById("home_page_graph");
-  let bar_graph_home_width = parent_graph_home.getBoundingClientRect().width;
-  // draw graphs on home and other pages
-  let bar_graph_home = new JGraph('bar', 'home_page_graph', ['MON', 'WED', 'TUES', 'THUR', 'FRI', 'SAT', 'SUN'], [130, 300, 100, 200, 300, 400, 450])
-  bar_graph_home.style = "lightV"
-  bar_graph_home.canvas_width = bar_graph_home_width;
-  bar_graph_home.canvas_height = 200;
-  bar_graph_home.grids = true
-  bar_graph_home.plot()
-
-  let analytic_graph_parent = document.getElementById("analytics_graph_1");
-  let analytic_graph_width = analytic_graph_parent.getBoundingClientRect().width;
-  let analytic_graph_height = analytic_graph_parent.getBoundingClientRect().height;
-  let bar_graph_analytics_2 = new JGraph('bar', 'analytics_graph_1', ['MON', 'WED', 'TUES', 'THUR', 'FRI', 'SAT', 'SUN'], [130, 300, 100, 200, 300, 400, 450])
-  bar_graph_analytics_2.style = "lightV"
-  bar_graph_analytics_2.canvas_width = analytic_graph_width;
-  bar_graph_analytics_2.canvas_height = analytic_graph_height;
-  bar_graph_analytics_2.plot()
-
-  let bar_graph_analytics_3 = new JGraph('pie', 'analytics_graph_2', ['MON', 'WED', 'TUES', 'THUR', 'FRI', 'SAT', 'SUN'], [130, 300, 100, 200, 300, 400, 450])
-  bar_graph_analytics_3.style = "lightV"
-  bar_graph_analytics_3.canvas_width = analytic_graph_width;
-  bar_graph_analytics_3.canvas_height = analytic_graph_height;
-  bar_graph_analytics_3.plot()
-
-  let bar_graph_analytics_4 = new JGraph('lines', 'analytics_graph_3', ['MON', 'WED', 'TUES', 'THUR', 'FRI', 'SAT', 'SUN'], [130, 300, 100, 200, 300, 400, 450])
-  bar_graph_analytics_4.style = "lightV"
-  bar_graph_analytics_4.canvas_width = analytic_graph_width;
-  bar_graph_analytics_4.canvas_height = analytic_graph_height;
-  bar_graph_analytics_4.plot()
-
-  let bar_graph_analytics_5 = new JGraph('pie', 'analytics_graph_4', ['MON', 'WED', 'TUES', 'THUR', 'FRI', 'SAT', 'SUN'], [130, 300, 100, 200, 300, 400, 450])
-  bar_graph_analytics_5.style = "lightV"
-  bar_graph_analytics_5.canvas_width = analytic_graph_width;
-  bar_graph_analytics_5.plot()
-  bar_graph_analytics_5.canvas_height = analytic_graph_height;
 </script>
 
 </html>
