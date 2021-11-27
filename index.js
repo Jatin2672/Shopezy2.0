@@ -129,7 +129,7 @@ ipcMain.on("welcome_screen:minimize" , ()=> {
 
 ipcMain.on("dashboard_screen:logout",()=>{
   dashboardWindow.close()
-  createPasscodeWindow()
+  createWelcomeWindow()
 })
 
 ipcMain.on("invoice:print", () => {
