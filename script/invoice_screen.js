@@ -2,6 +2,7 @@ const { ipcRenderer } = require('electron')
 const path = require('path')
 const fs = require('fs')
 
+let userSettings
 let printBtn, shareBtn
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -13,6 +14,15 @@ window.addEventListener('DOMContentLoaded', () => {
         // parse the data
         languageData = JSON.parse(data)
         changeLanguage("hi")
+    })
+
+    // read user_settings.json file
+    fs.readFile("./settings/usersettings.json", (err, data) => {
+        // if error occurs
+        if (err) throw err
+        // parse the data
+        userSettings = JSON.parse(data)
+        applyUserSettings()
     })
 
     printBtn = document.getElementById('print_btn')
@@ -78,6 +88,7 @@ function loadDataForInvoice(invoice_number) {
         document.getElementById('total_items').innerHTML = row.total_items
         document.getElementById('accountant_name').innerHTML = row.accountant_director
         document.getElementById('total_price').innerHTML = row.invoice_total_amount
+        document.getElementById('payment_method_info').innerHTML = row.payment_mode
         loadCustomerData(row.customer_id)
 
     })
@@ -97,10 +108,10 @@ function loadItemData(invoice_id) {
         htmlDataToInsert += `<tr>
         <td>${[i]}</td>
         <td>${[row.name]}</td>
-        <td>${[row.unit_price]}</td>
+        <td>₹${[row.unit_price]}</td>
         <td>${[row.quantity]}</td>
         <td>${[row.discount]}%</td>
-        <td>${[row.total_price]}%</td>
+        <td>₹${[row.total_price]}</td>
         </tr>`
         i++;
     })
@@ -125,4 +136,13 @@ function loadCustomerData(id){
         document.getElementById("customer_phone").innerHTML += row.phone_number
         }        
     })
+}
+
+function applyUserSettings(){
+    document.getElementById('shop_name').innerHTML = userSettings.bussiness_name
+    document.getElementById('thanking_customer_text2').innerHTML += userSettings.bussiness_name
+    document.getElementById('shop_address').innerHTML = userSettings.address
+    document.getElementById('phone_shop').innerHTML = userSettings.mobile
+    document.getElementById('email_shop').innerHTML = userSettings.email
+
 }

@@ -1144,7 +1144,7 @@ function generateInvoiceFromData() {
      })
 
      setTimeout(() => {
-        addNewInvoiceData(customer_id, payment_method, grandTotal , accountant_director , itemListReceived.length+1)
+        addNewInvoiceData(customer_id, grandTotal, payment_method , accountant_director , itemListReceived.length+1)
      }, 200);
 
      setTimeout(() => {
