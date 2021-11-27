@@ -349,6 +349,20 @@ window.addEventListener("DOMContentLoaded", () => {
             addOrUpdateItemStock()
         });
 
+        // ---------------------------------------------- Log out Function ----------------------------------------------------
+
+        let log_out_btn=document.getElementById("log_out_icon_home")
+        
+        log_out_btn.addEventListener('click',()=>{
+            model_box_container.style.display="block"
+            ErrorAlert("Logged Out Successfully!!!")
+            setTimeout(() => {
+                ipcRenderer.send("dashboard_screen:logout")
+            }, 2500);
+        })
+
+        // ---------------------------------------------- Log out Function Ends -----------------------------------------------
+
 })
 
 

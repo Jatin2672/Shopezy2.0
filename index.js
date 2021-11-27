@@ -127,6 +127,11 @@ ipcMain.on("welcome_screen:minimize" , ()=> {
   welcomeWindow.minimize()
 })
 
+ipcMain.on("dashboard_screen:logout",()=>{
+  dashboardWindow.close()
+  createPasscodeWindow()
+})
+
 ipcMain.on("invoice:print", () => {
 
   let options = {
