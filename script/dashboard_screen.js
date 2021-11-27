@@ -564,6 +564,11 @@ function midBtnaction() {
     let transaction_btn = document.getElementById("transaction_btn")
     let settings_btn = document.getElementById("settings_btn")
     let account_setting_btn = document.getElementById("account_setting_btn")
+    let invoice_setting_btn = document.getElementById("invoice_setting_btn")
+    let invoicepage_Setting_btn = document.getElementById("Setting_btn")
+    let setting_stock_btn = document.getElementById("setting_stock_btn")
+    let stocks_setting_btn = document.getElementById("stocks_setting_btn")
+
 
     invo_mid_btn.addEventListener('click', () => {
         invoice_btn.click();
@@ -581,8 +586,25 @@ function midBtnaction() {
         settings_btn.click();
         setTimeout(() => {
             account_setting_btn.click();
-        }, 1000);
+        }, 200);
     })
+    // -------------------------- btn clicks of subpages ---------------------------------
+
+    invoicepage_Setting_btn.addEventListener('click',()=>{
+        settings_btn.click();
+        setTimeout(() => {
+            invoice_setting_btn.click();
+        }, 200);
+    })
+
+    setting_stock_btn.addEventListener('click',()=>{
+        settings_btn.click();
+        setTimeout(() => {
+            stocks_setting_btn.click();
+        }, 200);
+    })
+
+    // -------------------------- btn clicks of subpages ends ---------------------------------
 
 }
 
