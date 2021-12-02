@@ -13,7 +13,8 @@
     --input_border: rgb(90, 89, 89);
     --yes_btn: #FF8585;
     --blur_bg: rgba(0, 0, 0, 0.568);
-
+    --bg-shape-color:linear-gradient(120deg,  #343A4F, #0F1620);
+    --bg-shape-color-light:linear-gradient(120deg,  #343a4fe0, #0f1620ea);
 }
 @font-face {
     font-family:audiowide ;
@@ -1735,3 +1736,112 @@ margin-bottom: 20px;
 
 }
 /* --------------------------------- Notfication modal ----------------------------------- */
+/* --------------------------------- Add accountant popUP  ----------------------------------- */
+
+.accoutant_add_div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    padding: 15px;
+    width: 50%;
+}
+#addAccountant_popUp{
+    width: 30vw;
+    height: 70vh;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: white;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+}
+#addAccountant_popUp_titleBar{
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    height: 10%;
+    align-items: center;
+    justify-items: end;
+    font-family: audiowide;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 5px;
+    border-bottom: 1px solid var(--gray_card);
+}
+#addAccountant_popUp_close_btn{
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+#addAccountant_popUp_close_btn:hover{
+    background-color: red;
+}
+.addAccountantPopUp_Main{
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    height: 90%;
+    color: white;
+}
+.Addaccountant_popUP_card{
+    height: 320px;
+    width: 70%;
+    border: 0;
+    border-radius: 8px;
+    font-size: 18px;
+    padding: 5px 12px;
+    background-image: var(--bg-shape-color);
+    box-shadow: 5px 5px 9px -2px rgba(0,0,0,0.75);
+}
+#accountant_popUp_name_txt{
+    width: 98%;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+    background-image: var(--bg-shape-color-light);
+    color: white;
+}
+#accountant_sign_upldiv{
+    width: 98%;
+    height: 50px;
+    /* border: 1px solid rgb(189, 189, 189); */
+    border-radius: 5px;
+    padding: 5px;
+    display: grid;
+    place-items: center;
+    background-image: var(--bg-shape-color-light);
+    
+}
+#accountant_sign_upld_img{
+    width: 70%;
+    height: 50%;
+}
+#file_sign_accountant_btn{
+    background-color: var(--primary-color);
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    padding: 5px;
+    font-weight: bold;
+    margin: 15px 35%;
+}
+#btn_to_add_accountant{
+    background-color: var(--primary-color);
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 50px;
+    width: 120px;
+    padding: 5px;
+    font-weight: bold;
+    box-shadow: 5px 5px 9px -2px rgba(0,0,0,0.75);
+}
+#btn_to_add_accountant:hover{
+    box-shadow: 5px 5px 5px -2px rgba(0,0,0,0.75);
+}
+
+/* --------------------------------- Add accountant popUP Ends ----------------------------------- */

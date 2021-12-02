@@ -364,6 +364,43 @@ window.addEventListener("DOMContentLoaded", () => {
         })
 
         // ---------------------------------------------- Log out Function Ends -----------------------------------------------
+// ---------------------------------------------- Add Accountant popUP  -----------------------------------------------
+let newaccountdirector_invoice_settings=document.getElementById("newaccountdirector_invoice_settings")
+let addAccountant_popUp_close_btn=document.getElementById("addAccountant_popUp_close_btn")
+let addAccountant_popUp=document.getElementById("addAccountant_popUp")
+let file_sign_accountant=document.getElementById("file_sign_accountant")
+let accountant_sign_upld_img=document.getElementById("accountant_sign_upld_img")
+let file_sign_accountant_btn=document.getElementById("file_sign_accountant_btn")
+
+
+newaccountdirector_invoice_settings.addEventListener('click',()=>{
+    model_box_container.style.display="block"
+    addAccountant_popUp.style.display="block"
+})
+addAccountant_popUp_close_btn.addEventListener('click',()=>{
+    model_box_container.style.display="none"
+    addAccountant_popUp.style.display="none"
+})
+
+file_sign_accountant_btn.addEventListener('click',()=>{
+    file_sign_accountant.click();
+})
+
+file_sign_accountant.addEventListener('change', function () {
+    const chooseFile = this.files[0];
+
+    if (chooseFile) {
+        const reader = new FileReader();
+
+        reader.addEventListener('load', () => {
+            accountant_sign_upld_img.setAttribute('src', reader.result);
+            // profile_pic_url = reader.result;
+        });
+        reader.readAsDataURL(chooseFile)
+    }
+})
+
+// ---------------------------------------------- Add Accountant popUP Ends -----------------------------------------------
 
 })
 
