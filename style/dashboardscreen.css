@@ -1230,24 +1230,17 @@ margin-bottom: 20px;
     margin-left: 47%;
     /* display: flex; */
 }
-#info_accountant1_invoice_settings{
+.info_accountant_invoice_settings{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
     padding: 15px;
 }
-
-#info_accountant2_invoice_settings{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
-    padding: 15px;
-}
-
-#info_accountant3_invoice_settings{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    place-items: center;
+.signature_director_invoice_settings{
+    background: #EEEEEE;
+    border-radius: 12px;
+    width: 215px;
+    text-align: center;
     padding: 15px;
 }
 #signature_directors1_invoice_settings{

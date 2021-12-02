@@ -41,6 +41,7 @@ let profile_pic_url
 let updateModelBox
 
 let savebtn_account_settings
+let accountant_name_var, accountant_sign_var
 
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
@@ -221,8 +222,8 @@ window.addEventListener("DOMContentLoaded", () => {
         generateInvoiceFromData()
         setTimeout(() => {
             ipcRenderer.send("preview_invoice", max_invoice_detail_id)
-        },1500)
-        
+        }, 1500)
+
     })
 
     savebtn_account_settings.addEventListener("click", () => {
@@ -349,61 +350,94 @@ window.addEventListener("DOMContentLoaded", () => {
             addOrUpdateItemStock()
         });
 
-        // ---------------------------------------------- Log out Function ----------------------------------------------------
+    // ---------------------------------------------- Log out Function ----------------------------------------------------
 
-        let log_out_btn=document.getElementById("log_out_icon_home")
-        
-        log_out_btn.addEventListener('click',()=>{
-            model_box_container.style.display="block"
-            ErrorAlert("Logged Out Successfully!!!")
-            userSettingsData.passcodeApplied = "false"
-            updateSettings()
-            setTimeout(() => {
-                ipcRenderer.send("dashboard_screen:logout")
-            }, 2500);
+    let log_out_btn = document.getElementById("log_out_icon_home")
+
+    log_out_btn.addEventListener('click', () => {
+        model_box_container.style.display = "block"
+        ErrorAlert("Logged Out Successfully!!!")
+        userSettingsData.passcodeApplied = "false"
+        updateSettings()
+        setTimeout(() => {
+            ipcRenderer.send("dashboard_screen:logout")
+        }, 2500);
+    })
+
+    // ---------------------------------------------- Log out Function Ends -----------------------------------------------
+
+    // ---------------------------------------------- Add Accountant popUP  -----------------------------------------------
+    let newaccountdirector_invoice_settings = document.getElementById("newaccountdirector_invoice_settings")
+    let addAccountant_popUp_close_btn = document.getElementById("addAccountant_popUp_close_btn")
+    let addAccountant_popUp = document.getElementById("addAccountant_popUp")
+    let file_sign_accountant = document.getElementById("file_sign_accountant")
+    let accountant_sign_upld_img = document.getElementById("accountant_sign_upld_img")
+    let file_sign_accountant_btn = document.getElementById("file_sign_accountant_btn")
+
+
+    newaccountdirector_invoice_settings.addEventListener('click', () => {
+        model_box_container.style.display = "block"
+        addAccountant_popUp.style.display = "block"
+    })
+    addAccountant_popUp_close_btn.addEventListener('click', () => {
+        model_box_container.style.display = "none"
+        addAccountant_popUp.style.display = "none"
+    })
+
+    file_sign_accountant_btn.addEventListener('click', () => {
+        file_sign_accountant.click();
+    })
+
+    file_sign_accountant.addEventListener('change', function () {
+        const chooseFile = this.files[0];
+
+        if (chooseFile) {
+            const reader = new FileReader();
+
+            reader.addEventListener('load', () => {
+                accountant_sign_upld_img.setAttribute('src', reader.result);
+                accountant_sign_var = reader.result;
+            });
+            reader.readAsDataURL(chooseFile)
+        }
+    })
+    
+    let btn_to_add_accountant=document.getElementById("btn_to_add_accountant")
+    
+    btn_to_add_accountant.addEventListener('click',()=>{
+        accountant_name_var=accountant_popUp_name_txt.value;
+        addAccountant_popUp_close_btn.click();
+    })
+
+    let director_option_invoice_settings = document.querySelectorAll(".director_option_invoice_settings")
+    director_option_invoice_settings.forEach(director_option_invoice_settings => {
+
+        director_option_invoice_settings.addEventListener('click', () => {
+            let parent = director_option_invoice_settings.parentElement;
+            console.log(parent);
+            Accountant_detail_div_invoice.removeChild(parent)
         })
 
-        // ---------------------------------------------- Log out Function Ends -----------------------------------------------
-// ---------------------------------------------- Add Accountant popUP  -----------------------------------------------
-let newaccountdirector_invoice_settings=document.getElementById("newaccountdirector_invoice_settings")
-let addAccountant_popUp_close_btn=document.getElementById("addAccountant_popUp_close_btn")
-let addAccountant_popUp=document.getElementById("addAccountant_popUp")
-let file_sign_accountant=document.getElementById("file_sign_accountant")
-let accountant_sign_upld_img=document.getElementById("accountant_sign_upld_img")
-let file_sign_accountant_btn=document.getElementById("file_sign_accountant_btn")
-
-
-newaccountdirector_invoice_settings.addEventListener('click',()=>{
-    model_box_container.style.display="block"
-    addAccountant_popUp.style.display="block"
+    });
+    // ---------------------------------------------- Add Accountant popUP Ends -----------------------------------------------
+    
 })
-addAccountant_popUp_close_btn.addEventListener('click',()=>{
-    model_box_container.style.display="none"
-    addAccountant_popUp.style.display="none"
-})
+// to add acountant
+function Add_accountant_div(name,sign_img){
+    let Accountant_detail_div_invoice=document.getElementById("Accountant_detail_div_invoice")
+    let Accountant_html=`
+    <span class="accountant_name_txt" >${name}</span>
+    <div class="signature_director_invoice_settings"><img src="${sign_img}"
+      ></div>
+    <img src="../media/settings_page/dustbinIcon.svg" class="director_option_invoice_settings">
+   `
 
-file_sign_accountant_btn.addEventListener('click',()=>{
-    file_sign_accountant.click();
-})
+  let x = document.createElement("div");
+    x.className=`info_accountant_invoice_settings`
+    x.innerHTML = Accountant_html;
+    Accountant_detail_div_invoice.appendChild(x)
 
-file_sign_accountant.addEventListener('change', function () {
-    const chooseFile = this.files[0];
-
-    if (chooseFile) {
-        const reader = new FileReader();
-
-        reader.addEventListener('load', () => {
-            accountant_sign_upld_img.setAttribute('src', reader.result);
-            // profile_pic_url = reader.result;
-        });
-        reader.readAsDataURL(chooseFile)
-    }
-})
-
-// ---------------------------------------------- Add Accountant popUP Ends -----------------------------------------------
-
-})
-
+}
 
 // function to change language
 function changeLanguage(languageName) {
@@ -644,14 +678,14 @@ function midBtnaction() {
     })
     // -------------------------- btn clicks of subpages ---------------------------------
 
-    invoicepage_Setting_btn.addEventListener('click',()=>{
+    invoicepage_Setting_btn.addEventListener('click', () => {
         settings_btn.click();
         setTimeout(() => {
             invoice_setting_btn.click();
         }, 200);
     })
 
-    setting_stock_btn.addEventListener('click',()=>{
+    setting_stock_btn.addEventListener('click', () => {
         settings_btn.click();
         setTimeout(() => {
             stocks_setting_btn.click();
@@ -861,7 +895,7 @@ getAllItemFromStock()
 // function to add new row to invoice_detail table of masterdatabase
 function addNewInvoiceData(customer_id, invoice_total_amount, payment_mode, accountant_director, total_items) {
     //get maximum id of invoice_detail table
-    
+
     db.each(`SELECT MAX(invoice_id) AS max_id FROM invoice_detail`, (err, row) => {
         if (err) {
             console.log(err.message)
@@ -875,11 +909,11 @@ function addNewInvoiceData(customer_id, invoice_total_amount, payment_mode, acco
             console.log(err.message)
         }
     });
-    
+
 }
 
 // function to add new row to invoice_items table of masterdatabase
-function addNewInvoiceItemsData(prod_name ,invoice_id, barcode, quantity, unit_price, discount, total_price) {
+function addNewInvoiceItemsData(prod_name, invoice_id, barcode, quantity, unit_price, discount, total_price) {
     db.run(`INSERT INTO invoice_items (name , invoice_id , barcode , quantity , unit_price , discount , total_price ) VALUES 
     ( "${prod_name}",${invoice_id} , ${barcode} , ${quantity} , ${unit_price} , ${discount} , ${total_price} )`, (err) => {
         if (err) {
@@ -1062,10 +1096,10 @@ function toAppendItemToInvoice(barcode_item_received) {
       <input id="${[barcode_item_received]}quantityIn" type="number" name="no_of_items" class="quantity" min="1" max="20" value="1" required>
     </div>`
 
-     let x = document.createElement("div"); 
-     x.id = `${[barcode_item_received]}invoiceCard`
-     x.innerHTML = html_to_append;
-     x.className = "item_card"
+    let x = document.createElement("div");
+    x.id = `${[barcode_item_received]}invoiceCard`
+    x.innerHTML = html_to_append;
+    x.className = "item_card"
     invoice_item_container.appendChild(x)
 
     setTimeout(() => {
@@ -1168,27 +1202,27 @@ function generateInvoiceFromData() {
     let customer_id = -1
 
     db.get(`SELECT id FROM customer_info WHERE name ='${[name]}'
-     AND email='${[email]}' AND phone_number='${[phone]}'`, (err , row) => {
-        if(err) console.log(err)
-        if(row) {
+     AND email='${[email]}' AND phone_number='${[phone]}'`, (err, row) => {
+        if (err) console.log(err)
+        if (row) {
             customer_id = row.id
-        }else{
+        } else {
             //get max value of id
             db.get(`SELECT MAX(id) AS max_id FROM customer_info`, (err, row) => {
-                if(err) console.log(err)
+                if (err) console.log(err)
                 customer_id = row.max_id + 1
                 db.run(`INSERT INTO customer_info VALUES(${[customer_id]}, '${[name]}', '${[email]}', '${[phone]}')`)
             })
         }
-     })
+    })
 
-     setTimeout(() => {
-        addNewInvoiceData(customer_id, grandTotal, payment_method , accountant_director , itemListReceived.length+1)
-     }, 200);
+    setTimeout(() => {
+        addNewInvoiceData(customer_id, grandTotal, payment_method, accountant_director, itemListReceived.length + 1)
+    }, 200);
 
-     setTimeout(() => {
-         console.log("1",max_invoice_detail_id)
-        for(let i=0; i<itemListReceived.length; i++){
+    setTimeout(() => {
+        console.log("1", max_invoice_detail_id)
+        for (let i = 0; i < itemListReceived.length; i++) {
             let barcode = itemListReceived[i]
             let quantity = document.getElementById(`${barcode}quantityIn`).value
             let total_price = document.getElementById(`${barcode}totalPriceIn`).innerHTML
@@ -1196,14 +1230,14 @@ function generateInvoiceFromData() {
             total_price = parseInt(total_price)
             let discount = 0.1 * total_price
             let prod_name = document.getElementById(`${barcode}prod_nameIn`).innerHTML
-            let unit_price = total_price/quantity
+            let unit_price = total_price / quantity
 
-            addNewInvoiceItemsData(prod_name , max_invoice_detail_id, barcode, quantity, unit_price, discount, total_price)
+            addNewInvoiceItemsData(prod_name, max_invoice_detail_id, barcode, quantity, unit_price, discount, total_price)
         }
-     } , 500);
-     setTimeout(() => {
+    }, 500);
+    setTimeout(() => {
         return max_invoice_detail_id
-     } , 700);
+    }, 700);
 
 }
 function toogleButtonFun(svgId) {
