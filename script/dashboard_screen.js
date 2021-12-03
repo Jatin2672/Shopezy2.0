@@ -41,7 +41,7 @@ let profile_pic_url
 let updateModelBox
 
 let savebtn_account_settings
-let accountant_name_var, accountant_sign_var
+let accountant_name_var, accountant_sign_var, accountant_id_var=0;
 
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
@@ -406,6 +406,7 @@ window.addEventListener("DOMContentLoaded", () => {
     
     btn_to_add_accountant.addEventListener('click',()=>{
         accountant_name_var=accountant_popUp_name_txt.value;
+        Add_accountant_div(accountant_name_var,accountant_sign_var)
         addAccountant_popUp_close_btn.click();
     })
 
@@ -433,10 +434,11 @@ function Add_accountant_div(name,sign_img){
    `
 
   let x = document.createElement("div");
+    // x.id=`accountant_detail_${name}`
     x.className=`info_accountant_invoice_settings`
     x.innerHTML = Accountant_html;
     Accountant_detail_div_invoice.appendChild(x)
-
+    
 }
 
 // function to change language
