@@ -1015,12 +1015,29 @@ margin-bottom: 20px;
 
 /* -------------------------------Analytics---------------------------- */
 #analytics_page{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
-.analytic_sub_graphs{
+#analytics_graph_1{
+    width: calc(100% - 20px);
+    height: 30vh;
+    margin: 20px;
+}
+#lowerGraph{
+    width: 100%;
+    display: flex;
+    height: 70vh;
+}
+#lowerGraph > div{
     height: 100%;
+    display: flex;
+}
+#graph2{
+    width: 60%;
+}
+#graph3{
+    width: 40%;
 }
 /* -------------------------------Invoice---------------------------- */
 /* -------------------------------Settings---------------------------- */
