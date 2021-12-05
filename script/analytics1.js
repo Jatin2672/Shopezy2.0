@@ -402,9 +402,137 @@ function drawWeek(p){
     }
 }
 
+
+
+// streak graph 
+let dataGraph3 = [
+    [2,2,3,0,0,3,2], [1,4,3,0,1,3,2], [0,0,0,0,0,0,0], [0,2,3,0,1,3,1],
+    [1,2,2,0,1,3,0], [1,3,3,0,1,3,2], [4,4,3,2,1,3,2],[1,2,3,4,1,3,4],
+    [1,2,2,0,1,3,2], [0,2,3,0,0,1,0], [1,0,3,0,1,3,2],[1,0,1,1,1,3,2],
+    [0,3,4,4,4,1,0], [1,2,3,0,0,3,2], [0,2,2,0,0,3,2],[1,2,3,0,1,3,3],
+    [1,4,2,0,1,3,2], [3,2,4,3,0,3,2], [1,2,3,1,1,3,2],[0,2,3,4,4,2,2],
+    [1,1,1,0,1,3,0], [1,2,3,0,0,2,0], [1,1,3,2,1,3,0],[1,2,3,0,1,3,0],
+    [4,2,0,3,0,2,2], [0,1,2,0,1,3,2], [0,2,2,4,1,2,2],[1,0,3,0,1,3,2],
+    [0,2,0,4,1,3,2], [1,4,1,0,3,3,2], [1,2,3,1,1,3,2],[0,2,3,1,0,3,1],
+    [1,2,2,0,1,3,2], [0,0,0,3,0,0,0], [3,3,3,2,0,1,2],[0,0,3,1,0,1,2],
+    [3,3,3,4,2,2,0], [2,2,3,0,1,3,2], [1,2,3,0,1,3,2],[4,4,4,4,4,0,0],
+]
+// new p5( area_graph ,"graph2" );
+let [graph3Width, graph3Height] = [0, 0];
+function streak_graph(p){
+    p.setup = function(){
+        p.createCanvas(755, 200)
+        p.background(255)
+    }
+    p.draw = function(){
+        p.background(255);
+        drawRects(p)
+    }
+
+}
+
+let year_here = 2021;
+let selected_date = ""
+let date_position = [-20 , -20]
+let selected_value = 0
+
+function drawRects(p){
+    p.stroke(getcolor(0))
+    p.noFill()
+    p.rect(10,10,730,165)
+    for(let i = 0 ; i < 53 ; i++){
+        let j = i * 13
+        j += 40
+        p.fill(getcolor(0))
+        p.noStroke()
+        for(k = 0 ; k < 7 ; k++){
+        if((i*7)+k < 366){
+            if(i < dataGraph3.length && k < dataGraph3[i].length){
+                p.fill(getcolor(dataGraph3[i][k]))
+            }else{
+                p.fill(getcolor(5))
+            }
+            p.rect(j,30+15*k , 10 , 10) //1
+
+        if(p.mouseX > j && p.mouseX < j+13 && p.mouseY > 30+15*k && p.mouseY < 30+15*k+10){
+            let date = new Date("2020-01-01")
+            let timeInMillisecondPassed = date.getTime() + (((i*7)+k)*24*60*60*1000)
+            let newDate = new Date(timeInMillisecondPassed)
+            // format date to dd-mm-yy
+            let date_string = newDate.getDate() + "-" + (newDate.getMonth()+1) + "-" + newDate.getFullYear()
+             selected_date = date_string
+             date_position = [j,30+15*k]
+             if(i < dataGraph3.length && k < dataGraph3[i].length){
+              selected_value = dataGraph3[i][k]
+             }else{
+                 selected_value = "N/A"
+             }
+        }
+        }
+        
+        }
+        p.stroke(255)
+        p.textSize(12)
+        p.fill(66)
+        p.text("Less" , 580 , 154)
+        p.fill(getcolor(0))
+        p.rect(610, 145 , 10 , 10) // indicator light
+        p.fill(getcolor(1))
+        p.rect(623, 145 , 10 , 10)
+        p.fill(getcolor(2))
+        p.rect(636, 145 , 10 , 10)
+        p.fill(getcolor(3))
+        p.rect(649, 145 , 10 , 10)
+        p.fill(getcolor(4))
+        p.rect(662, 145 , 10 , 10)
+        p.fill(66)
+        p.text("More" , 675 , 154)
+        p.textSize(10)
+        p.text("Mon" , 15 , 38)
+        p.text("Wed" , 15 , 68)
+        p.text("Fri" , 15 , 98)
+        p.text("Sun" , 15 , 128)
+
+        
+    }
+    if(p.mouseX > 20 && p.mouseX < 740 && p.mouseY > 10 && p.mouseY < 135){
+    p.rectMode(p.CENTER)
+    p.rect(date_position[0], date_position[1]-18 , 120 , 30 , 10)
+    // draw a triangle
+    p.noStroke()
+    p.triangle(date_position[0]-6, date_position[1]-5 , date_position[0]+12, date_position[1]-5 , date_position[0]+3, date_position[1]+2)
+    p.rectMode(p.CORNER)
+    p.stroke(0)
+    p.fill(255)
+    p.text(selected_date , date_position[0]-45, date_position[1]-15)
+    p.text(selected_value + " sell" , date_position[0]+15, date_position[1]-15)
+    }
+}
+
+function getcolor(colorId){
+    switch(colorId){
+        case 0:
+            return "#C4C4C4"
+        case 1:
+            return "#BBCDE8"
+        case 2:
+            return "#8AB3F0"
+        case 3:
+            return "#5998FA"
+        case 4:
+            return "#0088FF"
+        default:
+            return "#F4F4F4"
+    }
+
+}
+
+
+
+
 // new p5( area_graph ,"graph2" );
 
-// new p5( streak_graph ,"graph3" );
+new p5( streak_graph ,"graph3" );
 window.addEventListener('DOMContentLoaded', () =>{
     new p5( base_line_graph ,"analytics_graph_1" );
 })

@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (err) throw err
         // parse the data
         languageData = JSON.parse(data)
-        changeLanguage("en")
+        //changeLanguage("en")
     })
 
     fs.readFile("./settings/system_settings.json", (err, data) => {
@@ -444,6 +444,7 @@ function Add_accountant_div(name,sign_img){
 // function to change language
 function changeLanguage(languageName) {
     // loop all the key 
+    try{
     for (let key in languageData) {
         try {
             document.getElementById(key).innerHTML = languageData[key][languageName]
@@ -451,12 +452,16 @@ function changeLanguage(languageName) {
             console.log(key)
         }
     }
+    }catch(error){
+        console.log(error)
+    }
 
     document.getElementById("selectmenu_personalisation_settings").value = languageName
 
     fs.writeFile("./settings/system_settings.json", JSON.stringify(system_settings), (err) => {
         if (err) console.log(err)
     })
+
 }
 
 // function to change name and email on user badge [sidebar]
