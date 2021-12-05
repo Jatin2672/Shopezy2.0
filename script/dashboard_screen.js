@@ -466,6 +466,7 @@ function changeLanguage(languageName) {
 
 // function to change name and email on user badge [sidebar]
 function userSettingsUpdate() {
+
     if (userSettingsData.email != "") {
         document.getElementById("email_shop_badge").innerHTML = userSettingsData.email
         document.getElementById("email_store_txt_home").innerHTML = userSettingsData.email
@@ -495,6 +496,7 @@ function userSettingsUpdate() {
     if (userSettingsData.bussiness_category != "") {
         document.getElementById("bussiness_category_acc").value = userSettingsData.bussiness_category
     }
+
 }
 
 function changePage(pageNumber) {
@@ -1317,4 +1319,3 @@ function addOrUpdateItemStock() {
     }, 300);
 
 }
-
