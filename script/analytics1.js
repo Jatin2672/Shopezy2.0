@@ -8,7 +8,7 @@ var data = {
 let selectedI;
 
 function bar_graph(p) {
-    console.log(p);
+    // console.log(p);
     p.setup = function () {
 
         p.createCanvas(300, 230);
@@ -95,7 +95,7 @@ function bar_graph(p) {
 
         p.pop()
 
-        // draw curser
+        // draw curser crossline mouse
         p.strokeWeight(0.5);
         p.drawingContext.setLineDash([5,5])
         p.line(p.mouseX , 0 , p.mouseX , p.height)

@@ -855,6 +855,7 @@ function openItemUpdateDialog(barcode, name, price, sellPrice, quantity) {
             deleteItemFromStock(barcode)
             model_box_container.style.display = "none"
             updateModelBox.style.display = "none"
+            
         })
 
 }
