@@ -537,15 +537,15 @@
     },
     "top_left_section_invoicePage1": {
         "hi": "ग्राहक का नाम",
-        "en": "Custumer's Name"
+        "en": "Customer's Name"
     },
     "top_left_section_invoicePage2": {
         "hi": "ग्राहक का ईमेल",
-        "en": "Custumer's Email"
+        "en": "Customer's Email"
     },
     "top_left_section_invoicePage3": {
         "hi": "ग्राहक का मोबाइल नंबर",
-        "en": "Custumer's Mobile Number"
+        "en": "Customer's Mobile Number"
     },
     "dashboard_top_parts_paymentmethod": {
         "hi": "भुगतान विधि",
