@@ -8,11 +8,11 @@
         "hi":"आरंभ करने के लिए पासकोड दर्ज करे"
     },
     "forget_password_txt":{
-        "en":"Forget Password ?",
-        "hi":"पासवर्ड भूल गये ?"
+        "en":"New User ?",
+        "hi":"नए उपयोगकर्ता ?"
     },
     "reset_now_btn":{
-        "en":"Reset Now",
-        "hi":"अभी रीसेट करें"
+        "en":"Register",
+        "hi":"रजिस्टर करें"
     }
 }
