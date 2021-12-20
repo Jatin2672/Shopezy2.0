@@ -1,1 +1,9 @@
+<<<<<<< Updated upstream
+{"registered":"false","bussiness_name":"Lesile Fashion Store","bussiness_category":"4","email":"lesilefashion@gmail.com","mobile":"9925502550","address":"new ranchView California usa","bussiness_owner_name":"Miss Lesile Stone","passcodeApplied":"true","passcode":"1234","profile_pic_url":"../media/userphoto.png"}
+=======
+<<<<<<< HEAD
+{"registered":"true","bussiness_name":"Lesile Fashion Store","bussiness_category":"4","email":"lesilefashion@gmail.com","mobile":"9925502550","address":"new ranchView California usa","bussiness_owner_name":"Miss Lesile Stone","passcodeApplied":"false","passcode":"1234"}
+=======
 {"registered":"true","bussiness_name":"Lesile Fashion Store","bussiness_category":"4","email":"lesilefashion@gmail.com","mobile":"9925502550","address":"new ranchView California usa","bussiness_owner_name":"Miss Lesile Stone","passcodeApplied":"true","passcode":"1234","profile_pic_url":"../media/userphoto.png"}
+>>>>>>> 406e6c8c8ac21f133b7af8764df48e82a176f734
+>>>>>>> Stashed changes
