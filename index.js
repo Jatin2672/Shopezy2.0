@@ -132,6 +132,12 @@ ipcMain.on("dashboard_screen:logout",()=>{
   createPasscodeWindow()
 })
 
+ipcMain.on("Register User",()=>{
+  passcodeWindow.close()
+  createWelcomeWindow()
+})
+
+
 ipcMain.on("invoice:print", () => {
 
   let options = {

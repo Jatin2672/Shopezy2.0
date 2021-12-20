@@ -357,7 +357,6 @@ window.addEventListener("DOMContentLoaded", () => {
     log_out_btn.addEventListener('click', () => {
         model_box_container.style.display = "block"
         ErrorAlert("Logged Out Successfully!!!")
-        userSettingsData.passcodeApplied = "false"
         updateSettings()
         setTimeout(() => {
             ipcRenderer.send("dashboard_screen:logout")

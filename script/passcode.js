@@ -1,7 +1,7 @@
 //import file system
 const { ipcRenderer } = require('electron');
 const fs = require('fs');
-let languageData , userSettingsData , inputpasscode
+let languageData , userSettingsData , inputpasscode,registerBtn
 
 //this event runs when html content is loaded
 window.addEventListener("DOMContentLoaded", () => {
@@ -38,6 +38,10 @@ window.addEventListener("DOMContentLoaded", () => {
     })
     document.getElementById("close_passcode_btn").addEventListener("click" , () =>{
         ipcRenderer.send("passcode:close")
+    })
+    registerBtn=document.getElementById("reset_now_btn");
+    registerBtn.addEventListener('click',()=>{
+        ipcRenderer.send("Register User")
     })
 })
 
